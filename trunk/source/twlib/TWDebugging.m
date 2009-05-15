@@ -41,6 +41,8 @@ void TWFail(const char* assertion, const char* function, const char* filePath, i
    );
 }
 
+#if TARGET_OS_IPHONE
+
 void TWLogTouchSet(const char* action, NSSet* set, UIEvent* event)
 {
    NSUInteger setCount = [set count];
@@ -84,6 +86,8 @@ void TWLogTouchSet(const char* action, NSSet* set, UIEvent* event)
       }
    }
 }
+
+#endif TARGET_OS_IPHONE
 
 // implements DEBUG_ASSERT_MESSAGE in AssertMacros.h
 

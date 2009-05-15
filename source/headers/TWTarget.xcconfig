@@ -8,3 +8,5 @@ PRODUCT_NAME = Navigation
 
 GCC_PREFIX_HEADER = headers/TWProjectPrefix.h
 INFOPLIST_FILE = resources/TWApplicationInfo.plist
+//INFOPLIST_PREFIX_HEADER = resources/version.h
+//INFOPLIST_PREPROCESS = YES

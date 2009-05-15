@@ -31,4 +31,3 @@
 #pragma mark Conveniences
 
 TWNavigationAppDelegate *TWAppDelegate(void);
-inline TWNavigationAppDelegate *TWAppDelegate(void) { return [[UIApplication sharedApplication] delegate]; }

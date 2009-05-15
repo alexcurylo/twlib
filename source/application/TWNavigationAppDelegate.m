@@ -55,3 +55,10 @@
 
 @end
 
+#pragma mark -
+#pragma mark Conveniences
+
+TWNavigationAppDelegate *TWAppDelegate(void)
+{
+   return [[UIApplication sharedApplication] delegate];
+}

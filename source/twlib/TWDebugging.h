@@ -27,6 +27,7 @@ typedef char twcompileassertsymbol(__LINE__, msg) [ ((test) ? 1 : -1) ]
 
 #ifdef DEBUG
 
+#undef DEBUG_ASSERT_PRODUCTION_CODE
 #define DEBUG_ASSERT_PRODUCTION_CODE 0
 
 // note for Objective-C only we could simplify like
@@ -69,6 +70,7 @@ typedef char twcompileassertsymbol(__LINE__, msg) [ ((test) ? 1 : -1) ]
 
 #endif DEBUG
 
+#undef DEBUG_ASSERT_MESSAGE
 #define DEBUG_ASSERT_MESSAGE TWAssertMessage
 #import <AssertMacros.h>
 

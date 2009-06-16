@@ -25,9 +25,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMainNibFile</key>
-	<string>TWNavigationMainWindow</string>
+	<string></string>
 	<key>UIInterfaceOrientation</key>
-	<string>UIInterfaceOrientationPortrait</string>
+	<string>UIInterfaceOrientationLandscape</string>
 	<key>UIRequiresPersistentWiFi</key>
 	<false/>
 	<key>UIStatusBarStyle</key>

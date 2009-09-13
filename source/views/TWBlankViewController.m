@@ -18,7 +18,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-   (void)animated;
+   [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

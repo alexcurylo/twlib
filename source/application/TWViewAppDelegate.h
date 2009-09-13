@@ -1,17 +1,18 @@
 //
-//  TWNavigationAppDelegate.h
+//  TWViewAppDelegate.h
 //
 //  Copyright Trollwerks Inc 2009. All rights reserved.
 //
 
-@interface TWNavigationAppDelegate : NSObject <UIApplicationDelegate>
-{
+@class TWBlankViewController;
+
+@interface TWViewAppDelegate : NSObject <UIApplicationDelegate> {
     IBOutlet UIWindow *window;
-    IBOutlet UINavigationController *navigationController;
+    IBOutlet TWBlankViewController *viewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
+@property (nonatomic, retain) IBOutlet TWBlankViewController *viewController;
 
 #pragma mark -
 #pragma mark Life cycle
@@ -30,4 +31,4 @@
 #pragma mark -
 #pragma mark Conveniences
 
-TWNavigationAppDelegate *TWAppDelegate(void);
+TWViewAppDelegate *TWAppDelegate(void);

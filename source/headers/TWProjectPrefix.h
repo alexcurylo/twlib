@@ -20,7 +20,9 @@
 #endif TARGET_OS_IPHONE
 
 // this will be set if ActiveSDK selection is 3.0 or greater
-#define TWTARGET_SDKVERSION_3 __IPHONE_OS_VERSION_MIN_REQUIRED >= 30000
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 30000
+#define TWTARGET_SDKVERSION_3 1
+#endif __IPHONE_OS_VERSION_MIN_REQUIRED >= 30000
 
 #import <TWDebugging.h>
 

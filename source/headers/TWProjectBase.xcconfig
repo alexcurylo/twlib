@@ -4,19 +4,21 @@
 //  Copyright Trollwerks Inc 2009. All rights reserved.
 //
 
-SDKROOT = iphoneos2.2
-ALWAYS_SEARCH_USER_PATHS = NO
-GCC_PRECOMPILE_PREFIX_HEADER = YES
-GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES
 
-ARCHS[sdk=iphoneos*] = armv6
+// http://iphonesdkdev.blogspot.com/2009/07/how-to-build-single-iphone-application.html
+SDKROOT = iphoneos3.1
+IPHONEOS_DEPLOYMENT_TARGET = 2.2
+MACOSX_DEPLOYMENT_TARGET = 10.5
+
+AARCHS[sdk=iphoneos*] = armv6
 ARCHS[sdk=iphonesimulator*] = i386
 //ONLY_ACTIVE_ARCH[sdk=iphone*] = YES
 ONLY_ACTIVE_ARCH = YES
-//MACOSX_DEPLOYMENT_TARGET[sdk=iphone*] = 10.5
-MACOSX_DEPLOYMENT_TARGET = 10.5
 CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Developer 
 
+ALWAYS_SEARCH_USER_PATHS = NO
+GCC_PRECOMPILE_PREFIX_HEADER = YES
+GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES
 GCC_C_LANGUAGE_STANDARD = c99
 GCC_ENABLE_OBJC_EXCEPTIONS = YES
 GCC_OBJC_CALL_CXX_CDTORS = YES
@@ -27,6 +29,11 @@ PREBINDING = NO
 GCC_DYNAMIC_NO_PIC = YES
 // if you do not set this to NO, then your dynamic_cast will break, because gcc 4.0 is stupid
 GCC_SYMBOLS_PRIVATE_EXTERN = NO
+
+INFOPLIST_PREPROCESS = YES
+// from http://developer.apple.com/technotes/tn2007/tn2175.html
+// and don't forget &amp; for & in strings, like URLs, or put them in IfnoPlist.strings perhaps
+INFOPLIST_OTHER_PREPROCESSOR_FLAGS = -traditional -CC
 
 // borrowed from Google Toolbox For Mac General.xcconfig
 

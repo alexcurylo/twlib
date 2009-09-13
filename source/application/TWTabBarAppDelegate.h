@@ -6,8 +6,8 @@
 
 @interface TWTabBarAppDelegate : NSObject <UIApplicationDelegate>
 {
-   UIWindow *window;
-   UITabBarController *tabBarController;
+   IBOutlet UIWindow *window;
+   IBOutlet UITabBarController *tabBarController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

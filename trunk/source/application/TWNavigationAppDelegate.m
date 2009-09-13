@@ -29,7 +29,7 @@
    [window makeKeyAndVisible];
 }
 
-- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application;
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
 {
    (void)application;
    twlog("applicationDidReceiveMemoryWarning!! -- no action");

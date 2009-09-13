@@ -1,32 +1,31 @@
 //
-//  TWTabBarAppDelegate.m
+//  TWViewAppDelegate.m
 //
 //  Copyright Trollwerks Inc 2009. All rights reserved.
 //
 
-#import "TWTabBarAppDelegate.h"
+#import "TWViewAppDelegate.h"
+#import "TWBlankViewController.h"
 
-@implementation TWTabBarAppDelegate
+@implementation TWViewAppDelegate
 
 @synthesize window;
-@synthesize tabBarController;
-
-#pragma mark -
-#pragma mark Life cycle
+@synthesize viewController;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application
-{
+{    
    twlog("launched %@ %@(%@)",
-      [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"],
-      [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
-      [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]
-   );
+         [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"],
+         [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
+         [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]
+         );
    
    // status bar marked hidden UIStatusBarStyleBlackOpaque in Info.plist so Default.png comes up fullscreen
    [application setStatusBarHidden:NO animated:NO];
    
-   [window addSubview:[tabBarController view]];
-   [window makeKeyAndVisible];
+    // Override point for customization after app launch    
+    [window addSubview:self.viewController.view];
+    [window makeKeyAndVisible];
 }
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
@@ -43,10 +42,10 @@
 
 - (void)dealloc
 {
-	self.tabBarController = nil;
+	self.viewController = nil;
 	self.window = nil;
-
-	[super dealloc];
+   
+   [super dealloc];
 }
 
 #pragma mark -
@@ -58,7 +57,7 @@
 #pragma mark -
 #pragma mark Conveniences
 
-TWTabBarAppDelegate *TWAppDelegate(void)
+TWViewAppDelegate *TWAppDelegate(void)
 {
    return [[UIApplication sharedApplication] delegate];
 }

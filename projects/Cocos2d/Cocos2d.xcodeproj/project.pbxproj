@@ -74,6 +74,7 @@
 		FAB7D17D0FA6BF1F00CBDED9 /* TWC2Main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB7D1730FA6BF1F00CBDED9 /* TWC2Main.m */; };
 		FAB7D17E0FA6BF1F00CBDED9 /* TWC2AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB7D1750FA6BF1F00CBDED9 /* TWC2AppDelegate.m */; };
 		FAB7D17F0FA6BF1F00CBDED9 /* TWDebugging.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB7D1780FA6BF1F00CBDED9 /* TWDebugging.m */; };
+		FAD98BF6108A19F600963F89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAD98BF5108A19F600963F89 /* Localizable.strings */; };
 		FAEE734A0FD9955E003A225E /* SoundEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAEE73450FD9955E003A225E /* SoundEngine.cpp */; };
 		FAEE734B0FD9955E003A225E /* SoundEngineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEE73480FD9955E003A225E /* SoundEngineManager.m */; };
 		FAEE73680FD99A06003A225E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEE73670FD99A06003A225E /* AudioToolbox.framework */; };
@@ -191,6 +192,7 @@
 		FABC85AF0FA77F8D00445CF5 /* TWProjectBase.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectBase.xcconfig; sourceTree = "<group>"; };
 		FABC85B00FA77F8D00445CF5 /* TWProjectRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectRelease.xcconfig; sourceTree = "<group>"; };
 		FABC85B10FA77F8D00445CF5 /* TWProjectDebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectDebug.xcconfig; sourceTree = "<group>"; };
+		FAD98BF5108A19F600963F89 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		FAEE73450FD9955E003A225E /* SoundEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundEngine.cpp; sourceTree = "<group>"; };
 		FAEE73460FD9955E003A225E /* SoundEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEngine.h; sourceTree = "<group>"; };
 		FAEE73470FD9955E003A225E /* SoundEngineManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEngineManager.h; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 		FAB7D1660FA6BF1800CBDED9 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAD98BF5108A19F600963F89 /* Localizable.strings */,
 				FAB7D16B0FA6BF1800CBDED9 /* TWC2ApplicationInfo.plist */,
 				FAEE74390FD9BCAA003A225E /* images */,
 				FAEE75070FD9FDFE003A225E /* sounds */,
@@ -742,6 +745,7 @@
 				FA1159EB0FDAE54B00174369 /* btn-playagain-normal.png in Resources */,
 				FA1159EC0FDAE54B00174369 /* btn-playagain-selected.png in Resources */,
 				FA1159F60FDAEA6700174369 /* fire.png in Resources */,
+				FAD98BF6108A19F600963F89 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

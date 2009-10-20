@@ -18,11 +18,12 @@
 		FACDC1040FD17EB100B3B9EE /* TWBlankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACDC1030FD17EB100B3B9EE /* TWBlankView.xib */; };
 		FACDC1060FD17EBA00B3B9EE /* TWTabBarMainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACDC1050FD17EBA00B3B9EE /* TWTabBarMainWindow.xib */; };
 		FACDC10A0FD17ED700B3B9EE /* TWBlankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACDC1080FD17ED700B3B9EE /* TWBlankViewController.m */; };
+		FAD98BD4108A19A900963F89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAD98BD3108A19A900963F89 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* TabBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = .app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FAB7D15E0FA6BEFF00CBDED9 /* notes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = notes.rtf; sourceTree = "<group>"; };
@@ -43,6 +44,7 @@
 		FACDC1050FD17EBA00B3B9EE /* TWTabBarMainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWTabBarMainWindow.xib; sourceTree = "<group>"; };
 		FACDC1080FD17ED700B3B9EE /* TWBlankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWBlankViewController.m; sourceTree = "<group>"; };
 		FACDC1090FD17ED700B3B9EE /* TWBlankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWBlankViewController.h; sourceTree = "<group>"; };
+		FAD98BD3108A19A900963F89 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +64,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* TabBar.app */,
+				1D6058910D05DD3D006BFB54 /* .app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,6 +115,7 @@
 		FAB7D1660FA6BF1800CBDED9 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAD98BD3108A19A900963F89 /* Localizable.strings */,
 				FACDC1050FD17EBA00B3B9EE /* TWTabBarMainWindow.xib */,
 				FACDC1030FD17EB100B3B9EE /* TWBlankView.xib */,
 				FAB7D16B0FA6BF1800CBDED9 /* TWApplicationInfo.plist */,
@@ -177,7 +180,7 @@
 			);
 			name = TabBar;
 			productName = Navigation;
-			productReference = 1D6058910D05DD3D006BFB54 /* TabBar.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* .app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -213,6 +216,7 @@
 				FAB7D16D0FA6BF1800CBDED9 /* Icon.png in Resources */,
 				FACDC1040FD17EB100B3B9EE /* TWBlankView.xib in Resources */,
 				FACDC1060FD17EBA00B3B9EE /* TWTabBarMainWindow.xib in Resources */,
+				FAD98BD4108A19A900963F89 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

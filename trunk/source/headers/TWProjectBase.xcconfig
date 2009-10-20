@@ -7,14 +7,19 @@
 
 // http://iphonesdkdev.blogspot.com/2009/07/how-to-build-single-iphone-application.html
 SDKROOT = iphoneos3.1
+//SDKROOT = macosx10.5
 IPHONEOS_DEPLOYMENT_TARGET = 2.2
-MACOSX_DEPLOYMENT_TARGET = 10.5
+MACOSX_DEPLOYMENT_TARGET[sdk=iphone*] = 10.5
+//MACOSX_DEPLOYMENT_TARGET = 10.4
 
 AARCHS[sdk=iphoneos*] = armv6
 ARCHS[sdk=iphonesimulator*] = i386
-//ONLY_ACTIVE_ARCH[sdk=iphone*] = YES
-ONLY_ACTIVE_ARCH = YES
+ONLY_ACTIVE_ARCH[sdk=iphone*] = YES
 CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Developer 
+ARCHS[sdk=macosx*] = i386 ppc
+//ARCHS[sdk=macosx10.4*] = i386 ppc
+//ARCHS[sdk=macosx10.5*] = i386 x86_64 ppc ppc64
+//ARCHS[sdk=macosx10.6*] = i386 x86_64 ppc
 
 ALWAYS_SEARCH_USER_PATHS = NO
 GCC_PRECOMPILE_PREFIX_HEADER = YES

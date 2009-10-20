@@ -18,6 +18,7 @@
 		FAB7D17E0FA6BF1F00CBDED9 /* TWNavigationAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB7D1750FA6BF1F00CBDED9 /* TWNavigationAppDelegate.m */; };
 		FAB7D17F0FA6BF1F00CBDED9 /* TWDebugging.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB7D1780FA6BF1F00CBDED9 /* TWDebugging.m */; };
 		FAB7D1800FA6BF1F00CBDED9 /* TWRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB7D17C0FA6BF1F00CBDED9 /* TWRootTableViewController.m */; };
+		FAD98BE1108A19CE00963F89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAD98BE0108A19CE00963F89 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		FABC85AF0FA77F8D00445CF5 /* TWProjectBase.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectBase.xcconfig; sourceTree = "<group>"; };
 		FABC85B00FA77F8D00445CF5 /* TWProjectRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectRelease.xcconfig; sourceTree = "<group>"; };
 		FABC85B10FA77F8D00445CF5 /* TWProjectDebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectDebug.xcconfig; sourceTree = "<group>"; };
+		FAD98BE0108A19CE00963F89 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		FAB7D1660FA6BF1800CBDED9 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAD98BE0108A19CE00963F89 /* Localizable.strings */,
 				FAB7D1690FA6BF1800CBDED9 /* TWNavigationMainWindow.xib */,
 				FAB7D16A0FA6BF1800CBDED9 /* TWRootTableView.xib */,
 				FAB7D16B0FA6BF1800CBDED9 /* TWApplicationInfo.plist */,
@@ -213,6 +216,7 @@
 				FAB7D16D0FA6BF1800CBDED9 /* Icon.png in Resources */,
 				FAB7D16E0FA6BF1800CBDED9 /* TWNavigationMainWindow.xib in Resources */,
 				FAB7D16F0FA6BF1800CBDED9 /* TWRootTableView.xib in Resources */,
+				FAD98BE1108A19CE00963F89 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

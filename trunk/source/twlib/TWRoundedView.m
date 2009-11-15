@@ -12,6 +12,7 @@
 @implementation TWRoundedView
 
 @synthesize foregroundColor;
+@synthesize strokeColor;
 
 - (id)initWithFrame:(CGRect)frame andColor:(UIColor *)color
 {
@@ -19,20 +20,36 @@
    {
       self.backgroundColor = [UIColor clearColor];
       self.foregroundColor = color;
+      self.strokeColor = color;
+
+      self.contentMode = UIViewContentModeRedraw; // so corners fix themselves
+      self.opaque = NO;
    }
    return self;
+}
+
+- (void)awakeFromNib
+{
+   [super awakeFromNib];
+   
+   self.foregroundColor = self.backgroundColor;
+   self.strokeColor = self.backgroundColor;
+   self.backgroundColor = [UIColor clearColor];
+   
+   self.contentMode = UIViewContentModeRedraw;
+   self.opaque = NO;
 }
 
 - (void)drawRect:(CGRect)rect
 {
    (void)rect;
    
-   CGFloat strokeWidth = 1.f;
+   CGFloat strokeWidth = 2.f;
    CGFloat cornerRadius = 10.f;
    
    CGContextRef context = UIGraphicsGetCurrentContext();
    CGContextSetLineWidth(context, strokeWidth);
-   CGContextSetStrokeColorWithColor(context, self.foregroundColor.CGColor);
+   CGContextSetStrokeColorWithColor(context, self.strokeColor.CGColor);
    CGContextSetFillColorWithColor(context, self.foregroundColor.CGColor);
    
    CGRect rrect = self.bounds;
@@ -65,7 +82,8 @@
 - (void)dealloc
 {
    self.foregroundColor = nil;
-   
+   self.strokeColor = nil;
+  
    [super dealloc];
 }
 

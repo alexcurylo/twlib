@@ -14,6 +14,7 @@
 - (void)viewDidLoad
 {
    [super viewDidLoad];
+   twlog("TWBlankViewController viewDidLoad");
 }
 
 - (void)viewWillAppear:(BOOL)animated

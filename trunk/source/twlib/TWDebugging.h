@@ -38,6 +38,7 @@ typedef char twcompileassertsymbol(__LINE__, msg) [ ((test) ? 1 : -1) ]
 #define twlogif(assertion, ...) do { if (twunlikely(assertion)) TWLog(__VA_ARGS__); } while (0)
 #define twlogtouchset TWLogTouchSet
 #define twmark	TWLog("MARK: %s", __PRETTY_FUNCTION__);  
+#define twunimplemented	TWLog("IMPLEMENT: %s", __PRETTY_FUNCTION__);
 #define twtimerstart NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate]
 #define twtimerend(msg) NSTimeInterval stop = [NSDate timeIntervalSinceReferenceDate]; if (msg) TWLog("%s -- time: %f", msg, stop-start)
 #define twtimerduration (stop - start)
@@ -63,6 +64,7 @@ typedef char twcompileassertsymbol(__LINE__, msg) [ ((test) ? 1 : -1) ]
 #define twlogif(...)
 #define twlogtouchset(...)
 #define twmark
+#define twunimplemented
 #define twtimerstart
 #define twtimerend(...)
 #define twtimerduration 0

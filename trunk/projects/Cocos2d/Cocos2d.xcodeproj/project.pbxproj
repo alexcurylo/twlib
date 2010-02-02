@@ -69,6 +69,8 @@
 		FA1159EB0FDAE54B00174369 /* btn-playagain-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = FA1159E90FDAE54B00174369 /* btn-playagain-normal.png */; };
 		FA1159EC0FDAE54B00174369 /* btn-playagain-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = FA1159EA0FDAE54B00174369 /* btn-playagain-selected.png */; };
 		FA1159F60FDAEA6700174369 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = FA1159F50FDAEA6700174369 /* fire.png */; };
+		FA417B7A11176383008AC4E1 /* TWProjectAdHoc.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FA417B7811176383008AC4E1 /* TWProjectAdHoc.xcconfig */; };
+		FA417B7B11176383008AC4E1 /* TWProjectAppStore.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FA417B7911176383008AC4E1 /* TWProjectAppStore.xcconfig */; };
 		FAB7D16C0FA6BF1800CBDED9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB7D1670FA6BF1800CBDED9 /* Default.png */; };
 		FAB7D16D0FA6BF1800CBDED9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB7D1680FA6BF1800CBDED9 /* Icon.png */; };
 		FAB7D17D0FA6BF1F00CBDED9 /* TWC2Main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB7D1730FA6BF1F00CBDED9 /* TWC2Main.m */; };
@@ -178,6 +180,8 @@
 		FA1159E90FDAE54B00174369 /* btn-playagain-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-playagain-normal.png"; sourceTree = "<group>"; };
 		FA1159EA0FDAE54B00174369 /* btn-playagain-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-playagain-selected.png"; sourceTree = "<group>"; };
 		FA1159F50FDAEA6700174369 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
+		FA417B7811176383008AC4E1 /* TWProjectAdHoc.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectAdHoc.xcconfig; sourceTree = "<group>"; };
+		FA417B7911176383008AC4E1 /* TWProjectAppStore.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectAppStore.xcconfig; sourceTree = "<group>"; };
 		FAB7D15E0FA6BEFF00CBDED9 /* notes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = notes.rtf; sourceTree = "<group>"; };
 		FAB7D1620FA6BF0900CBDED9 /* TWC2Target.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWC2Target.xcconfig; sourceTree = "<group>"; };
 		FAB7D1670FA6BF1800CBDED9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -382,6 +386,8 @@
 			isa = PBXGroup;
 			children = (
 				FABC85B10FA77F8D00445CF5 /* TWProjectDebug.xcconfig */,
+				FA417B7811176383008AC4E1 /* TWProjectAdHoc.xcconfig */,
+				FA417B7911176383008AC4E1 /* TWProjectAppStore.xcconfig */,
 				FABC85B00FA77F8D00445CF5 /* TWProjectRelease.xcconfig */,
 				FABC85AF0FA77F8D00445CF5 /* TWProjectBase.xcconfig */,
 				FAB7D1620FA6BF0900CBDED9 /* TWC2Target.xcconfig */,
@@ -746,6 +752,8 @@
 				FA1159EC0FDAE54B00174369 /* btn-playagain-selected.png in Resources */,
 				FA1159F60FDAEA6700174369 /* fire.png in Resources */,
 				FAD98BF6108A19F600963F89 /* Localizable.strings in Resources */,
+				FA417B7A11176383008AC4E1 /* TWProjectAdHoc.xcconfig in Resources */,
+				FA417B7B11176383008AC4E1 /* TWProjectAppStore.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -836,12 +844,12 @@
 			};
 			name = Debug;
 		};
-		1D6058950D05DD3E006BFB54 /* Release */ = {
+		1D6058950D05DD3E006BFB54 /* Release-AdHoc */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FAB7D1620FA6BF0900CBDED9 /* TWC2Target.xcconfig */;
 			buildSettings = {
 			};
-			name = Release;
+			name = "Release-AdHoc";
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -850,12 +858,26 @@
 			};
 			name = Debug;
 		};
-		C01FCF5008A954540054247B /* Release */ = {
+		C01FCF5008A954540054247B /* Release-AdHoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FABC85B00FA77F8D00445CF5 /* TWProjectRelease.xcconfig */;
+			baseConfigurationReference = FA417B7811176383008AC4E1 /* TWProjectAdHoc.xcconfig */;
 			buildSettings = {
 			};
-			name = Release;
+			name = "Release-AdHoc";
+		};
+		FA417B7D1117639A008AC4E1 /* Release-AppStore */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA417B7911176383008AC4E1 /* TWProjectAppStore.xcconfig */;
+			buildSettings = {
+			};
+			name = "Release-AppStore";
+		};
+		FA417B7E1117639A008AC4E1 /* Release-AppStore */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAB7D1620FA6BF0900CBDED9 /* TWC2Target.xcconfig */;
+			buildSettings = {
+			};
+			name = "Release-AppStore";
 		};
 /* End XCBuildConfiguration section */
 
@@ -864,19 +886,21 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
-				1D6058950D05DD3E006BFB54 /* Release */,
+				1D6058950D05DD3E006BFB54 /* Release-AdHoc */,
+				FA417B7E1117639A008AC4E1 /* Release-AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release-AdHoc";
 		};
 		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Cocos2d" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
-				C01FCF5008A954540054247B /* Release */,
+				C01FCF5008A954540054247B /* Release-AdHoc */,
+				FA417B7D1117639A008AC4E1 /* Release-AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release-AdHoc";
 		};
 /* End XCConfigurationList section */
 	};

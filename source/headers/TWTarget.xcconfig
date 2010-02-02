@@ -4,7 +4,7 @@
 //  Copyright 2009 Trollwerks Inc. All rights reserved.
 //
 
-PRODUCT_NAME = Navigation
+PRODUCT_NAME = NotNamed
 
 GCC_PREFIX_HEADER = headers/TWProjectPrefix.h
 INFOPLIST_FILE = resources/TWApplicationInfo.plist

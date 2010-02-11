@@ -1,11 +1,16 @@
 //
 //  TWRootTableViewController.h
 //
-//  Copyright Trollwerks Inc 2009. All rights reserved.
+//  Copyright Trollwerks Inc 2009-2010. All rights reserved.
 //
+
+//#define SUPPORTOS2TABLEVIEWCELLS 1
 
 @interface TWRootTableViewController : UITableViewController
 {
+#if SUPPORTOS2TABLEVIEWCELLS
+   BOOL hasInitWithStyle;
+#endif SUPPORTOS2TABLEVIEWCELLS
 }
 
 #pragma mark -
@@ -13,10 +18,8 @@
 
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
-#if TWTARGET_SDKVERSION_3
 - (void)viewDidUnload;
 - (void)setView:(UIView*)toView;
-#endif TWTARGET_SDKVERSION_3
 - (void)clearOutlets;
 - (void)dealloc;
 

@@ -1,7 +1,7 @@
 //
 //  TWBlankViewController.m
 //
-//  Copyright Trollwerks Inc 2009. All rights reserved.
+//  Copyright Trollwerks Inc 2010. All rights reserved.
 //
 
 #import "TWBlankViewController.h"
@@ -29,20 +29,18 @@
    twlog("TWBlankViewController didReceiveMemoryWarning -- no action");
 }
 
-#if TWTARGET_SDKVERSION_3
 - (void)viewDidUnload
 {
 	[self clearOutlets];
 }
 
-- (void)setView:(UIView*)toView
+- (void)setView:(UIView *)toView
 {
 	if (!toView)
 		[self clearOutlets];
 	
 	[super setView:toView];
 }
-#endif TWTARGET_SDKVERSION_3
 
 - (void) clearOutlets
 {
@@ -50,6 +48,7 @@
 
 - (void)dealloc
 {
+   [[NSNotificationCenter defaultCenter] removeObserver:self];
    [self clearOutlets];
    
    [super dealloc];

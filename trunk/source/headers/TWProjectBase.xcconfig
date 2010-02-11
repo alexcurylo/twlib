@@ -4,11 +4,10 @@
 //  Copyright Trollwerks Inc 2009. All rights reserved.
 //
 
-
 // http://iphonesdkdev.blogspot.com/2009/07/how-to-build-single-iphone-application.html
-SDKROOT = iphoneos3.1.2
+SDKROOT = iphoneos3.1.3
 //SDKROOT = macosx10.5
-IPHONEOS_DEPLOYMENT_TARGET = 2.2
+IPHONEOS_DEPLOYMENT_TARGET = 2.2.1
 MACOSX_DEPLOYMENT_TARGET[sdk=iphone*] = 10.5
 //MACOSX_DEPLOYMENT_TARGET = 10.4
 
@@ -20,6 +19,8 @@ ARCHS[sdk=macosx*] = i386 ppc
 //ARCHS[sdk=macosx10.4*] = i386 ppc
 //ARCHS[sdk=macosx10.5*] = i386 x86_64 ppc ppc64
 //ARCHS[sdk=macosx10.6*] = i386 x86_64 ppc
+
+RUN_CLANG_STATIC_ANALYZER = YES
 
 ALWAYS_SEARCH_USER_PATHS = NO
 GCC_PRECOMPILE_PREFIX_HEADER = YES
@@ -125,10 +126,13 @@ GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES
 // NOTE: sign compare is also controlled by -Wextra, we we override it above.
 GCC_WARN_SHADOW = YES
 GCC_WARN_SIGN_COMPARE = YES
+GCC_WARN_UNDECLARED_SELECTOR = YES
 
 GCC_WARN_PEDANTIC = NO // doesn't even like #import
 GCC_WARN_PROTOTYPE_CONVERSION = NO // may catch implicit casts, but lots of noise ... like YES and NO for BOOL
 GCC_TREAT_NONCONFORMANT_CODE_ERRORS_AS_WARNINGS = NO
+GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = NO // freaks on Cocoa
+GCC_WARN_STRICT_SELECTOR_MATCH = NO // freaks on Cocoa, -objectForKey: specifically
 
 
 // merge flag/path settings with possible previous configuration file flag settings

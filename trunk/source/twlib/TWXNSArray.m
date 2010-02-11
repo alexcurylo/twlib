@@ -1,4 +1,10 @@
 //
+//  TWXNSArray.m
+//
+//  Copyright 2010 Trollwerks Inc. All rights reserved.
+//
+
+//
 //  NSArray+CWSortedInsert.m
 //
 //  Created by Fredrik Olsson on 2008-03-21.
@@ -27,7 +33,7 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "TWXNSArraySortedInsert.h"
+#import "TWXNSArray.h"
 #import <objc/runtime.h>
 
 @implementation NSArray (TWXNSArraySortedInsert)
@@ -49,8 +55,25 @@
   return insertIndex;
 }
 
-static NSComparisonResult cw_SelectorCompare(id a, id b, void* aSelector) {
-	return (NSComparisonResult)objc_msgSend(a, (SEL)aSelector, b);
+//id objc_msgSend(id, SEL, ...);
+
+static NSComparisonResult cw_SelectorCompare(id a, id b, void* aSelector)
+{
+/*
+ //return (NSComparisonResult)objc_msgSend(a, (SEL)aSelector, b);
+   // http://www.cocoabuilder.com/archive/cocoa/156384-objc-msgsend-problems-on-x86.html#156604
+   
+   //BOOL (*fnx)(id, SEL) = (BOOL (*)(id, SEL))objc_msgSend;
+   
+   //id (*messengerFunctionPointer)(id, SEL, ...) = objc_msgSend;
+   
+   NSComparisonResult (*fn)(id, SEL, id) = (NSComparisonResult (*)(id, SEL, id)) objc_msgSend;
+   
+   NSComparisonResult result = (*fn)(a, (SEL)aSelector, b);
+ */
+   
+   id result = objc_msgSend(a, (SEL)aSelector, b);
+	return (NSComparisonResult)result;
 }
 
 -(NSUInteger)indexForInsertingObject:(id)anObject sortedUsingSelector:(SEL)aSelector;
@@ -63,22 +86,27 @@ static IMP cw_ascendingImp = NULL;
 
 +(void)initialize;
 {
-  cw_compareObjectToObjectImp = [NSSortDescriptor instanceMethodForSelector:@selector(compareObject:toObject:)];
-	cw_ascendingImp = [NSSortDescriptor instanceMethodForSelector:@selector(ascending)];
+   cw_compareObjectToObjectImp = [NSSortDescriptor instanceMethodForSelector:@selector(compareObject:toObject:)];
+   cw_ascendingImp = [NSSortDescriptor instanceMethodForSelector:@selector(ascending)];
 }
 
-static NSComparisonResult cw_DescriptorCompare(id a, id b, void* descriptors) {
-	NSComparisonResult result = NSOrderedSame;
-  for (NSSortDescriptor* sortDescriptor in (NSArray*)descriptors) {
-		result = (NSComparisonResult)cw_compareObjectToObjectImp(sortDescriptor, @selector(compareObject:toObject:), a, b);
-    if (result != NSOrderedSame) {
-      if (!cw_ascendingImp(sortDescriptor, @selector(ascending))) {
-      	result = 0 - result;
+static NSComparisonResult cw_DescriptorCompare(id a, id b, void* descriptors)
+{
+   NSComparisonResult result = NSOrderedSame;
+   for (NSSortDescriptor* sortDescriptor in (NSArray*)descriptors)
+   {
+      id compareResult = cw_compareObjectToObjectImp(sortDescriptor, @selector(compareObject:toObject:), a, b);
+      result = (NSComparisonResult)compareResult;
+      if (result != NSOrderedSame)
+      {
+         if (!cw_ascendingImp(sortDescriptor, @selector(ascending)))
+         {
+            result = 0 - result;
+         }
+         break;
       }
-      break;
-    }
-  }
-  return result;
+   }
+   return result;
 }
 
 -(NSUInteger)indexForInsertingObject:(id)anObject sortedUsingDescriptors:(NSArray*)descriptors;

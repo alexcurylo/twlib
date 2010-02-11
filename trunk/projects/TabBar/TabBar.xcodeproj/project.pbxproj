@@ -12,6 +12,8 @@
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		FA417B5C111762E5008AC4E1 /* TWProjectAdHoc.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FA417B5A111762E5008AC4E1 /* TWProjectAdHoc.xcconfig */; };
 		FA417B5D111762E5008AC4E1 /* TWProjectAppStore.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FA417B5B111762E5008AC4E1 /* TWProjectAppStore.xcconfig */; };
+		FA59A25F111FC4E000E48A21 /* TWRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA59A25E111FC4E000E48A21 /* TWRootTableViewController.m */; };
+		FA59A261111FC4FC00E48A21 /* TWRootTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA59A260111FC4FC00E48A21 /* TWRootTableView.xib */; };
 		FAB7D16C0FA6BF1800CBDED9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB7D1670FA6BF1800CBDED9 /* Default.png */; };
 		FAB7D16D0FA6BF1800CBDED9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB7D1680FA6BF1800CBDED9 /* Icon.png */; };
 		FAB7D17D0FA6BF1F00CBDED9 /* TWMain.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB7D1730FA6BF1F00CBDED9 /* TWMain.m */; };
@@ -30,6 +32,9 @@
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FA417B5A111762E5008AC4E1 /* TWProjectAdHoc.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectAdHoc.xcconfig; sourceTree = "<group>"; };
 		FA417B5B111762E5008AC4E1 /* TWProjectAppStore.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectAppStore.xcconfig; sourceTree = "<group>"; };
+		FA59A25D111FC4E000E48A21 /* TWRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWRootTableViewController.h; sourceTree = "<group>"; };
+		FA59A25E111FC4E000E48A21 /* TWRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWRootTableViewController.m; sourceTree = "<group>"; };
+		FA59A260111FC4FC00E48A21 /* TWRootTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWRootTableView.xib; sourceTree = "<group>"; };
 		FAB7D15E0FA6BEFF00CBDED9 /* notes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = notes.rtf; sourceTree = "<group>"; };
 		FAB7D1620FA6BF0900CBDED9 /* TWTarget.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWTarget.xcconfig; sourceTree = "<group>"; };
 		FAB7D1670FA6BF1800CBDED9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -124,6 +129,7 @@
 				FAD98BD3108A19A900963F89 /* Localizable.strings */,
 				FACDC1050FD17EBA00B3B9EE /* TWTabBarMainWindow.xib */,
 				FACDC1030FD17EB100B3B9EE /* TWBlankView.xib */,
+				FA59A260111FC4FC00E48A21 /* TWRootTableView.xib */,
 				FAB7D16B0FA6BF1800CBDED9 /* TWApplicationInfo.plist */,
 				FAB7D1670FA6BF1800CBDED9 /* Default.png */,
 				FAB7D1680FA6BF1800CBDED9 /* Icon.png */,
@@ -165,6 +171,8 @@
 			children = (
 				FACDC1080FD17ED700B3B9EE /* TWBlankViewController.m */,
 				FACDC1090FD17ED700B3B9EE /* TWBlankViewController.h */,
+				FA59A25D111FC4E000E48A21 /* TWRootTableViewController.h */,
+				FA59A25E111FC4E000E48A21 /* TWRootTableViewController.m */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -225,6 +233,7 @@
 				FAD98BD4108A19A900963F89 /* Localizable.strings in Resources */,
 				FA417B5C111762E5008AC4E1 /* TWProjectAdHoc.xcconfig in Resources */,
 				FA417B5D111762E5008AC4E1 /* TWProjectAppStore.xcconfig in Resources */,
+				FA59A261111FC4FC00E48A21 /* TWRootTableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +248,7 @@
 				FAB7D17F0FA6BF1F00CBDED9 /* TWDebugging.m in Sources */,
 				FAB7D17E0FA6BF1F00CBDED9 /* TWTabBarAppDelegate.m in Sources */,
 				FACDC10A0FD17ED700B3B9EE /* TWBlankViewController.m in Sources */,
+				FA59A25F111FC4E000E48A21 /* TWRootTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

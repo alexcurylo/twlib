@@ -1,7 +1,7 @@
 //
 //  TWRootTableViewController.m
 //
-//  Copyright Trollwerks Inc 2009. All rights reserved.
+//  Copyright Trollwerks Inc 2009-2010. All rights reserved.
 //
 
 #import "TWRootTableViewController.h"
@@ -13,8 +13,14 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+   [super viewDidLoad];
+   twlog("TWRootTableViewController viewDidLoad");
 
+#if SUPPORTOS2TABLEVIEWCELLS
+   UITableViewCell *cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"TEST"] autorelease];
+   hasInitWithStyle = [cell respondsToSelector:@selector(initWithStyle:reuseIdentifier:)];
+#endif SUPPORTOS2TABLEVIEWCELLS
+   
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -26,7 +32,6 @@
    twlog("TWRootTableViewController didReceiveMemoryWarning -- no action");
 }
 
-#if TWTARGET_SDKVERSION_3
 - (void)viewDidUnload
 {
 	[self clearOutlets];
@@ -39,7 +44,6 @@
 	
 	[super setView:toView];
 }
-#endif TWTARGET_SDKVERSION_3
 
 - (void) clearOutlets
 {
@@ -47,6 +51,7 @@
 
 - (void)dealloc
 {
+   [[NSNotificationCenter defaultCenter] removeObserver:self];
    [self clearOutlets];
 
    [super dealloc];
@@ -54,7 +59,6 @@
 
 #pragma mark -
 #pragma mark Table support
-
 
 #pragma mark Table view methods
 
@@ -85,16 +89,24 @@
     static NSString *kRootTableViewCellIdentifier = @"RootTableViewCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kRootTableViewCellIdentifier];
-    if (cell == nil) {
-#if TWTARGET_SDKVERSION_3
-#error check current best practices here
-       cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kRootTableViewCellIdentifier] autorelease];
-#else
-       cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:kRootTableViewCellIdentifier] autorelease];
-#endif TWTARGET_SDKVERSION_3
+    if (cell == nil)
+    {
+#if SUPPORTOS2TABLEVIEWCELLS
+       if (!hasInitWithStyle)
+          cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:kRootTableViewCellIdentifier] autorelease];
+       else
+#endif SUPPORTOS2TABLEVIEWCELLS
+          cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kRootTableViewCellIdentifier] autorelease];
+      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-	cell.text = [NSString stringWithFormat:@"cell %i", indexPath.row];
+   NSString *mainLabel = [NSString stringWithFormat:@"cell %i", indexPath.row];
+#if SUPPORTOS2TABLEVIEWCELLS
+   if (!hasInitWithStyle)
+      cell.text = mainLabel;
+   else
+#endif SUPPORTOS2TABLEVIEWCELLS
+      cell.textLabel.text = mainLabel;
 
    return cell;
 }

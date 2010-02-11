@@ -1,4 +1,10 @@
 //
+//  TWXNSArray.h
+//
+//  Copyright 2010 Trollwerks Inc. All rights reserved.
+//
+
+//
 //  NSArray+CWSortedInsert.h
 //
 //  Created by Fredrik Olsson on 2008-03-21.

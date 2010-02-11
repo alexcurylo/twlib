@@ -1,7 +1,7 @@
 //
 //  TWBlankViewController.h
 //
-//  Copyright Trollwerks Inc 2009. All rights reserved.
+//  Copyright Trollwerks Inc 2010. All rights reserved.
 //
 
 @interface TWBlankViewController : UIViewController
@@ -14,10 +14,8 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)didReceiveMemoryWarning;
-#if TWTARGET_SDKVERSION_3
 - (void)viewDidUnload;
-- (void)setView:(UIView*)toView;
-#endif TWTARGET_SDKVERSION_3
+- (void)setView:(UIView *)toView;
 - (void)clearOutlets;
 - (void)dealloc;
 

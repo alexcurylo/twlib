@@ -6,6 +6,16 @@
 
 PRODUCT_NAME = NotNamed
 
+//GCC_PREPROCESSOR_DEFINITIONS = $(inherited) POSESPRO=1
+
+// might as well just set these in build panel if there's multiple targets
+//TW_CODE_SIGN_IDENTITY = "iPhone Distribution: Trollwerks Inc.";
+//TW_ADHOC_PROVISIONING_PROFILE = "33CF9AFA-F61A-4CC7-ACA4-D896AD1CDE90";
+//TW_APPSTORE_PROVISIONING_PROFILE = "6906C5A2-C360-41C2-BE88-CADE1A43E018";
+//"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Trollwerks Inc.";
+//"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6906C5A2-C360-41C2-BE88-CADE1A43E018";
+
+
 GCC_PREFIX_HEADER = headers/TWProjectPrefix.h
 INFOPLIST_FILE = resources/TWApplicationInfo.plist
 //INFOPLIST_PREFIX_HEADER = resources/version.h

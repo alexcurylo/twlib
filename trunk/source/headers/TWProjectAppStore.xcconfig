@@ -4,4 +4,7 @@
 //  Copyright Trollwerks Inc 2009. All rights reserved.
 //
 
+// this kills Code Sense when in base -- let's see if just in debug breaks too
+//RUN_CLANG_STATIC_ANALYZER = YES
+
 #include "TWProjectRelease.xcconfig"

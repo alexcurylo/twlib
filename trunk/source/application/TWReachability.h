@@ -10,82 +10,89 @@
  
  in app delegate definition
  
+ @class TWReachability;
  TWReachability* hostReach;
  TWReachability* internetReach;
  TWReachability* wifiReach;
  UIAlertView *noInternetAlert;
  @property (nonatomic, retain) UIAlertView *noInternetAlert;
+ - (void)startReachabilityChecks;
+ - (void)reachabilityChanged:(NSNotification *)note;
+ - (BOOL)isInternetAvailable:(BOOL)alertIfNot;
 
- in -applicationDidFinishLaunching call
+ in app delegate implementation
  
+ #import "TWReachability.h"
+ @synthesize noInternetAlert;
+
+ in -applicationDidFinishLaunching call immediately at start
+ [self startReachabilityChecks];
+
  - (void)startReachabilityChecks
  {
- // Observe the kReachabilityChangedNotification. When that notification is posted, the
- // method "reachabilityChanged" will be called. 
- [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
- 
- //Change the host name here to change the server your monitoring
- hostReach = [[TWReachability reachabilityWithHostName: @"www.apple.com"] retain];
- [hostReach startNotifier];
- 
- internetReach = [[TWReachability reachabilityForInternetConnection] retain];
- [internetReach startNotifier];
- 
- wifiReach = [[TWReachability reachabilityForLocalWiFi] retain];
- [wifiReach startNotifier];
+    // Observe the kReachabilityChangedNotification. When that notification is posted, the
+    // method "reachabilityChanged" will be called. 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+    
+    //Change the host name here to change the server your monitoring
+    hostReach = [[TWReachability reachabilityWithHostName: @"www.apple.com"] retain];
+    [hostReach startNotifier];
+    
+    internetReach = [[TWReachability reachabilityForInternetConnection] retain];
+    [internetReach startNotifier];
+    
+    wifiReach = [[TWReachability reachabilityForLocalWiFi] retain];
+    [wifiReach startNotifier];
  }
  
  then for instance
  
  - (void)reachabilityChanged:(NSNotification *)note
  {
- (void)note;
- TWReachability* curReach = [note object];
- NSParameterAssert([curReach isKindOfClass: [TWReachability class]]);
+    (void)note;
+    TWReachability* curReach = [note object];
+    NSParameterAssert([curReach isKindOfClass: [TWReachability class]]);
 
- [self isInternetAvailable:YES];
+    [self isInternetAvailable:YES];
  }
+
+- (BOOL)isInternetAvailable:(BOOL)alertIfNot
+{
+   BOOL result = NO;
+      
+   NetworkStatus hostStatus = [hostReach currentReachabilityStatus];
+   switch (hostStatus)
+   {
+      default:
+         twlog("isInternetAvailable unexpected host status %d!", hostStatus);
+         // FALL
+      case kNotReachable:
+         result = NO;
+         if (alertIfNot && !self.noInternetAlert)
+         {
+            self.noInternetAlert = [[[UIAlertView alloc]
+               initWithTitle:NSLocalizedString(@"NOINTERNETTITLE", nil)
+               message:NSLocalizedString(@"NOINTERNETMESSAGE", nil)
+               delegate:self
+               cancelButtonTitle:nil 
+               otherButtonTitles:NSLocalizedString(@"OK", nil),
+               nil
+            ] autorelease];
+            [self.noInternetAlert show];
+         }
+         break;
  
- - (BOOL)isInternetAvailable:(BOOL)alertIfNot
- {
- BOOL result = NO;
- 
- NetworkStatus hostStatus = [hostReach currentReachabilityStatus];
- switch (hostStatus)
- {
- default:
- twlog("isInternetAvailable unexpected host status %d!", hostStatus);
- // FALL
- case kNotReachable:
- result = NO;
- if (alertIfNot && !self.noInternetAlert)
- {
- self.noInternetAlert = [[[UIAlertView alloc]
- initWithTitle:NSLocalizedString(@"NOINTERNETTITLE", nil)
- message:NSLocalizedString(@"NOINTERNETMESSAGE", nil)
- delegate:self
- cancelButtonTitle:nil 
- otherButtonTitles:NSLocalizedString(@"OK", nil),
- nil
- ] autorelease];
- [self.noInternetAlert show];
- }
- break;
- case kReachableViaWWAN:
- result = YES;
- if (self.noInternetAlert)
- [self.noInternetAlert dismissWithClickedButtonIndex:0 animated:YES];
- break;
- case kReachableViaWiFi:
- result = YES;
- if (self.noInternetAlert)
- [self.noInternetAlert dismissWithClickedButtonIndex:0 animated:YES];
- break;
- }
- 
- return result;
- }
- 
+      case kReachableViaWWAN:
+      case kReachableViaWiFi:
+         result = YES;
+         if (self.noInternetAlert)
+            [self.noInternetAlert dismissWithClickedButtonIndex:0 animated:YES];
+         self.noInternetAlert = nil;
+         break;
+   }
+   
+   return result;
+}
  */
 
 
@@ -94,7 +101,7 @@
  File: Reachability.h
  Abstract: Basic demonstration of how to use the SystemConfiguration Reachablity APIs.
  
- Version: 2.0.3ddg
+ Version: 2.0.4ddg
  */
 
 /*

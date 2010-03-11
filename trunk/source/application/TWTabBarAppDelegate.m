@@ -25,8 +25,8 @@
    // status bar marked hidden UIStatusBarStyleBlackOpaque in Info.plist so Default.png comes up fullscreen
    [application setStatusBarHidden:NO animated:NO];
    
-   [window addSubview:[tabBarController view]];
-   [window makeKeyAndVisible];
+   [self.window addSubview:[self.tabBarController view]];
+   [self.window makeKeyAndVisible];
 }
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application

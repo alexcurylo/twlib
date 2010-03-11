@@ -45,20 +45,32 @@
    SEL completionSelector;
    // - (void)completionMethod:(TWURLFetcher *)fetcher
 
+   id contextInfo;
+
    BOOL succeeded;
+
+   NSInteger retries;
+
+   long long expectedContentLength;
+   NSInteger statusCode;
 }
 
 @property (nonatomic, copy) NSString *requestString;
 @property (nonatomic, retain) NSMutableURLRequest *request;
 @property (nonatomic, retain) NSURLConnection *connection;
 @property (nonatomic, retain) NSMutableData *connectionData;
+@property (nonatomic, assign) id completionTarget;
+@property (nonatomic, assign) SEL completionSelector;
+@property (nonatomic, retain) id contextInfo;
 @property (nonatomic, assign) BOOL succeeded;
+@property (nonatomic, assign) NSInteger retries;
 
 #pragma mark -
 #pragma mark Utilities
 
 
 + (TWURLFetcher *)urlFetcher:(NSString *)urlLink target:(id)target selector:(SEL)selector;
++ (TWURLFetcher *)urlFetcherRetry:(TWURLFetcher *)failure;
 
 #pragma mark -
 #pragma mark Life cycle
@@ -68,12 +80,18 @@
 - (void)dealloc;
 
 #pragma mark -
+#pragma mark Actions
+
+- (BOOL)retry:(NSInteger)maxRetries;
+
+#pragma mark -
 #pragma mark NSURLConnectionDelegate
 
+- (void)connection:(NSURLConnection *)connect didReceiveResponse:(NSURLResponse *)response;
 - (void)connection:(NSURLConnection *)connect didReceiveData:(NSData *)data;
 - (void)connectionDidFinishLoading:(NSURLConnection *)connect;
 - (void)connection:(NSURLConnection *)connect didFailWithError:(NSError *)error;
 
-- (void)completeAndRelease;
+- (void)complete;
 
 @end

@@ -11,7 +11,7 @@
  File: Reachability.m
  Abstract: Basic demonstration of how to use the SystemConfiguration Reachablity APIs.
  
- Version: 2.0.3ddg
+ Version: 2.0.4ddg
  */
 
 /*
@@ -186,6 +186,7 @@ static void logNetworkStatus_(const char *name, int line, NetworkStatus status) 
 */
 #else
 #define logReachabilityFlags(flags)
+#define reachabilityFlags_(flags) @""
 /*
  #define logNetworkStatus(status)
 */
@@ -476,7 +477,9 @@ const SCNetworkReachabilityFlags kConnectionDown =  kSCNetworkReachabilityFlagsC
 		if (flags & kSCNetworkReachabilityFlagsConnectionRequired) { return kReachableViaWiFi; }
 		
 		// Required by the compiler. Should never get here. Default to not connected.
+#if (defined DEBUG && defined CLASS_DEBUG)
 		NSAssert1(NO, @"Uncaught reachability test. Flags: %@", reachabilityFlags_(flags));
+#endif
 		return kNotReachable;
 
 		}

@@ -6,27 +6,70 @@
 
 #import "TWURLFetcher.h"
 
+static NSMutableArray *sActiveFetchers = nil;
+
 @implementation TWURLFetcher
 
 @synthesize requestString;
 @synthesize request;
 @synthesize connection;
 @synthesize connectionData;
+@synthesize completionTarget;
+@synthesize completionSelector;
+@synthesize contextInfo;
 @synthesize succeeded;
-//@synthesize resultDictionary;
+@synthesize retries;
 
 #pragma mark -
 #pragma mark Utilities
-
 
 + (TWURLFetcher *)urlFetcher:(NSString *)urlLink target:(id)target selector:(SEL)selector
 {
    if (!urlLink || !urlLink.length)
       return nil;
    
-	TWURLFetcher *fetcher = [[TWURLFetcher alloc] initWithRequestString:urlLink target:target selector:selector];
+	TWURLFetcher *fetcher = [[TWURLFetcher alloc]
+      initWithRequestString:urlLink
+      target:target
+      selector:selector
+   ];
    twcheck(fetcher);
-   return fetcher;
+   
+   if (fetcher)
+   {
+      if (!sActiveFetchers)
+         sActiveFetchers = [[NSMutableArray alloc] init];
+      
+      [sActiveFetchers addObject:fetcher];
+   }
+   
+   return [fetcher autorelease];
+}
+
++ (TWURLFetcher *)urlFetcherRetry:(TWURLFetcher *)failure
+{
+   if (!failure)
+      return nil;
+   
+	TWURLFetcher *fetcher = [[TWURLFetcher alloc]
+      initWithRequestString:failure.requestString
+      target:failure.completionTarget
+      selector:failure.completionSelector
+   ];
+   twcheck(fetcher);
+   
+   if (fetcher)
+   {
+      fetcher.contextInfo = failure.contextInfo;
+      fetcher.retries = failure.retries + 1;
+      
+      if (!sActiveFetchers)
+         sActiveFetchers = [[NSMutableArray alloc] init];
+      
+      [sActiveFetchers addObject:fetcher];
+   }
+   
+   return [fetcher autorelease];
 }
 
 #pragma mark -
@@ -65,13 +108,70 @@
    self.request = nil;
    self.connection = nil;
    self.connectionData = nil;
-   //self.resultDictionary = nil;
+   self.contextInfo = nil;
   
    [super dealloc];
 }
 
 #pragma mark -
+#pragma mark Actions
+
+- (BOOL)retry:(NSInteger)maxRetries
+{
+   if (maxRetries < retries)
+      return NO;
+   
+   /*
+   [self.connection cancel];
+   self.connection = nil;
+   self.connectionData = nil;
+   self.succeeded = NO;
+   
+   twcheck(self.request);
+   self.connection = [NSURLConnection connectionWithRequest:self.request delegate:self];
+   twcheck(self.connection);
+   
+   retries++;
+   twlog("retrying, attempt %i...", retries);
+    */
+   TWURLFetcher *poseFetcher = [TWURLFetcher urlFetcherRetry:self];
+   twcheck(poseFetcher); (void)poseFetcher;
+   
+   return YES;
+}
+
+#pragma mark -
 #pragma mark NSURLConnectionDelegate
+
+- (void)connection:(NSURLConnection *)connect didReceiveResponse:(NSURLResponse *)response
+{
+   if ([response respondsToSelector:@selector(statusCode)])
+   {
+      expectedContentLength = [((NSHTTPURLResponse *)response) expectedContentLength];
+      if (0 > expectedContentLength)
+         expectedContentLength = 0;
+      twcheck(expectedContentLength);
+      statusCode = [((NSHTTPURLResponse *)response) statusCode];
+      if ( (400 <= statusCode) && (599 >= statusCode) )
+      {
+         twlog("TWURLFetcher didReceiveResponse cancelling...");
+         
+         [connect cancel];  // stop connecting; no more delegate messages
+
+         twlog("TWURLFetcher response FAIL (%i) for query: %@", statusCode, self.requestString);
+
+         succeeded = NO;
+         
+         twlog("TWURLFetcher didReceiveResponse calling complete...");
+
+         [self complete];
+      }
+      else if (200 != statusCode)
+      {
+         twlog("TWURLFetcher suspicious status response code (%i) for query: %@", statusCode, self.requestString);
+      }
+   }
+}
 
 - (void)connection:(NSURLConnection *)connect didReceiveData:(NSData *)data
 {
@@ -98,9 +198,17 @@
    twlogif(nil != error, "TWURLFetcher deserialize FAIL for query: %@\ndeserializeAsDictionary error: %@", self.requestString, error);
    */
    
+   if (!self.connectionData)
+   {
+      twlog("TWURLFetcher connectionData nil in connectionDidFinishLoading?? Really?");
+   }
+   else if (self.connectionData.length != expectedContentLength)
+   {
+      twlog("TWURLFetcher connectionDidFinishLoading warning: actual size (%u) != expected size (%lli)!!", self.connectionData.length, expectedContentLength);
+   }
    succeeded = YES;
    
-   [self completeAndRelease];
+   [self complete];
 }
 
 - (void)connection:(NSURLConnection *)connect didFailWithError:(NSError *)error
@@ -108,19 +216,33 @@
    (void)connect;
    (void)error;
    
-   twlog("TWURLFetcher connection FAIL for query: %@", self.requestString);
+   twlog("TWURLFetcher connection FAIL (%@) for query: %@", error.localizedDescription, self.requestString);
    
    succeeded = NO;
    
-   [self completeAndRelease];
+   [self complete];
 }
 
-- (void)completeAndRelease
+- (void)complete
 {
+   //NSInteger retried = retries;
    if (completionTarget)
+   {
       [completionTarget performSelector:completionSelector withObject:self];
+      // in case complete gets called twice, as it appears may happen from didReceiveResponse and connectionDidFinishLoading?
+      completionTarget = nil;
+      completionSelector = nil;
+   }
+   else
+   {
+      twlog("TWURLFetcher complete called when completed!!");
+   }
    
-   [self release];
+   //if (retried == retries)
+   {
+   twlogif(10 < sActiveFetchers.count, "TWURLFetchers (count:%i) not getting completed??", sActiveFetchers.count);
+   [sActiveFetchers removeObjectIdenticalTo:self];
+   }
 }
 
 @end

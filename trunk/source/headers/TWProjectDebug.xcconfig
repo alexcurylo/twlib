@@ -4,8 +4,8 @@
 //  Copyright Trollwerks Inc 2009. All rights reserved.
 //
 
-// this kills Code Sense when in base -- let's see if just in debug breaks too
-RUN_CLANG_STATIC_ANALYZER = YES
+// this kills Code Sense! (as of Xcode 3.2.2)
+//RUN_CLANG_STATIC_ANALYZER = YES
 
 TW_CONFIGURATION_GCC_PREPROCESSOR_DEFINITIONS = DEBUG=1
 

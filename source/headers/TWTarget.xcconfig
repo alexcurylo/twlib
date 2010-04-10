@@ -19,3 +19,5 @@ PRODUCT_NAME = NotNamed
 GCC_PREFIX_HEADER = headers/TWProjectPrefix.h
 INFOPLIST_FILE = resources/TWApplicationInfo.plist
 //INFOPLIST_PREFIX_HEADER = resources/version.h
+
+// FRAMEWORK_SEARCH_PATHS = $(inherited) "$(SRCROOT)/source/support/CrashReportSender"

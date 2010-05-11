@@ -13,10 +13,15 @@
 
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
 - (void)didReceiveMemoryWarning;
 - (void)viewDidUnload;
 - (void)setView:(UIView *)toView;
 - (void)clearOutlets;
 - (void)dealloc;
+
+#pragma mark -
+#pragma mark Actions
+
 
 @end

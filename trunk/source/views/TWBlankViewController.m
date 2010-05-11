@@ -22,6 +22,12 @@
    [super viewWillAppear:animated];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+   [super viewDidAppear:animated];
+   //[TWAppDelegate() showIntroAlert:@"INTROBLANK"];
+}
+
 - (void)didReceiveMemoryWarning
 {
    [super didReceiveMemoryWarning];
@@ -42,7 +48,7 @@
 	[super setView:toView];
 }
 
-- (void) clearOutlets
+- (void)clearOutlets
 {
 }
 
@@ -53,5 +59,9 @@
    
    [super dealloc];
 }
+
+#pragma mark -
+#pragma mark Actions
+
 
 @end

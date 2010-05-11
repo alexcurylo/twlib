@@ -1,7 +1,7 @@
 //
 //  TWRootTableViewController.m
 //
-//  Copyright Trollwerks Inc 2009-2010. All rights reserved.
+//  Copyright Trollwerks Inc 2010. All rights reserved.
 //
 
 #import "TWRootTableViewController.h"
@@ -25,6 +25,17 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+   [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+   [super viewDidAppear:animated];
+   //[TWAppDelegate() showIntroAlert:@"INTROTABLE"];
+}
+
 - (void)didReceiveMemoryWarning
 {
    [super didReceiveMemoryWarning];
@@ -45,7 +56,7 @@
 	[super setView:toView];
 }
 
-- (void) clearOutlets
+- (void)clearOutlets
 {
 }
 
@@ -58,9 +69,11 @@
 }
 
 #pragma mark -
-#pragma mark Table support
+#pragma mark Actions
 
-#pragma mark Table view methods
+
+#pragma mark -
+#pragma mark Table support
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

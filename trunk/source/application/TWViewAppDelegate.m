@@ -24,7 +24,7 @@
    [application setStatusBarHidden:NO animated:NO];
    
     // Override point for customization after app launch    
-    [window addSubview:self.viewController.view];
+    [self.window addSubview:self.viewController.view];
     [window makeKeyAndVisible];
 }
 

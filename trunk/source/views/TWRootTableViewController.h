@@ -1,7 +1,7 @@
 //
 //  TWRootTableViewController.h
 //
-//  Copyright Trollwerks Inc 2009-2010. All rights reserved.
+//  Copyright Trollwerks Inc 2010. All rights reserved.
 //
 
 //#define SUPPORTOS2TABLEVIEWCELLS 1
@@ -17,11 +17,17 @@
 #pragma mark Life cycle
 
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
 - (void)didReceiveMemoryWarning;
 - (void)viewDidUnload;
 - (void)setView:(UIView*)toView;
 - (void)clearOutlets;
 - (void)dealloc;
+
+#pragma mark -
+#pragma mark Actions
+
 
 #pragma mark -
 #pragma mark Table support

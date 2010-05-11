@@ -1,7 +1,7 @@
 //
 //  TWURLFetcher.m
 //
-//  Copyright 2009 Trollwerks Inc. All rights reserved.
+//  Copyright 2010 Trollwerks Inc. All rights reserved.
 //
 
 #import "TWURLFetcher.h"
@@ -150,7 +150,8 @@ static NSMutableArray *sActiveFetchers = nil;
       expectedContentLength = [((NSHTTPURLResponse *)response) expectedContentLength];
       if (0 > expectedContentLength)
          expectedContentLength = 0;
-      twcheck(expectedContentLength);
+      // lacking this isn't fatal, but it should be there we'd hope
+      twlogif(!expectedContentLength, "TWURLFetcher WARNING: no expectedContentLength for %@", self.requestString);
       statusCode = [((NSHTTPURLResponse *)response) statusCode];
       if ( (400 <= statusCode) && (599 >= statusCode) )
       {
@@ -202,7 +203,7 @@ static NSMutableArray *sActiveFetchers = nil;
    {
       twlog("TWURLFetcher connectionData nil in connectionDidFinishLoading?? Really?");
    }
-   else if (self.connectionData.length != expectedContentLength)
+   else if (expectedContentLength && (self.connectionData.length != expectedContentLength))
    {
       twlog("TWURLFetcher connectionDidFinishLoading warning: actual size (%u) != expected size (%lli)!!", self.connectionData.length, expectedContentLength);
    }

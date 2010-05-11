@@ -51,6 +51,8 @@
 
 - (void)drawRect:(CGRect)rect
 {
+   // http://stackoverflow.com/questions/2264083/rounded-uiview-using-calayers-only-some-corners-how
+   
    // http://appsamuck.com/blog/index.php/2010/01/04/how-do-i-mask-a-square-image-to-have-round-corners-in-the-iphone-sdk/
    // http://www.platinumball.net/blog/2009/04/28/iphone-drawing-rectangles/
    CGContextRef contextref = UIGraphicsGetCurrentContext();

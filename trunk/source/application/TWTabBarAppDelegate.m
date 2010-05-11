@@ -27,6 +27,20 @@
    
    [self.window addSubview:[self.tabBarController view]];
    [self.window makeKeyAndVisible];
+
+   /*
+    // get views all created to do their initialization
+    for (UIViewController *controller in self.tabBarController.viewControllers)
+    {
+    (void)controller.view;
+    if ([controller isKindOfClass:[UINavigationController class]])
+    {
+    UINavigationController *navController = (UINavigationController *)controller;
+    (void)navController.topViewController.view;
+    }
+    }
+    */
+   
 }
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application

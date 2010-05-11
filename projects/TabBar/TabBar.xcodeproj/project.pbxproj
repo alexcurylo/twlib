@@ -10,8 +10,6 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
-		FA417B5C111762E5008AC4E1 /* TWProjectAdHoc.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FA417B5A111762E5008AC4E1 /* TWProjectAdHoc.xcconfig */; };
-		FA417B5D111762E5008AC4E1 /* TWProjectAppStore.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FA417B5B111762E5008AC4E1 /* TWProjectAppStore.xcconfig */; };
 		FA59A25F111FC4E000E48A21 /* TWRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA59A25E111FC4E000E48A21 /* TWRootTableViewController.m */; };
 		FA59A261111FC4FC00E48A21 /* TWRootTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA59A260111FC4FC00E48A21 /* TWRootTableView.xib */; };
 		FAB7D16C0FA6BF1800CBDED9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB7D1670FA6BF1800CBDED9 /* Default.png */; };
@@ -19,6 +17,7 @@
 		FAB7D17D0FA6BF1F00CBDED9 /* TWMain.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB7D1730FA6BF1F00CBDED9 /* TWMain.m */; };
 		FAB7D17E0FA6BF1F00CBDED9 /* TWTabBarAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB7D1750FA6BF1F00CBDED9 /* TWTabBarAppDelegate.m */; };
 		FAB7D17F0FA6BF1F00CBDED9 /* TWDebugging.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB7D1780FA6BF1F00CBDED9 /* TWDebugging.m */; };
+		FABB0AF81194824500270CF2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABB0AF71194824500270CF2 /* SystemConfiguration.framework */; };
 		FACDC1040FD17EB100B3B9EE /* TWBlankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACDC1030FD17EB100B3B9EE /* TWBlankView.xib */; };
 		FACDC1060FD17EBA00B3B9EE /* TWTabBarMainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACDC1050FD17EBA00B3B9EE /* TWTabBarMainWindow.xib */; };
 		FACDC10A0FD17ED700B3B9EE /* TWBlankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACDC1080FD17ED700B3B9EE /* TWBlankViewController.m */; };
@@ -46,6 +45,7 @@
 		FAB7D1770FA6BF1F00CBDED9 /* TWDebugging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWDebugging.h; sourceTree = "<group>"; };
 		FAB7D1780FA6BF1F00CBDED9 /* TWDebugging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWDebugging.m; sourceTree = "<group>"; };
 		FAB7D28E0FA73DB600CBDED9 /* TWProjectPrefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWProjectPrefix.h; sourceTree = "<group>"; };
+		FABB0AF71194824500270CF2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FABC85AF0FA77F8D00445CF5 /* TWProjectBase.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectBase.xcconfig; sourceTree = "<group>"; };
 		FABC85B00FA77F8D00445CF5 /* TWProjectRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectRelease.xcconfig; sourceTree = "<group>"; };
 		FABC85B10FA77F8D00445CF5 /* TWProjectDebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectDebug.xcconfig; sourceTree = "<group>"; };
@@ -64,6 +64,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				FABB0AF81194824500270CF2 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,9 +95,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
-				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				FABB0AF71194824500270CF2 /* SystemConfiguration.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -126,11 +128,11 @@
 		FAB7D1660FA6BF1800CBDED9 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAB7D16B0FA6BF1800CBDED9 /* TWApplicationInfo.plist */,
 				FAD98BD3108A19A900963F89 /* Localizable.strings */,
 				FACDC1050FD17EBA00B3B9EE /* TWTabBarMainWindow.xib */,
 				FACDC1030FD17EB100B3B9EE /* TWBlankView.xib */,
 				FA59A260111FC4FC00E48A21 /* TWRootTableView.xib */,
-				FAB7D16B0FA6BF1800CBDED9 /* TWApplicationInfo.plist */,
 				FAB7D1670FA6BF1800CBDED9 /* Default.png */,
 				FAB7D1680FA6BF1800CBDED9 /* Icon.png */,
 			);
@@ -228,11 +230,9 @@
 			files = (
 				FAB7D16C0FA6BF1800CBDED9 /* Default.png in Resources */,
 				FAB7D16D0FA6BF1800CBDED9 /* Icon.png in Resources */,
-				FACDC1040FD17EB100B3B9EE /* TWBlankView.xib in Resources */,
-				FACDC1060FD17EBA00B3B9EE /* TWTabBarMainWindow.xib in Resources */,
 				FAD98BD4108A19A900963F89 /* Localizable.strings in Resources */,
-				FA417B5C111762E5008AC4E1 /* TWProjectAdHoc.xcconfig in Resources */,
-				FA417B5D111762E5008AC4E1 /* TWProjectAppStore.xcconfig in Resources */,
+				FACDC1060FD17EBA00B3B9EE /* TWTabBarMainWindow.xib in Resources */,
+				FACDC1040FD17EB100B3B9EE /* TWBlankView.xib in Resources */,
 				FA59A261111FC4FC00E48A21 /* TWRootTableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

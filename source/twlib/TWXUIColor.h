@@ -1,7 +1,7 @@
 //
 //  TWXUIColor.h
 //
-//  Copyright 2009 Trollwerks Inc. All rights reserved.
+//  Copyright 2010 Trollwerks Inc. All rights reserved.
 //
 
 @interface UIColor (TWXUIColor)

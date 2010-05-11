@@ -4,6 +4,9 @@
 //  Copyright Trollwerks Inc 2009. All rights reserved.
 //
 
+// http://iphonedevelopment.blogspot.com/2010/05/validate-build-product.html
+VALIDATE_PRODUCT = YES
+
 TW_CONFIGURATION_GCC_PREPROCESSOR_DEFINITIONS = NDEBUG=1
 
 GCC_OPTIMIZATION_LEVEL = s

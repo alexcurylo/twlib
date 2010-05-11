@@ -1,7 +1,7 @@
 //
 //  TWTarget.xcconfig
 //
-//  Copyright 2009 Trollwerks Inc. All rights reserved.
+//  Copyright 2010 Trollwerks Inc. All rights reserved.
 //
 
 PRODUCT_NAME = NotNamed
@@ -21,3 +21,5 @@ INFOPLIST_FILE = resources/TWApplicationInfo.plist
 //INFOPLIST_PREFIX_HEADER = resources/version.h
 
 // FRAMEWORK_SEARCH_PATHS = $(inherited) "$(SRCROOT)/source/support/CrashReportSender"
+
+//TW_TARGET_OTHER_LDFLAGS = -lz

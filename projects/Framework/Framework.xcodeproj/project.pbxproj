@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		FAA5B7E7119F672C00CDD184 /* Create Framework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = FAA5B7EF119F673700CDD184 /* Build configuration list for PBXAggregateTarget "Create Framework" */;
+			buildPhases = (
+				FAA5B865119F763D00CDD184 /* Run Script - Build Framework */,
+			);
+			dependencies = (
+				FAA5B7EB119F673000CDD184 /* PBXTargetDependency */,
+				FAA5B7ED119F673400CDD184 /* PBXTargetDependency */,
+			);
+			name = "Create Framework";
+			productName = "Build & Merge Libraries";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		FAA5B6A5119EFE6400CDD184 /* TWDebugging.h in Headers */ = {isa = PBXBuildFile; fileRef = FAA5B6A3119EFE6400CDD184 /* TWDebugging.h */; };
+		FAA5B6A6119EFE6400CDD184 /* TWDebugging.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5B6A4119EFE6400CDD184 /* TWDebugging.m */; };
+		FAA5B746119F28C000CDD184 /* UIApplication+TWAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = FAA5B744119F28C000CDD184 /* UIApplication+TWAdditions.h */; };
+		FAA5B747119F28C000CDD184 /* UIApplication+TWAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5B745119F28C000CDD184 /* UIApplication+TWAdditions.m */; };
+		FAA5B7A6119F334700CDD184 /* TWDebugging.h in Headers */ = {isa = PBXBuildFile; fileRef = FAA5B6A3119EFE6400CDD184 /* TWDebugging.h */; };
+		FAA5B7A7119F334700CDD184 /* UIApplication+TWAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = FAA5B744119F28C000CDD184 /* UIApplication+TWAdditions.h */; };
+		FAA5B7A9119F334700CDD184 /* TWDebugging.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5B6A4119EFE6400CDD184 /* TWDebugging.m */; };
+		FAA5B7AA119F334700CDD184 /* UIApplication+TWAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5B745119F28C000CDD184 /* UIApplication+TWAdditions.m */; };
+		FAA5B7AC119F334700CDD184 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAA5B7EA119F673000CDD184 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = "DrawKitTouch-Device";
+		};
+		FAA5B7EC119F673400CDD184 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAA5B7A4119F334700CDD184;
+			remoteInfo = "DrawKitTouch-Simulator";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2AAC07E0554694100DB518D /* libFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFramework.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAA5B69A119EFCFF00CDD184 /* TWProjectBase.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectBase.xcconfig; sourceTree = "<group>"; };
+		FAA5B69B119EFCFF00CDD184 /* TWProjectDebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectDebug.xcconfig; sourceTree = "<group>"; };
+		FAA5B69C119EFCFF00CDD184 /* TWProjectPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWProjectPrefix.pch; sourceTree = "<group>"; };
+		FAA5B69D119EFCFF00CDD184 /* TWProjectRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectRelease.xcconfig; sourceTree = "<group>"; };
+		FAA5B6A3119EFE6400CDD184 /* TWDebugging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWDebugging.h; sourceTree = "<group>"; };
+		FAA5B6A4119EFE6400CDD184 /* TWDebugging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWDebugging.m; sourceTree = "<group>"; };
+		FAA5B744119F28C000CDD184 /* UIApplication+TWAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+TWAdditions.h"; sourceTree = "<group>"; };
+		FAA5B745119F28C000CDD184 /* UIApplication+TWAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+TWAdditions.m"; sourceTree = "<group>"; };
+		FAA5B757119F29CB00CDD184 /* notes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = notes.rtf; sourceTree = "<group>"; };
+		FAA5B758119F29CB00CDD184 /* references.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = references.rtf; sourceTree = "<group>"; };
+		FAA5B77A119F2C7900CDD184 /* TWTargetBase.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWTargetBase.xcconfig; sourceTree = "<group>"; };
+		FAA5B77B119F2C7900CDD184 /* TWTargetDevice.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWTargetDevice.xcconfig; sourceTree = "<group>"; };
+		FAA5B77C119F2C7900CDD184 /* TWTargetSimulator.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWTargetSimulator.xcconfig; sourceTree = "<group>"; };
+		FAA5B7B0119F334700CDD184 /* libFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFramework.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAA5B863119F753900CDD184 /* framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = framework.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAA5B7AB119F334700CDD184 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAA5B7AC119F334700CDD184 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libFramework.a */,
+				FAA5B7B0119F334700CDD184 /* libFramework.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* DrawKitTouch */ = {
+			isa = PBXGroup;
+			children = (
+				FAA5B756119F29CB00CDD184 /* notes */,
+				FAA5B743119F28C000CDD184 /* source */,
+				FAA5B82D119F702E00CDD184 /* resources */,
+				FAA5B699119EFCFF00CDD184 /* config */,
+				FAA5B6A2119EFE6400CDD184 /* twlib */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = DrawKitTouch;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAA5B699119EFCFF00CDD184 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				FAA5B77B119F2C7900CDD184 /* TWTargetDevice.xcconfig */,
+				FAA5B77C119F2C7900CDD184 /* TWTargetSimulator.xcconfig */,
+				FAA5B77A119F2C7900CDD184 /* TWTargetBase.xcconfig */,
+				FAA5B69B119EFCFF00CDD184 /* TWProjectDebug.xcconfig */,
+				FAA5B69D119EFCFF00CDD184 /* TWProjectRelease.xcconfig */,
+				FAA5B69A119EFCFF00CDD184 /* TWProjectBase.xcconfig */,
+				FAA5B69C119EFCFF00CDD184 /* TWProjectPrefix.pch */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		FAA5B6A2119EFE6400CDD184 /* twlib */ = {
+			isa = PBXGroup;
+			children = (
+				FAA5B6A3119EFE6400CDD184 /* TWDebugging.h */,
+				FAA5B6A4119EFE6400CDD184 /* TWDebugging.m */,
+			);
+			path = twlib;
+			sourceTree = "<group>";
+		};
+		FAA5B743119F28C000CDD184 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				FAA5B744119F28C000CDD184 /* UIApplication+TWAdditions.h */,
+				FAA5B745119F28C000CDD184 /* UIApplication+TWAdditions.m */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		FAA5B756119F29CB00CDD184 /* notes */ = {
+			isa = PBXGroup;
+			children = (
+				FAA5B757119F29CB00CDD184 /* notes.rtf */,
+				FAA5B758119F29CB00CDD184 /* references.rtf */,
+			);
+			path = notes;
+			sourceTree = "<group>";
+		};
+		FAA5B82D119F702E00CDD184 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAA5B863119F753900CDD184 /* framework.plist */,
+				FAA5B845119F725000CDD184 /* images */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		FAA5B845119F725000CDD184 /* images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAA5B6A5119EFE6400CDD184 /* TWDebugging.h in Headers */,
+				FAA5B746119F28C000CDD184 /* UIApplication+TWAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAA5B7A5119F334700CDD184 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAA5B7A6119F334700CDD184 /* TWDebugging.h in Headers */,
+				FAA5B7A7119F334700CDD184 /* UIApplication+TWAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* Framework-Device */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "Framework-Device" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Framework-Device";
+			productName = DrawKitTouch;
+			productReference = D2AAC07E0554694100DB518D /* libFramework.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		FAA5B7A4119F334700CDD184 /* Framework-Simulator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAA5B7AD119F334700CDD184 /* Build configuration list for PBXNativeTarget "Framework-Simulator" */;
+			buildPhases = (
+				FAA5B7A5119F334700CDD184 /* Headers */,
+				FAA5B7A8119F334700CDD184 /* Sources */,
+				FAA5B7AB119F334700CDD184 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Framework-Simulator";
+			productName = DrawKitTouch;
+			productReference = FAA5B7B0119F334700CDD184 /* libFramework.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "Framework" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* DrawKitTouch */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* Framework-Device */,
+				FAA5B7A4119F334700CDD184 /* Framework-Simulator */,
+				FAA5B7E7119F672C00CDD184 /* Create Framework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FAA5B865119F763D00CDD184 /* Run Script - Build Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - Build Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# name and build location\nFRAMEWORK_NAME=${PROJECT_NAME}  \nFRAMEWORK_BUILD_PATH=\"${PROJECT_DIR}/build/Framework-${BUILD_STYLE}\"  \n \n# these never change\nFRAMEWORK_VERSION=A  \nFRAMEWORK_CURRENT_VERSION=1  \nFRAMEWORK_COMPATIBILITY_VERSION=1\n\n# Clean any existing framework that might be there  \nif [ -d \"$FRAMEWORK_BUILD_PATH\" ]   \nthen\n\techo \"Framework: Cleaning framework...\"  \n\trm -rf \"$FRAMEWORK_BUILD_PATH\"  \nfi\n\n# Build the canonical Framework bundle directory structure  \necho \"Framework: Setting up directories...\"  \nFRAMEWORK_DIR=$FRAMEWORK_BUILD_PATH/$FRAMEWORK_NAME.framework  \nmkdir -p $FRAMEWORK_DIR  \nmkdir -p $FRAMEWORK_DIR/Versions  \nmkdir -p $FRAMEWORK_DIR/Versions/$FRAMEWORK_VERSION\nmkdir -p $FRAMEWORK_DIR/Versions/$FRAMEWORK_VERSION/Resources\nmkdir -p $FRAMEWORK_DIR/Versions/$FRAMEWORK_VERSION/Headers\n \necho \"Framework: Creating symlinks...\"  \nln -s $FRAMEWORK_VERSION $FRAMEWORK_DIR/Versions/Current\nln -s Versions/Current/Headers $FRAMEWORK_DIR/Headers\nln -s Versions/Current/Resources $FRAMEWORK_DIR/Resources\nln -s Versions/Current/$FRAMEWORK_NAME $FRAMEWORK_DIR/$FRAMEWORK_NAME \n\n# combine lib files for various platforms into one\necho \"Framework: Creating library...\"  \nlipo -create \"${PROJECT_DIR}/build/${BUILD_STYLE}-iphoneos/lib${PROJECT_NAME}.a\" \"${PROJECT_DIR}/build/${BUILD_STYLE}-iphonesimulator/lib${PROJECT_NAME}.a\" -o \"$FRAMEWORK_DIR/Versions/Current/$FRAMEWORK_NAME\"\n \necho \"Framework: Copying assets into current version...\"\ncp ${SRCROOT}/source/*.h $FRAMEWORK_DIR/Headers/\n#cp ${SRCROOT}/resources/images/* $FRAMEWORK_DIR/Resources/\n \n# replace placeholder in plist with project name\ncat \"${SRCROOT}/resources/framework.plist\" | sed 's/${PROJECT_NAME}/'\"${PROJECT_NAME}\"'/' > $FRAMEWORK_DIR/Resources/Info.plist\n\n# zip it up for easy distribution\nditto -c -k --keepParent $FRAMEWORK_DIR $FRAMEWORK_DIR.zip";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAA5B6A6119EFE6400CDD184 /* TWDebugging.m in Sources */,
+				FAA5B747119F28C000CDD184 /* UIApplication+TWAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAA5B7A8119F334700CDD184 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAA5B7A9119F334700CDD184 /* TWDebugging.m in Sources */,
+				FAA5B7AA119F334700CDD184 /* UIApplication+TWAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAA5B7EB119F673000CDD184 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* Framework-Device */;
+			targetProxy = FAA5B7EA119F673000CDD184 /* PBXContainerItemProxy */;
+		};
+		FAA5B7ED119F673400CDD184 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAA5B7A4119F334700CDD184 /* Framework-Simulator */;
+			targetProxy = FAA5B7EC119F673400CDD184 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAA5B77B119F2C7900CDD184 /* TWTargetDevice.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAA5B77B119F2C7900CDD184 /* TWTargetDevice.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAA5B69B119EFCFF00CDD184 /* TWProjectDebug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAA5B69D119EFCFF00CDD184 /* TWProjectRelease.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		FAA5B7AE119F334700CDD184 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAA5B77C119F2C7900CDD184 /* TWTargetSimulator.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		FAA5B7AF119F334700CDD184 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAA5B77C119F2C7900CDD184 /* TWTargetSimulator.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		FAA5B7E8119F672C00CDD184 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build & Merge Libraries";
+			};
+			name = Debug;
+		};
+		FAA5B7E9119F672C00CDD184 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Build & Merge Libraries";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "Framework-Device" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAA5B7AD119F334700CDD184 /* Build configuration list for PBXNativeTarget "Framework-Simulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAA5B7AE119F334700CDD184 /* Debug */,
+				FAA5B7AF119F334700CDD184 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAA5B7EF119F673700CDD184 /* Build configuration list for PBXAggregateTarget "Create Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAA5B7E8119F672C00CDD184 /* Debug */,
+				FAA5B7E9119F672C00CDD184 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

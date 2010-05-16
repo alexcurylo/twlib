@@ -1,0 +1,9 @@
+//
+//  TWTargetSimulator.xcconfig
+//
+//  Copyright 2010 Trollwerks Inc. All rights reserved.
+//
+
+SDKROOT = iphonesimulator3.1.3
+
+#include "TWTargetBase.xcconfig"

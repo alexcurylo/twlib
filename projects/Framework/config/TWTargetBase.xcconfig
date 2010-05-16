@@ -1,0 +1,20 @@
+//
+//  TWTargetBase.xcconfig
+//
+//  Copyright 2010 Trollwerks Inc. All rights reserved.
+//
+
+PRODUCT_NAME = Framework
+
+GCC_PREFIX_HEADER = config/TWProjectPrefix.pch
+
+// expect armv6 armv7
+ARCHS[sdk=iphoneos*] = $(ARCHS_UNIVERSAL_IPHONE_OS)
+// for 2.2 can't compile armv7
+//ARCHS[sdk=iphoneos*] = $(ARCHS_STANDARD_32_BIT)
+// expect i386
+ARCHS[sdk=iphonesimulator*] = $(ARCHS_STANDARD_32_BIT)
+ONLY_ACTIVE_ARCH = NO
+
+IPHONEOS_DEPLOYMENT_TARGET = 2.0
+MACOSX_DEPLOYMENT_TARGET = 10.5

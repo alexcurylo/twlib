@@ -1,0 +1,20 @@
+//
+//  TWProjectDebug.xcconfig
+//
+//  Copyright Trollwerks Inc 2010. All rights reserved.
+//
+
+TW_CONFIGURATION_GCC_PREPROCESSOR_DEFINITIONS = DEBUG=1
+
+GCC_OPTIMIZATION_LEVEL = 0
+GCC_GENERATE_DEBUGGING_SYMBOLS = YES
+
+GCC_TREAT_WARNINGS_AS_ERRORS = NO
+GCC_WARN_UNINITIALIZED_AUTOS = NO
+
+// do not strip *anything* in a debug build
+DEPLOYMENT_POSTPROCESSING = NO
+COPY_PHASE_STRIP = NO
+DEAD_CODE_STRIPPING = NO
+
+#include "TWProjectBase.xcconfig"

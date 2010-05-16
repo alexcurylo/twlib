@@ -84,6 +84,8 @@
 
 - (BOOL)retry:(NSInteger)maxRetries;
 
+- (void)cancel;
+
 #pragma mark -
 #pragma mark NSURLConnectionDelegate
 

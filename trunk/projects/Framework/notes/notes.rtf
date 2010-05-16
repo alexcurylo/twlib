@@ -1,0 +1,40 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf540
+{\fonttbl\f0\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;}
+\deftab720
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs20 \cf0 //\
+// Project notes\
+//\
+\
+To produce the DrawKitTouch kinda-sorta-framework, select the 'Create Framework' target and 'Debug' or 'Release' configuration.\
+\
+If all goes according to plan, 'DrawKitTouch.framework' and a zipped copy will be created in /build/Framework-Debug/ or /build/Framework-Release. Drill down into it, and you will see headers and resources in the folders you would expect to see them in a proper desktop framework, and if you do lipo -info on the library file (named 'DrawKitTouch' same as the framework) you should see the output\
+\
+Architectures in the fat file: <path>DrawKitTouch.framework/Versions/A/DrawKitTouch are: armv6 armv7 i386 \
+\
+In theory, that means we've produced a library that can be linked with any kind of iDevice or Simulator executable with no\
+cross-project references needed to get things right. (Unless you're compiling for 2.x, in which case no armv7 is available.)\
+\
+\
+See DrawTouchDemo.xcodeproj for an example of how to use this kinda-sorta-framework, which simply displays its version, \
+the version of the linked kinda-sorta-framework drawn from a UIApplication category, and a bundled .png file.\
+\
+- If you drag build/Framework-[Debug|Release] into the linking project, Xcode will be somewhat fooled into\
+thinking the "framework" therein is an actual framework; it'll have the framework icon, and angle bracket\
+includes will work in your source, and linking generally proceeds as expected.\
+\
+(Note that in the sample project folder there is a /drawkittouch folder containing versions built with various SDKs, for testing\
+of runtime interdependencies; it's not tied to the DrawKitTouch project at all currently. In future we will have some scheme\
+with configuration-based FRAMEWORK_SEARCH_PATHS to make this somewhat more transparent, no doubt.)\
+\
+- However, you must add -ObjC to OTHER_LD_FLAGS in the linking project as well as the framework project for categories to show\
+up at runtime. There is discussion to be found of using -all_load (or -force_load in Xcode 3.2+) in the library project to\
+avoid this, but that apparently has the side effect of making your app compilation SDK dependent. As well, with the current\
+4.0b3 SDK, it appears that -all_load must be in the linking project to get a 4.0 targeted library to load at all. Updates\
+to follow on this subject.\
+\
+- However, unlike real frameworks bundled resources do not get transparently included, and there appears to be no easy\
+solution to that issue other than not bundling resources. At the moment the workaround is to manually drag the /Resources\
+folder from the linked .framework into the project file.}

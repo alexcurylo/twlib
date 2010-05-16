@@ -79,10 +79,10 @@ static NSMutableArray *sActiveFetchers = nil;
 {
    if ( (self = [super init]) )
    {
-      completionTarget = target;
-      twcheck(completionTarget);
-      completionSelector = selector;
-      twcheck(completionSelector);
+      self.completionTarget = target;
+      twcheck(self.completionTarget);
+      self.completionSelector = selector;
+      twcheck(self.completionSelector);
 
       self.requestString = urlLink;
       twcheck(self.requestString);
@@ -102,8 +102,8 @@ static NSMutableArray *sActiveFetchers = nil;
 - (void)dealloc
 {
    //twlog("TWURLFetcher dealloc");
-   completionTarget = nil;
-   completionSelector = nil;
+   self.completionTarget = nil;
+   self.completionSelector = nil;
    self.requestString = nil;
    self.request = nil;
    self.connection = nil;
@@ -138,6 +138,14 @@ static NSMutableArray *sActiveFetchers = nil;
    twcheck(poseFetcher); (void)poseFetcher;
    
    return YES;
+}
+
+- (void)cancel
+{
+   twlog("TWURLFetcher cancelling!");
+   self.completionTarget = nil;
+   self.completionSelector = nil;
+   [self.connection cancel];
 }
 
 #pragma mark -
@@ -227,12 +235,12 @@ static NSMutableArray *sActiveFetchers = nil;
 - (void)complete
 {
    //NSInteger retried = retries;
-   if (completionTarget)
+   if (self.completionTarget)
    {
-      [completionTarget performSelector:completionSelector withObject:self];
+      [self.completionTarget performSelector:self.completionSelector withObject:self];
       // in case complete gets called twice, as it appears may happen from didReceiveResponse and connectionDidFinishLoading?
-      completionTarget = nil;
-      completionSelector = nil;
+      self.completionTarget = nil;
+      self.completionSelector = nil;
    }
    else
    {

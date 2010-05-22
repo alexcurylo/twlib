@@ -10,6 +10,9 @@
 
 - (NSString *)stringByEscapingForURLArgument;
 
+// suitable for [NSArray sortedArrayUsingSelector:]
+- (NSComparisonResult)compareByValue:(NSString *)otherString
+
 /*
 + (id)stringWithUUID;
 

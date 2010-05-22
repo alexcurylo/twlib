@@ -35,6 +35,19 @@
 
 #import <Foundation/Foundation.h>
 
+@interface NSArray (TWXNSArray)
+
+- (id)randomItem;
+
+- (NSArray *)arrayByShufflingArray;
+
+@end
+
+@interface NSMutableArray (TWXNSArray)
+
+- (void)shuffle;
+
+@end
 
 @interface NSArray (TWXNSArraySortedInsert)
 

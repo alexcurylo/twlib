@@ -36,6 +36,38 @@
 #import "TWXNSArray.h"
 #import <objc/runtime.h>
 
+@implementation NSArray (TWXNSArray)
+
+- (id)randomItem
+{
+   if (!self.count)
+      return nil;
+
+   NSUInteger randomPos = arc4random() % self.count;
+   //twlog("random pos in %i items: %i", self.count, randomPos);
+   return [self objectAtIndex:randomPos];
+}
+
+- (NSArray *)arrayByShufflingArray
+{
+   NSMutableArray* shuffledArray = [NSMutableArray arrayWithArray:self];
+   [shuffledArray shuffle];
+   return shuffledArray;
+}
+
+@end
+
+@interface NSMutableArray (TWXNSArray)
+
+- (void)shuffle
+{
+   for (NSUInteger i = [self count] - 1; i > 0; --i)
+      [self exchangeObjectAtIndex:arc4random() % (i+1) withObjectAtIndex: i];
+}
+
+@end
+
+
 @implementation NSArray (TWXNSArraySortedInsert)
 
 -(NSUInteger)indexForInsertingObject:(id)anObject sortedUsingfunction:(NSInteger (*)(id, id, void *))compare context:(void*)context;

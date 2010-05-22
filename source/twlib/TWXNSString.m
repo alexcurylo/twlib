@@ -29,6 +29,15 @@
    );
    return [(NSString *)escaped autorelease];
 }
+
+// suitable for [NSArray sortedArrayUsingSelector:]
+- (NSComparisonResult)compareByValue:(NSString *)otherString
+{	
+   NSNumber *myNID = [NSNumber numberWithFloat:[self floatValue]];
+   NSNumber *otherNID = [NSNumber numberWithFloat:[otherString floatValue]];
+   return [myNID compare:otherNID];
+}
+
    /*
 + (id)stringWithUUID
 {

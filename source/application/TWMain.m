@@ -1,7 +1,7 @@
 //
 //  TWMain.m
 //
-//  Copyright Trollwerks Inc 2009. All rights reserved.
+//  Copyright 2010 Trollwerks Inc. All rights reserved.
 //
 
 static void uncaughtExceptionHandler(NSException *exception)

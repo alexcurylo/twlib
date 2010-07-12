@@ -1,7 +1,7 @@
 //
 //  TWProjectPrefix.h
 //
-//  Copyright 2009 Trollwerks Inc. All rights reserved.
+//  Copyright 2010 Trollwerks Inc. All rights reserved.
 //
 
 #import <Availability.h>
@@ -18,11 +18,6 @@
 #else
 #define TWTARGET_SDK_MAC 1
 #endif TARGET_OS_IPHONE
-
-// this will be set if ActiveSDK selection is 3.0 or greater
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 30000
-#define TWTARGET_SDKVERSION_3 1
-#endif __IPHONE_OS_VERSION_MIN_REQUIRED >= 30000
 
 #import <TWDebugging.h>
 

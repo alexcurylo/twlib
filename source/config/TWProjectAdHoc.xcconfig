@@ -1,7 +1,7 @@
 //
 //  TWProjectAdHoc.xcconfig
 //
-//  Copyright Trollwerks Inc 2009. All rights reserved.
+//  Copyright 2010 Trollwerks Inc. All rights reserved.
 //
 
 CODE_SIGN_ENTITLEMENTS = resources/Entitlements.plist

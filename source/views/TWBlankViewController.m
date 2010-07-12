@@ -37,6 +37,7 @@
 
 - (void)viewDidUnload
 {
+   twlog("TWBlankViewController viewDidUnload");
 	[self clearOutlets];
 }
 

@@ -12,6 +12,11 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
 	<string>Icon.png</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>Icon@2x.png</string>
+		<string>Icon.png</string>
+	</array>
 	<key>UIPrerenderedIcon</key>
 	<false/>
 	<key>CFBundleDevelopmentRegion</key>
@@ -30,11 +35,6 @@
 	<string>UIInterfaceOrientationPortrait</string>
 	<key>UIRequiresPersistentWiFi</key>
 	<false/>
-	<key>UIRequiredDeviceCapabilities</key>
-	<dict>
-		<key>armv6</key>
-		<true/>
-	</dict>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleBlackOpaque</string>
 	<key>UIStatusBarHidden</key>

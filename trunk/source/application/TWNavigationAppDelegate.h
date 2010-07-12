@@ -1,7 +1,7 @@
 //
 //  TWNavigationAppDelegate.h
 //
-//  Copyright Trollwerks Inc 2009. All rights reserved.
+//  Copyright 2010 Trollwerks Inc. All rights reserved.
 //
 
 @interface TWNavigationAppDelegate : NSObject <UIApplicationDelegate>
@@ -16,9 +16,15 @@
 #pragma mark -
 #pragma mark Life cycle
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application;
++ (void)initialize;
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application;
+- (void)applicationDidBecomeActive:(UIApplication *)application;
+- (void)applicationWillResignActive:(UIApplication *)application;
+- (void)applicationDidEnterBackground:(UIApplication *)application;
+- (void)applicationWillEnterForeground:(UIApplication *)application;
 - (void)applicationWillTerminate:(UIApplication *)application;
+- (void)cleanup;
 - (void)dealloc;
 
 #pragma mark -

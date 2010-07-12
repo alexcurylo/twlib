@@ -1,0 +1,7 @@
+//
+//  TWProjectAppStore.xcconfig
+//
+//  Copyright 2010 Trollwerks Inc. All rights reserved.
+//
+
+#include "TWProjectRelease.xcconfig"

@@ -1,7 +1,7 @@
 //
 //  TWDebugging.h
 //
-//  Copyright 2009 Trollwerks Inc. All rights reserved.
+//  Copyright 2010 Trollwerks Inc. All rights reserved.
 //
 
 #pragma mark -
@@ -36,6 +36,7 @@ typedef char twcompileassertsymbol(__LINE__, msg) [ ((test) ? 1 : -1) ]
 
 #define twlog TWLog
 #define twlogif(assertion, ...) do { if (twunlikely(assertion)) TWLog(__VA_ARGS__); } while (0)
+#define twwin(x) ((x) ? "WIN" : "FAIL")
 #define twlogtouchset TWLogTouchSet
 #define twmark	TWLog("MARK: %s", __PRETTY_FUNCTION__);  
 #define twunimplemented	TWLog("IMPLEMENT: %s", __PRETTY_FUNCTION__);
@@ -62,6 +63,7 @@ typedef char twcompileassertsymbol(__LINE__, msg) [ ((test) ? 1 : -1) ]
 
 #define twlog(...)
 #define twlogif(...)
+#define twwin(...)
 #define twlogtouchset(...)
 #define twmark
 #define twunimplemented

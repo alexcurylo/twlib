@@ -1,7 +1,7 @@
 //
 //  TWNavigationAppDelegate.m
 //
-//  Copyright Trollwerks Inc 2009. All rights reserved.
+//  Copyright 2010 Trollwerks Inc. All rights reserved.
 //
 
 #import "TWNavigationAppDelegate.h"
@@ -14,19 +14,39 @@
 #pragma mark -
 #pragma mark Life cycle
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application
++ (void)initialize
 {
-   twlog("launched %@ %@(%@)",
+	if ( self == [TWNavigationAppDelegate class])
+   {
+      /* if you'd like some settings defaults
+		NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
+         [NSNumber numberWithBool:NO], kXXPrefDefaultValue,
+         nil
+      ];
+		[[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+       */
+	}
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+   (void)launchOptions;
+   
+   twlog("launched %@ %@(%@) with options %@",
       [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"],
       [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
-      [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]
+      [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"],
+      launchOptions
    );
    
    // status bar marked hidden UIStatusBarStyleBlackOpaque in Info.plist so Default.png comes up fullscreen
-   [application setStatusBarHidden:NO animated:NO];
+   application.statusBarHidden = NO;
    
-   [window addSubview:[navigationController view]];
+   [window addSubview:navigationController.view];
    [window makeKeyAndVisible];
+   
+   // return NO if URL in launchOptions cannot be handled
+   return YES;
 }
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
@@ -35,9 +55,40 @@
    twlog("applicationDidReceiveMemoryWarning!! -- no action");
 }
 
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+   (void)application;
+}
+
+- (void)applicationWillResignActive:(UIApplication *)application
+{
+   (void)application;
+}
+
+// only on iOS 4; may be quit without further notification
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+   (void)application;
+
+   [self cleanup];
+}
+
+// only on iOS 4
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+   (void)application;
+}
+
+// only expected to be called on iOS 3
 - (void)applicationWillTerminate:(UIApplication *)application
 {
    (void)application;
+   
+   [self cleanup];
+}
+
+- (void)cleanup
+{
    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

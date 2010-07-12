@@ -1,24 +1,21 @@
 //
 //  TWProjectBase.xcconfig
 //
-//  Copyright Trollwerks Inc 2010. All rights reserved.
+//  Copyright 2010 Trollwerks Inc. All rights reserved.
 //
 
-// http://iphonesdkdev.blogspot.com/2009/07/how-to-build-single-iphone-application.html
-SDKROOT = iphoneos3.1.3
-//SDKROOT = macosx10.5
-IPHONEOS_DEPLOYMENT_TARGET = 2.2.1
-MACOSX_DEPLOYMENT_TARGET[sdk=iphone*] = 10.5
-//MACOSX_DEPLOYMENT_TARGET = 10.4
+SDKROOT = iphoneos4.0
+IPHONEOS_DEPLOYMENT_TARGET = 3.0
+// 1 = iPhone; 2 = iPad; 1,2 = iPhone/iPad
+TARGETED_DEVICE_FAMILY = 1
 
-AARCHS[sdk=iphoneos*] = armv6
-ARCHS[sdk=iphonesimulator*] = i386
-ONLY_ACTIVE_ARCH[sdk=iphone*] = YES
-CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Developer 
-ARCHS[sdk=macosx*] = i386 ppc
-//ARCHS[sdk=macosx10.4*] = i386 ppc
-//ARCHS[sdk=macosx10.5*] = i386 x86_64 ppc ppc64
-//ARCHS[sdk=macosx10.6*] = i386 x86_64 ppc
+// "Standard (armv6 armv7)"
+ARCHS = $(ARCHS_STANDARD_32_BIT)
+// "Optimized (arm7)" -- cannot use with 3.0 deployment
+//ARCHS = $(ARCHS_UNIVERSAL_IPHONE_OS);
+// on armv7 want thumb always on; on armv6 makes floating point slower
+GCC_THUMB_SUPPORT = YES
+GCC_THUMB_SUPPORT[arch=armv6] = NO
 
 // this kills Code Sense! (as of Xcode 3.2.2)
 //RUN_CLANG_STATIC_ANALYZER = YES
@@ -36,6 +33,7 @@ PREBINDING = NO
 GCC_DYNAMIC_NO_PIC = YES
 // if you do not set this to NO, then your dynamic_cast will break, because gcc 4.0 is stupid
 GCC_SYMBOLS_PRIVATE_EXTERN = NO
+//GCC_FAST_MATH = YES; -- may affect rounding
 
 INFOPLIST_PREPROCESS = YES
 // from http://developer.apple.com/technotes/tn2007/tn2175.html
@@ -93,8 +91,11 @@ GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES
 // in your project file by editing TW_GENERAL_WARNING_CFLAGS and only 
 // including the warning levels that you currently are compiling against. 
 // GTM should always compile with full warnings.
-TW_GENERAL_WARNING_CFLAGS1 = -Wall -Wendif-labels -Winvalid-pch -Wformat=2 -Wmissing-format-attribute -Wwrite-strings -Wstack-protector -Wstrict-aliasing=2
-// -Wglobal-constructors new in 3.2.2: "Global Construction or Destruction Required"
+TW_GENERAL_WARNING_CFLAGS1 = -Wall -Wendif-labels -Winvalid-pch -Wwrite-strings -Wstack-protector -Wstrict-aliasing=2
+//TW_GENERAL_WARNING_CFLAGS2 = -Wpacked -Wmissing-field-initializers
+// -Wpacked bitches about "packed attribute causes inefficient alignment for 'PLCrashReportFileHeader'"
+// -Wglobal-constructors new in 3.2.2: “Global Construction or Destruction Required”
+// -Wformat=2 -Wmissing-format-attribute we could add; with Xcode 3.2.3 whine about every -stringWithFormat
 TW_GENERAL_WARNING_CFLAGS2 = -Wpacked -Wmissing-field-initializers  -Wglobal-constructors
 //TW_EXTRA_WARNING_OVERRIDE_CFLAGS = -Wno-unused-parameter -Wno-sign-compare
 //WARNING_CFLAGS = -Wall -Wextra -Wno-missing-field-initializers
@@ -109,7 +110,6 @@ GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES
 GCC_WARN_ABOUT_RETURN_TYPE = YES
 GCC_WARN_MISSING_PARENTHESES = YES
 GCC_WARN_ABOUT_POINTER_SIGNEDNESS = YES
-GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES
 GCC_WARN_UNKNOWN_PRAGMAS = YES
 GCC_WARN_UNUSED_LABEL = YES
 GCC_WARN_UNUSED_FUNCTION = YES
@@ -119,7 +119,7 @@ GCC_WARN_UNUSED_PARAMETER = YES
 GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES
 GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES
 GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES
-GCC_WARN_64_TO_32_BIT_CONVERSION = YES
+GCC_WARN_64_TO_32_BIT_CONVERSION[arch=*64*] = YES
 // Use of Gestalt requires 4 char constants (amongst other things) -- but not on iPhone?
 GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES 
 // We don't turn on shadow and sign comparisons because too many 3rd party
@@ -135,6 +135,7 @@ GCC_WARN_PROTOTYPE_CONVERSION = NO // may catch implicit casts, but lots of nois
 GCC_TREAT_NONCONFORMANT_CODE_ERRORS_AS_WARNINGS = NO
 GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = NO // freaks on Cocoa
 GCC_WARN_STRICT_SELECTOR_MATCH = NO // freaks on Cocoa, -objectForKey: specifically
+GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = NO // 4.0GM SDK warns on every -stringWithFormat:
 
 
 // merge flag/path settings with possible previous configuration file flag settings
@@ -145,9 +146,11 @@ OTHER_CFLAGS = $(inherited) $(TW_GENERAL_OTHER_CFLAGS) $(TW_CONFIGURATION_OTHER_
 OTHER_CPLUSPLUSFLAGS = $(TW_GENERAL_OTHER_CPLUSPLUSFLAGS) $(TW_CONFIGURATION_OTHER_CPLUSPLUSFLAGS)
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) $(TW_CONFIGURATION_GCC_PREPROCESSOR_DEFINITIONS)
 OTHER_LDFLAGS = $(inherited) $(TW_TARGET_OTHER_LDFLAGS) $(TW_CONFIGURATION_OTHER_LDFLAGS)
+// zip: -lz C++: -lstdc++ frameworks: -ObjC -all_load
 
 TW_TROLLWERKS_SEARCH_PATH = source/twlib
 HEADER_SEARCH_PATHS = $(inherited) $(TW_TROLLWERKS_SEARCH_PATH) $(TW_CONFIGURATION_HEADER_SEARCH_PATHS)
 
 //LIBRARY_FLURRY_PATH = "$(SRCROOT)/source/support/Flurry"
 //LIBRARY_SEARCH_PATHS = $(inherited) $(LIBRARY_FLURRY_PATH)
+// FRAMEWORK_SEARCH_PATHS = $(inherited) "$(SRCROOT)/source/support/CrashReportSender"

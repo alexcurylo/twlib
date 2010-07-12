@@ -3,15 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
-		FA417B6B11176337008AC4E1 /* TWProjectAdHoc.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FA417B6911176337008AC4E1 /* TWProjectAdHoc.xcconfig */; };
-		FA417B6C11176337008AC4E1 /* TWProjectAppStore.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FA417B6A11176337008AC4E1 /* TWProjectAppStore.xcconfig */; };
 		FAB7D16C0FA6BF1800CBDED9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB7D1670FA6BF1800CBDED9 /* Default.png */; };
 		FAB7D16D0FA6BF1800CBDED9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB7D1680FA6BF1800CBDED9 /* Icon.png */; };
 		FAB7D16E0FA6BF1800CBDED9 /* TWNavigationMainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB7D1690FA6BF1800CBDED9 /* TWNavigationMainWindow.xib */; };
@@ -28,10 +26,14 @@
 		1D6058910D05DD3D006BFB54 /* .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = .app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		FA417B6911176337008AC4E1 /* TWProjectAdHoc.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectAdHoc.xcconfig; sourceTree = "<group>"; };
-		FA417B6A11176337008AC4E1 /* TWProjectAppStore.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectAppStore.xcconfig; sourceTree = "<group>"; };
+		FA8C2D9C11E8E1CF009E3D00 /* TWProjectAdHoc.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectAdHoc.xcconfig; sourceTree = "<group>"; };
+		FA8C2D9D11E8E1CF009E3D00 /* TWProjectAppStore.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectAppStore.xcconfig; sourceTree = "<group>"; };
+		FA8C2D9E11E8E1CF009E3D00 /* TWProjectBase.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectBase.xcconfig; sourceTree = "<group>"; };
+		FA8C2D9F11E8E1CF009E3D00 /* TWProjectDebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectDebug.xcconfig; sourceTree = "<group>"; };
+		FA8C2DA011E8E1CF009E3D00 /* TWProjectPrefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWProjectPrefix.h; sourceTree = "<group>"; };
+		FA8C2DA111E8E1CF009E3D00 /* TWProjectRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectRelease.xcconfig; sourceTree = "<group>"; };
+		FA8C2DA211E8E1CF009E3D00 /* TWTarget.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWTarget.xcconfig; sourceTree = "<group>"; };
 		FAB7D15E0FA6BEFF00CBDED9 /* notes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = notes.rtf; sourceTree = "<group>"; };
-		FAB7D1620FA6BF0900CBDED9 /* TWTarget.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWTarget.xcconfig; sourceTree = "<group>"; };
 		FAB7D1670FA6BF1800CBDED9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		FAB7D1680FA6BF1800CBDED9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		FAB7D1690FA6BF1800CBDED9 /* TWNavigationMainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWNavigationMainWindow.xib; sourceTree = "<group>"; };
@@ -44,10 +46,6 @@
 		FAB7D1780FA6BF1F00CBDED9 /* TWDebugging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWDebugging.m; sourceTree = "<group>"; };
 		FAB7D17B0FA6BF1F00CBDED9 /* TWRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWRootTableViewController.h; sourceTree = "<group>"; };
 		FAB7D17C0FA6BF1F00CBDED9 /* TWRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWRootTableViewController.m; sourceTree = "<group>"; };
-		FAB7D28E0FA73DB600CBDED9 /* TWProjectPrefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWProjectPrefix.h; sourceTree = "<group>"; };
-		FABC85AF0FA77F8D00445CF5 /* TWProjectBase.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectBase.xcconfig; sourceTree = "<group>"; };
-		FABC85B00FA77F8D00445CF5 /* TWProjectRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectRelease.xcconfig; sourceTree = "<group>"; };
-		FABC85B10FA77F8D00445CF5 /* TWProjectDebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectDebug.xcconfig; sourceTree = "<group>"; };
 		FAD98BE0108A19CE00963F89 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,7 +77,7 @@
 				FAB7D15D0FA6BEFF00CBDED9 /* notes */,
 				FAB7D1710FA6BF1F00CBDED9 /* source */,
 				FAB7D1660FA6BF1800CBDED9 /* resources */,
-				FAB7D1600FA6BF0900CBDED9 /* headers */,
+				FA8C2D9B11E8E1CF009E3D00 /* config */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -89,11 +87,25 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
-				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA8C2D9B11E8E1CF009E3D00 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				FA8C2D9C11E8E1CF009E3D00 /* TWProjectAdHoc.xcconfig */,
+				FA8C2D9D11E8E1CF009E3D00 /* TWProjectAppStore.xcconfig */,
+				FA8C2D9E11E8E1CF009E3D00 /* TWProjectBase.xcconfig */,
+				FA8C2D9F11E8E1CF009E3D00 /* TWProjectDebug.xcconfig */,
+				FA8C2DA011E8E1CF009E3D00 /* TWProjectPrefix.h */,
+				FA8C2DA111E8E1CF009E3D00 /* TWProjectRelease.xcconfig */,
+				FA8C2DA211E8E1CF009E3D00 /* TWTarget.xcconfig */,
+			);
+			path = config;
 			sourceTree = "<group>";
 		};
 		FAB7D15D0FA6BEFF00CBDED9 /* notes */ = {
@@ -102,20 +114,6 @@
 				FAB7D15E0FA6BEFF00CBDED9 /* notes.rtf */,
 			);
 			path = notes;
-			sourceTree = "<group>";
-		};
-		FAB7D1600FA6BF0900CBDED9 /* headers */ = {
-			isa = PBXGroup;
-			children = (
-				FABC85B10FA77F8D00445CF5 /* TWProjectDebug.xcconfig */,
-				FA417B6911176337008AC4E1 /* TWProjectAdHoc.xcconfig */,
-				FA417B6A11176337008AC4E1 /* TWProjectAppStore.xcconfig */,
-				FABC85B00FA77F8D00445CF5 /* TWProjectRelease.xcconfig */,
-				FABC85AF0FA77F8D00445CF5 /* TWProjectBase.xcconfig */,
-				FAB7D1620FA6BF0900CBDED9 /* TWTarget.xcconfig */,
-				FAB7D28E0FA73DB600CBDED9 /* TWProjectPrefix.h */,
-			);
-			path = headers;
 			sourceTree = "<group>";
 		};
 		FAB7D1660FA6BF1800CBDED9 /* resources */ = {
@@ -194,8 +192,11 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Trollwerks Inc.";
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Navigation" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -223,8 +224,6 @@
 				FAB7D16E0FA6BF1800CBDED9 /* TWNavigationMainWindow.xib in Resources */,
 				FAB7D16F0FA6BF1800CBDED9 /* TWRootTableView.xib in Resources */,
 				FAD98BE1108A19CE00963F89 /* Localizable.strings in Resources */,
-				FA417B6B11176337008AC4E1 /* TWProjectAdHoc.xcconfig in Resources */,
-				FA417B6C11176337008AC4E1 /* TWProjectAppStore.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,42 +246,42 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FAB7D1620FA6BF0900CBDED9 /* TWTarget.xcconfig */;
+			baseConfigurationReference = FA8C2DA211E8E1CF009E3D00 /* TWTarget.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		1D6058950D05DD3E006BFB54 /* Release-AdHoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FAB7D1620FA6BF0900CBDED9 /* TWTarget.xcconfig */;
+			baseConfigurationReference = FA8C2DA211E8E1CF009E3D00 /* TWTarget.xcconfig */;
 			buildSettings = {
 			};
 			name = "Release-AdHoc";
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FABC85B10FA77F8D00445CF5 /* TWProjectDebug.xcconfig */;
+			baseConfigurationReference = FA8C2D9F11E8E1CF009E3D00 /* TWProjectDebug.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release-AdHoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA417B6911176337008AC4E1 /* TWProjectAdHoc.xcconfig */;
+			baseConfigurationReference = FA8C2D9C11E8E1CF009E3D00 /* TWProjectAdHoc.xcconfig */;
 			buildSettings = {
 			};
 			name = "Release-AdHoc";
 		};
 		FA417B6D11176341008AC4E1 /* Release-AppStore */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA417B6A11176337008AC4E1 /* TWProjectAppStore.xcconfig */;
+			baseConfigurationReference = FA8C2D9D11E8E1CF009E3D00 /* TWProjectAppStore.xcconfig */;
 			buildSettings = {
 			};
 			name = "Release-AppStore";
 		};
 		FA417B6E11176341008AC4E1 /* Release-AppStore */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FAB7D1620FA6BF0900CBDED9 /* TWTarget.xcconfig */;
+			baseConfigurationReference = FA8C2DA211E8E1CF009E3D00 /* TWTarget.xcconfig */;
 			buildSettings = {
 			};
 			name = "Release-AppStore";

@@ -1,19 +1,18 @@
 //
 //  TWProjectRelease.xcconfig
 //
-//  Copyright Trollwerks Inc 2009. All rights reserved.
+//  Copyright 2010 Trollwerks Inc. All rights reserved.
 //
 
-// http://iphonedevelopment.blogspot.com/2010/05/validate-build-product.html
 VALIDATE_PRODUCT = YES
+CODE_SIGN_IDENTITY = iPhone Distribution 
 
-TW_CONFIGURATION_GCC_PREPROCESSOR_DEFINITIONS = NDEBUG=1
+TW_CONFIGURATION_GCC_PREPROCESSOR_DEFINITIONS = NDEBUG=1 NS_BLOCK_ASSERTIONS=1
+
+ONLY_ACTIVE_ARCH = NO
 
 GCC_OPTIMIZATION_LEVEL = s
 GCC_WARN_UNINITIALIZED_AUTOS = YES
-
-//GCC_FAST_MATH = YES; -- may affect rounding
-//GCC_THUMB_SUPPORT = NO; -- makes larger, faster on floating point/3D?
 
 GCC_TREAT_WARNINGS_AS_ERRORS = YES
 

@@ -45,6 +45,7 @@
 
 - (void)viewDidUnload
 {
+   twlog("TWRootTableViewController viewDidUnload");
 	[self clearOutlets];
 }
 

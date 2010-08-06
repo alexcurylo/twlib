@@ -49,40 +49,52 @@
    return YES;
 }
 
-- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+// only on iOS 4
+- (void)applicationWillEnterForeground:(UIApplication *)application
 {
    (void)application;
-   twlog("applicationDidReceiveMemoryWarning!! -- no action");
+   twlog("applicationWillEnterForeground");
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
    (void)application;
+   twlog("applicationDidBecomeActive");
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
    (void)application;
+   twlog("applicationWillResignActive");
 }
 
 // only on iOS 4; may be quit without further notification
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
    (void)application;
+   twlog("applicationDidEnterBackground");
 
    [self cleanup];
 }
 
-// only on iOS 4
-- (void)applicationWillEnterForeground:(UIApplication *)application
+- (void)applicationSignificantTimeChange:(UIApplication *)application;
+// midnight, carrier time update, daylight savings time change
 {
    (void)application;
+   twlog("applicationSignificantTimeChange");
 }
 
-// only expected to be called on iOS 3
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+   (void)application;
+   twlog("applicationDidReceiveMemoryWarning!! -- no action");
+}
+
+// only expected to be called on iOS 3, or iOS 4 on non-multitasking devices
 - (void)applicationWillTerminate:(UIApplication *)application
 {
    (void)application;
+   twlog("applicationWillTerminate");
    
    [self cleanup];
 }

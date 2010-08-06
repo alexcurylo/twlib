@@ -8,6 +8,16 @@
 
 @implementation NSString (TWXNSString)
 
++ (id)stringWithUUID
+{
+   CFUUIDRef uuidRef = CFUUIDCreate(kCFAllocatorDefault);
+   CFStringRef strRef = CFUUIDCreateString(kCFAllocatorDefault, uuidRef);
+   NSString *uuidString = [NSString stringWithString:(NSString*)strRef];
+   CFRelease(strRef);
+   CFRelease(uuidRef);
+   return uuidString;
+}
+
 - (BOOL)contains:(NSString *)substring
 {
    NSRange range = [self rangeOfString:substring];
@@ -36,6 +46,14 @@
    NSNumber *myNID = [NSNumber numberWithFloat:[self floatValue]];
    NSNumber *otherNID = [NSNumber numberWithFloat:[otherString floatValue]];
    return [myNID compare:otherNID];
+}
+
+- (NSString *) stringWithSentenceCapitalization
+{
+   NSString *firstCharacterInString = [[self substringToIndex:1] capitalizedString];
+   NSString *sentenceString = [self stringByReplacingCharactersInRange:NSMakeRange(0,1) withString: firstCharacterInString];
+   
+   return sentenceString;
 }
 
    /*

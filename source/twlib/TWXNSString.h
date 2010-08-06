@@ -6,12 +6,16 @@
 
 @interface NSString (TWXNSString)
 
++ (id)stringWithUUID;
+
 - (BOOL)contains:(NSString *)substring;
 
 - (NSString *)stringByEscapingForURLArgument;
 
 // suitable for [NSArray sortedArrayUsingSelector:]
-- (NSComparisonResult)compareByValue:(NSString *)otherString
+- (NSComparisonResult)compareByValue:(NSString *)otherString;
+
+- (NSString *) stringWithSentenceCapitalization;
 
 /*
 + (id)stringWithUUID;

@@ -32,4 +32,19 @@
    return alert;
 }
 
++ (UIAlertView *)twxOKCancelAlert:(NSString *)title withMessage:(NSString *)message
+{
+   UIAlertView *alert = [[[UIAlertView alloc] 
+                          initWithTitle:NSLocalizedString(title, nil) 
+                          message:NSLocalizedString(message, nil) 
+                          delegate:nil 
+                          cancelButtonTitle:NSLocalizedString(@"CANCEL", nil) 
+                          otherButtonTitles:NSLocalizedString(@"OK", nil),
+                          nil
+                          ] autorelease];
+   [alert show];
+   
+   return alert;
+}
+
 @end

@@ -11,10 +11,18 @@
 #pragma mark -
 #pragma mark Life cycle
 
++ (TWBlankViewController *)controller
+{
+   TWBlankViewController *controller = [[[TWBlankViewController alloc] initWithNibName:@"TWBlankView" bundle:nil] autorelease];
+   return controller;
+}
+
 - (void)viewDidLoad
 {
    [super viewDidLoad];
    twlog("TWBlankViewController viewDidLoad");
+   
+   //self.title = NSLocalizedString(@"BLANK", nil);
 }
 
 - (void)viewWillAppear:(BOOL)animated

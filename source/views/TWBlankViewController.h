@@ -11,6 +11,8 @@
 #pragma mark -
 #pragma mark Life cycle
 
++ (TWBlankViewController *)controller;
+
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidAppear:(BOOL)animated;

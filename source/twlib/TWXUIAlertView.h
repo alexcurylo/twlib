@@ -10,5 +10,7 @@
 
 + (UIAlertView *)twxOKAlert:(NSString *)title withMessage:(NSString *)message;
 
++ (UIAlertView *)twxOKCancelAlert:(NSString *)title withMessage:(NSString *)message;
+
 @end
 

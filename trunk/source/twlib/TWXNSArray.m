@@ -36,38 +36,6 @@
 #import "TWXNSArray.h"
 #import <objc/runtime.h>
 
-@implementation NSArray (TWXNSArray)
-
-- (id)randomItem
-{
-   if (!self.count)
-      return nil;
-
-   NSUInteger randomPos = arc4random() % self.count;
-   //twlog("random pos in %i items: %i", self.count, randomPos);
-   return [self objectAtIndex:randomPos];
-}
-
-- (NSArray *)arrayByShufflingArray
-{
-   NSMutableArray* shuffledArray = [NSMutableArray arrayWithArray:self];
-   [shuffledArray shuffle];
-   return shuffledArray;
-}
-
-@end
-
-@interface NSMutableArray (TWXNSArray)
-
-- (void)shuffle
-{
-   for (NSUInteger i = [self count] - 1; i > 0; --i)
-      [self exchangeObjectAtIndex:arc4random() % (i+1) withObjectAtIndex: i];
-}
-
-@end
-
-
 @implementation NSArray (TWXNSArraySortedInsert)
 
 -(NSUInteger)indexForInsertingObject:(id)anObject sortedUsingfunction:(NSInteger (*)(id, id, void *))compare context:(void*)context;
@@ -78,7 +46,9 @@
   while (insertIndex < topIndex) {
     NSUInteger midIndex = (insertIndex + topIndex) / 2;
     id testObject = objectAtIndexImp(self, @selector(objectAtIndex:), midIndex);
-    if (compare(anObject, testObject, context) < 0) {
+    //if (compare(anObject, testObject, context) < 0)
+    if (compare(anObject, testObject, context) > 0) // as per benlenarts
+    {
       insertIndex = midIndex + 1;
     } else {
       topIndex = midIndex;
@@ -129,6 +99,7 @@ static NSComparisonResult cw_DescriptorCompare(id a, id b, void* descriptors)
    {
       id compareResult = cw_compareObjectToObjectImp(sortDescriptor, @selector(compareObject:toObject:), a, b);
       result = (NSComparisonResult)compareResult;
+    /*
       if (result != NSOrderedSame)
       {
          if (!cw_ascendingImp(sortDescriptor, @selector(ascending)))
@@ -137,6 +108,10 @@ static NSComparisonResult cw_DescriptorCompare(id a, id b, void* descriptors)
          }
          break;
       }
+      */
+      // as per benlenart
+        if (result != NSOrderedSame)
+	      break;
    }
    return result;
 }

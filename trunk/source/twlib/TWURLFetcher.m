@@ -104,11 +104,11 @@ static NSMutableArray *sActiveFetchers = nil;
    //twlog("TWURLFetcher dealloc");
    self.completionTarget = nil;
    self.completionSelector = nil;
-   self.requestString = nil;
-   self.request = nil;
-   self.connection = nil;
-   self.connectionData = nil;
-   self.contextInfo = nil;
+	twrelease(requestString);
+	twrelease(request);
+	twrelease(connection);
+	twrelease(connectionData);
+	twrelease(contextInfo);
   
    [super dealloc];
 }

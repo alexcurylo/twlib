@@ -61,8 +61,8 @@ const int kPortraitKeyboardOffset = 216 - 49;
 
 - (void)dealloc
 {
-	self.label = nil;
-	self.previousText = nil;
+	twrelease(label);
+	twrelease(previousText);
    
    [super dealloc];
 }

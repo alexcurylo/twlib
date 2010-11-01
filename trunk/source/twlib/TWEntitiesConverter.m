@@ -21,7 +21,7 @@
 
 - (void)dealloc
 {
-	self.resultString = nil;
+	twrelease(resultString);
    
 	[super dealloc];
 }

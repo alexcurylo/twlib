@@ -134,7 +134,7 @@ enum
    self.difficultyLabel = nil;
    self.scoreLabel = nil;
    */
-   self.dateLabel = nil;
+	twrelease(dateLabel);
    
    [super dealloc];
 }

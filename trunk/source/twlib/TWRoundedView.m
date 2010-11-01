@@ -101,8 +101,8 @@
 
 - (void)dealloc
 {
-   self.foregroundColor = nil;
-   self.strokeColor = nil;
+	twrelease(foregroundColor);
+	twrelease(strokeColor);
    
    [super dealloc];
 }

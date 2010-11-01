@@ -42,8 +42,8 @@
 
 - (void)dealloc
 {
-	self.viewController = nil;
-	self.window = nil;
+	twrelease(viewController);
+	twrelease(window);
    
    [super dealloc];
 }

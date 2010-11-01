@@ -107,8 +107,8 @@
 
 - (void)dealloc
 {
-	self.tabBarController = nil;
-	self.window = nil;
+	twrelease(tabBarController);
+	twrelease(window);
 
 	[super dealloc];
 }

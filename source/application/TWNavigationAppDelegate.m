@@ -106,8 +106,8 @@
 
 - (void)dealloc
 {
-	self.navigationController = nil;
-	self.window = nil;
+	twrelease(navigationController);
+	twrelease(window);
 
 	[super dealloc];
 }

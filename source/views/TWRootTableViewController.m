@@ -11,6 +11,13 @@
 #pragma mark -
 #pragma mark Life cycle
 
++ (TWRootTableViewController *)controller
+{
+   TWRootTableViewController *controller = [[[TWRootTableViewController alloc] initWithNibName:@"TWRootTableView" bundle:nil] autorelease];
+   //controller.title = NSLocalizedString(@"TITLEROOTTABLE", nil);
+   return controller;
+}
+
 - (void)viewDidLoad
 {
    [super viewDidLoad];
@@ -64,7 +71,7 @@
 - (void)dealloc
 {
    [[NSNotificationCenter defaultCenter] removeObserver:self];
-   [self clearOutlets];
+	//twrelease(outlet);
 
    [super dealloc];
 }

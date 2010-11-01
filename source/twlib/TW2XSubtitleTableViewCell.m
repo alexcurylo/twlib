@@ -50,8 +50,8 @@
 
 - (void)dealloc
 {
-	self.textLabel = nil;
-	self.detailTextLabel = nil;
+	twrelease(textLabel);
+	twrelease(detailTextLabel);
 
    [super dealloc];
 }

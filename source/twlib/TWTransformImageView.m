@@ -57,9 +57,10 @@
 
 - (void)dealloc
 {
-   CGImageRelease(maskedPose);
+   if (maskedPose)
+      CGImageRelease(maskedPose);
 
-   if (touchBeginPoints != NULL)
+   if (touchBeginPoints)
       CFRelease(touchBeginPoints);
 
    [super dealloc];

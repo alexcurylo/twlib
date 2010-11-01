@@ -4,7 +4,7 @@
 //  from http://groups.google.com/group/iphonesdk/browse_thread/thread/b2b20d974d0a7083?hl=en
 //
 
-#import "TWXUIColors.h"
+#import "TWXUIColor.h"
 
 #define vendColor(r, g, b) \
    static UIColor *ret; \

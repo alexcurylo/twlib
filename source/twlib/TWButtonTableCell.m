@@ -69,8 +69,9 @@
 
 - (void)dealloc
 {
-	self.label = nil;
-	self.button = nil;
+	twrelease(label);
+	twrelease(button);
+
    [super dealloc];
 }
 

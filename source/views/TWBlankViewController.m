@@ -14,6 +14,7 @@
 + (TWBlankViewController *)controller
 {
    TWBlankViewController *controller = [[[TWBlankViewController alloc] initWithNibName:@"TWBlankView" bundle:nil] autorelease];
+   //self.title = NSLocalizedString(@"TITLEBLANK", nil);
    return controller;
 }
 
@@ -21,8 +22,6 @@
 {
    [super viewDidLoad];
    twlog("TWBlankViewController viewDidLoad");
-   
-   //self.title = NSLocalizedString(@"BLANK", nil);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -64,8 +63,8 @@
 - (void)dealloc
 {
    [[NSNotificationCenter defaultCenter] removeObserver:self];
-   [self clearOutlets];
-   
+ 	//twrelease(outlet);
+  
    [super dealloc];
 }
 

@@ -24,6 +24,14 @@
    twlog("TWBlankViewController viewDidLoad");
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+   if (UIUserInterfaceIdiomPad == UI_USER_INTERFACE_IDIOM())
+      return YES;
+   else
+      return UIDeviceOrientationPortrait == toInterfaceOrientation;
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
    [super viewWillAppear:animated];
@@ -44,6 +52,7 @@
 
 - (void)viewDidUnload
 {
+   [super viewDidUnload];
    twlog("TWBlankViewController viewDidUnload");
 	[self clearOutlets];
 }

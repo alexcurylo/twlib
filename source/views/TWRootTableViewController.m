@@ -32,6 +32,14 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+   if (UIUserInterfaceIdiomPad == UI_USER_INTERFACE_IDIOM())
+      return YES;
+   else
+      return UIDeviceOrientationPortrait == toInterfaceOrientation;
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
    [super viewWillAppear:animated];
@@ -52,6 +60,7 @@
 
 - (void)viewDidUnload
 {
+   [super viewDidUnload];
    twlog("TWRootTableViewController viewDidUnload");
 	[self clearOutlets];
 }

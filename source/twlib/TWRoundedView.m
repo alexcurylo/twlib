@@ -34,7 +34,7 @@
    [super awakeFromNib];
    
    self.foregroundColor = self.backgroundColor;
-   self.strokeColor = self.backgroundColor;
+   self.strokeColor = [UIColor blackColor];
    self.backgroundColor = [UIColor clearColor];
    
    self.contentMode = UIViewContentModeRedraw;
@@ -45,12 +45,12 @@
    [layer setMasksToBounds:YES];
    [layer setCornerRadius:10.0f];
    [layer setBorderWidth:2.0f];
-   //[layer setBorderColor:self.strokeColor.CGColor];
-   [layer setBorderColor:[[UIColor blackColor] CGColor]];
 }
 
 - (void)drawRect:(CGRect)rect
 {
+   [self.layer setBorderColor:self.strokeColor.CGColor];
+   
    // http://stackoverflow.com/questions/2264083/rounded-uiview-using-calayers-only-some-corners-how
    
    // http://appsamuck.com/blog/index.php/2010/01/04/how-do-i-mask-a-square-image-to-have-round-corners-in-the-iphone-sdk/

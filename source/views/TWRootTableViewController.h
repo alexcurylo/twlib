@@ -19,6 +19,7 @@
 + (TWRootTableViewController *)controller;
 
 - (void)viewDidLoad;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)didReceiveMemoryWarning;

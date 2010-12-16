@@ -10,4 +10,7 @@
 
 - (UIImage *)rotateRight;
 
+// partial drawing
+//- (void)drawInRect:(CGRect)drawRect fromRect:(CGRect)fromRect blendMode:(CGBlendMode)blendMode alpha:(CGFloat)alpha
+
 @end

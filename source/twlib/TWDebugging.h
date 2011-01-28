@@ -1,7 +1,7 @@
 //
 //  TWDebugging.h
 //
-//  Copyright 2010 Trollwerks Inc. All rights reserved.
+//  Copyright 2011 Trollwerks Inc. All rights reserved.
 //
 
 #pragma mark -

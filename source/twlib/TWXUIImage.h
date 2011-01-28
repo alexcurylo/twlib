@@ -1,10 +1,13 @@
 //
 //  TWXUIImage.h
 //
-//  Copyright Trollwerks Inc 2010. All rights reserved.
+//  Copyright Trollwerks Inc 2011. All rights reserved.
 //
 
-@interface UIImage (TWXUIImage)
+@interface UIImage (TWXUIImage) < NSCoding >
+
+- (id)initWithCoder:(NSCoder *)decoder;
+- (void)encodeWithCoder:(NSCoder *)encoder;
 
 - (UIImage *)scaleAndRotateImage;
 

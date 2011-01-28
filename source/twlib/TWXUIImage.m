@@ -1,14 +1,37 @@
 //
 //  TWXUIImage.m
 //
-//  Copyright Trollwerks Inc 2010. All rights reserved.
+//  Copyright Trollwerks Inc 2011. All rights reserved.
 //
 
 #import "TWXUIImage.h"
 
+#define kUIImageEncodingKey		@"UIImage"
+
 @implementation UIImage (TWXUIImage)
 
+// http://iphonedevelopment.blogspot.com/2009/03/uiimage-and-nscoding.html
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+	if ((self = [super init]))
+	{
+		NSData *data = [decoder decodeObjectForKey:kUIImageEncodingKey];
+		self = [self initWithData:data];
+	}
+	
+	return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+	NSData *data = UIImagePNGRepresentation(self);
+	[encoder encodeObject:data forKey:kUIImageEncodingKey];
+}
+
 // http://blog.logichigh.com/2008/06/05/uiimage-fix/
+
+
 - (UIImage *)scaleAndRotateImage
 {
    int kMaxResolution = 480; // this means a 480x320 picture will rotate correctly  

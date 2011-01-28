@@ -1,7 +1,7 @@
 //
 //  TWBlankViewController.h
 //
-//  Copyright Trollwerks Inc 2010. All rights reserved.
+//  Copyright Trollwerks Inc 2011. All rights reserved.
 //
 
 @interface TWBlankViewController : UIViewController

@@ -1,7 +1,7 @@
 //
 //  TWRootTableViewController.m
 //
-//  Copyright Trollwerks Inc 2010. All rights reserved.
+//  Copyright Trollwerks Inc 2011. All rights reserved.
 //
 
 #import "TWRootTableViewController.h"
@@ -22,11 +22,6 @@
 {
    [super viewDidLoad];
    twlog("TWRootTableViewController viewDidLoad");
-
-#if SUPPORTOS2TABLEVIEWCELLS
-   UITableViewCell *cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"TEST"] autorelease];
-   hasInitWithStyle = [cell respondsToSelector:@selector(initWithStyle:reuseIdentifier:)];
-#endif SUPPORTOS2TABLEVIEWCELLS
    
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -37,7 +32,8 @@
    if (UIUserInterfaceIdiomPad == UI_USER_INTERFACE_IDIOM())
       return YES;
    else
-      return UIDeviceOrientationPortrait == toInterfaceOrientation;
+      return UIInterfaceOrientationIsPortrait(toInterfaceOrientation);
+      //return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -116,27 +112,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *kRootTableViewCellIdentifier = @"RootTableViewCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kRootTableViewCellIdentifier];
-    if (cell == nil)
-    {
-#if SUPPORTOS2TABLEVIEWCELLS
-       if (!hasInitWithStyle)
-          cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:kRootTableViewCellIdentifier] autorelease];
-       else
-#endif SUPPORTOS2TABLEVIEWCELLS
-          cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kRootTableViewCellIdentifier] autorelease];
-      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
+   static NSString *kRootTableViewCellIdentifier = @"RootTableViewCell";
+
+   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kRootTableViewCellIdentifier];
+   if (cell == nil)
+      cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kRootTableViewCellIdentifier] autorelease];
+   cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
    NSString *mainLabel = [NSString stringWithFormat:@"cell %i", indexPath.row];
-#if SUPPORTOS2TABLEVIEWCELLS
-   if (!hasInitWithStyle)
-      cell.text = mainLabel;
-   else
-#endif SUPPORTOS2TABLEVIEWCELLS
-      cell.textLabel.text = mainLabel;
+   cell.textLabel.text = mainLabel;
 
    return cell;
 }

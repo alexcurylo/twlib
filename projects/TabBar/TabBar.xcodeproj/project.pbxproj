@@ -10,6 +10,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		FA06261512D9710C00FAF06B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA06261312D9710C00FAF06B /* Default@2x.png */; };
+		FA06261612D9710C00FAF06B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA06261412D9710C00FAF06B /* Icon@2x.png */; };
 		FA59A25F111FC4E000E48A21 /* TWRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA59A25E111FC4E000E48A21 /* TWRootTableViewController.m */; };
 		FA59A261111FC4FC00E48A21 /* TWRootTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA59A260111FC4FC00E48A21 /* TWRootTableView.xib */; };
 		FAB7D16C0FA6BF1800CBDED9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB7D1670FA6BF1800CBDED9 /* Default.png */; };
@@ -29,6 +31,8 @@
 		1D6058910D05DD3D006BFB54 /* .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = .app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FA06261312D9710C00FAF06B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FA06261412D9710C00FAF06B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		FA417B5A111762E5008AC4E1 /* TWProjectAdHoc.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectAdHoc.xcconfig; sourceTree = "<group>"; };
 		FA417B5B111762E5008AC4E1 /* TWProjectAppStore.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TWProjectAppStore.xcconfig; sourceTree = "<group>"; };
 		FA59A25D111FC4E000E48A21 /* TWRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWRootTableViewController.h; sourceTree = "<group>"; };
@@ -134,7 +138,9 @@
 				FACDC1030FD17EB100B3B9EE /* TWBlankView.xib */,
 				FA59A260111FC4FC00E48A21 /* TWRootTableView.xib */,
 				FAB7D1670FA6BF1800CBDED9 /* Default.png */,
+				FA06261312D9710C00FAF06B /* Default@2x.png */,
 				FAB7D1680FA6BF1800CBDED9 /* Icon.png */,
+				FA06261412D9710C00FAF06B /* Icon@2x.png */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -238,6 +244,8 @@
 				FACDC1060FD17EBA00B3B9EE /* TWTabBarMainWindow.xib in Resources */,
 				FACDC1040FD17EB100B3B9EE /* TWBlankView.xib in Resources */,
 				FA59A261111FC4FC00E48A21 /* TWRootTableView.xib in Resources */,
+				FA06261512D9710C00FAF06B /* Default@2x.png in Resources */,
+				FA06261612D9710C00FAF06B /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

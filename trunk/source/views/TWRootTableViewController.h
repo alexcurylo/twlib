@@ -1,16 +1,11 @@
 //
 //  TWRootTableViewController.h
 //
-//  Copyright Trollwerks Inc 2010. All rights reserved.
+//  Copyright Trollwerks Inc 2011. All rights reserved.
 //
-
-//#define SUPPORTOS2TABLEVIEWCELLS 1
 
 @interface TWRootTableViewController : UITableViewController
 {
-#if SUPPORTOS2TABLEVIEWCELLS
-   BOOL hasInitWithStyle;
-#endif SUPPORTOS2TABLEVIEWCELLS
 }
 
 #pragma mark -

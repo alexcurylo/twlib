@@ -1,7 +1,7 @@
 //
 //  TWBlankViewController.m
 //
-//  Copyright Trollwerks Inc 2010. All rights reserved.
+//  Copyright Trollwerks Inc 2011. All rights reserved.
 //
 
 #import "TWBlankViewController.h"
@@ -29,7 +29,8 @@
    if (UIUserInterfaceIdiomPad == UI_USER_INTERFACE_IDIOM())
       return YES;
    else
-      return UIDeviceOrientationPortrait == toInterfaceOrientation;
+      return UIInterfaceOrientationIsPortrait(toInterfaceOrientation);
+      //return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
 }
 
 - (void)viewWillAppear:(BOOL)animated

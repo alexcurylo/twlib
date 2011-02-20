@@ -4,7 +4,7 @@
 //  Copyright Trollwerks Inc 2009. All rights reserved.
 //
 
-@interface TWEntitiesConverter : NSObject
+@interface TWEntitiesConverter : NSObject < NSXMLParserDelegate >
 {
 	NSMutableString *resultString;
 }

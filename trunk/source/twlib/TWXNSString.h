@@ -17,6 +17,8 @@
 
 - (NSString *) stringWithSentenceCapitalization;
 
+- (NSString*)stringByTruncatingToWidth:(CGFloat)width withFont:(UIFont *)font;
+
 /*
 + (id)stringWithUUID;
 

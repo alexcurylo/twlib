@@ -1,7 +1,7 @@
 //
 //  TWXUIAlertView.m
 //
-//  Copyright 2009 Trollwerks Inc. All rights reserved.
+//  Copyright 2011 Trollwerks Inc. All rights reserved.
 //
 
 #import "TWXUIAlertView.h"
@@ -13,6 +13,15 @@
    UIAlertView *alert = [UIAlertView
       twxOKAlert:@"UNDERCONSTRUCTION"
       withMessage:@"NOTIMPLEMENTEDYET"
+   ];
+   return alert;
+}
+
++ (UIAlertView *)twxNoInternetAlert
+{
+   UIAlertView *alert = [UIAlertView
+      twxOKAlert:@"NOINTERNETTITLE"
+      withMessage:@"NOINTERNETMESSAGE"
    ];
    return alert;
 }

@@ -1,12 +1,14 @@
 //
 //  TWXUIAlertView.h
 //
-//  Copyright 2009 Trollwerks Inc. All rights reserved.
+//  Copyright 2011 Trollwerks Inc. All rights reserved.
 //
 
 @interface UIAlertView (TWXUIAlertView)
 
 + (UIAlertView *)twxUnimplementedAlert;
+
++ (UIAlertView *)twxNoInternetAlert;
 
 + (UIAlertView *)twxOKAlert:(NSString *)title withMessage:(NSString *)message;
 

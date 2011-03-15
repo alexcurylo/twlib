@@ -22,5 +22,16 @@
 - (void)doFadeInAnimation;
 - (void)doFadeInAnimationWithDelegate:(id)animationDelegate;
 
+// http://kwigbo.tumblr.com/post/3448069097/simplify-uiview-animation-with-categories
+
+// Animate removing a view from its parent
+- (void) removeWithTransition:(UIViewAnimationTransition) transition andDuration:(float) duration;
+// Animate adding a subview
+- (void) addSubview:(UIView *)view withTransition:(UIViewAnimationTransition) transition withDuration:(float) duration;
+// Animate the changing of a views frame
+- (void) setFrame:(CGRect) fr withDuration:(float) duration;
+// Animate changing the alpha of a view
+- (void) setAlpha:(float) a withDuration:(float) duration;
+
 @end
 

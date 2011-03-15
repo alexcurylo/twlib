@@ -134,4 +134,62 @@ static CGFloat kBounceTransitionDuration = 0.3;
    [viewLayer addAnimation:fadeInAnimation forKey:@"opacity"];
 }
 
+// http://kwigbo.tumblr.com/post/3448069097/simplify-uiview-animation-with-categories
+
+- (void) removeWithTransition:(UIViewAnimationTransition) transition andDuration:(float) duration
+{
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:duration];
+	[UIView setAnimationTransition:transition forView:self.superview cache:YES];
+	[self removeFromSuperview];
+	[UIView commitAnimations];
+}
+
+- (void) addSubview:(UIView *)view withTransition:(UIViewAnimationTransition) transition withDuration:(float) duration
+{
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:duration];
+	[UIView setAnimationTransition:transition forView:self cache:YES];
+	[self addSubview:view];
+	[UIView commitAnimations];
+}
+
+- (void) setFrame:(CGRect) fr withDuration:(float) duration
+{
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:duration];
+	self.frame = fr;
+	[UIView commitAnimations];
+}
+
+- (void) setAlpha:(float) a withDuration:(float) duration
+{
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:duration];
+	self.alpha = a;
+	[UIView commitAnimations];
+}
+
+/*
+ 
+ Here is an example of using the setFrame:withDuration: to slide a UIDatePicker on and off screen.
+ 
+ - (void) hideDatePicker:(BOOL) hide
+ {
+ CGRect hideFrame = CGRectMake(0, self.view.frame.size.height, datePicker.frame.size.width, datePicker.frame.size.height);
+ CGRect showFrame = CGRectMake(0, self.view.frame.size.height - datePicker.frame.size.height, datePicker.frame.size.width, datePicker.frame.size.height);
+ 
+ if(!hide) [datePicker setFrame:showFrame withDuration:.5];
+ else [datePicker setFrame:hideFrame withDuration:.5];
+ }
+ 
+ The following is an example of the flip animation used in a default “utility” application.
+ 
+ // Show the view with animation
+ [self.view addSubview:myviewcontroller.view withTransition:UIViewAnimationTransitionFlipFromLeft withDuration:.5];
+ // Remove the view with animation
+ [myviewcontroller.view removeWithTransition:UIViewAnimationTransitionFlipFromLeft andDuration:.5]; 
+ 
+ */
+
 @end

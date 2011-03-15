@@ -1,0 +1,9 @@
+//
+// TWTestsPrefix.pch
+//
+//  Copyright 2011 Trollwerks Inc. All rights reserved.
+//
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#endif // __OBJC__

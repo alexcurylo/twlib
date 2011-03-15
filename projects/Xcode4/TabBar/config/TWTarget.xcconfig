@@ -1,0 +1,12 @@
+//
+//  TWTarget.xcconfig
+//
+//  Copyright 2011 Trollwerks Inc. All rights reserved.
+//
+
+PRODUCT_NAME = NotNamed
+
+GCC_PREFIX_HEADER = config/TWProjectPrefix.h
+
+INFOPLIST_FILE = resources/TWTabBarInfo.plist
+//INFOPLIST_PREFIX_HEADER = resources/version.h

@@ -13,6 +13,14 @@ static CGFloat kBounceTransitionDuration = 0.3;
 
 @implementation UIView (TWXUIView)
 
+- (void)roundCorners
+{
+   CALayer* layer = self.layer;
+   [layer setMasksToBounds:YES];
+   [layer setCornerRadius:10.0f];
+   [layer setBorderWidth:2.0f];
+}
+
 - (UIView *)findFirstResponder
 {
    if (self.isFirstResponder)        

@@ -6,6 +6,8 @@
 
 @interface UIView (TWXUIView)
 
+- (void)roundCorners;
+
 - (UIView *)findFirstResponder;
 
 - (void)setSubviewsTextColor:(UIColor *)color;

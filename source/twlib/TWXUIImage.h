@@ -16,4 +16,8 @@
 // partial drawing
 //- (void)drawInRect:(CGRect)drawRect fromRect:(CGRect)fromRect blendMode:(CGBlendMode)blendMode alpha:(CGFloat)alpha
 
+// from AliSoftware UIImage+Resize
+- (UIImage *)resizedImageToSize:(CGSize)dstSize;
+- (UIImage *)resizedImageToFitInSize:(CGSize)boundingSize scaleIfSmaller:(BOOL)scale;
+
 @end

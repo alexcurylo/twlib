@@ -5,6 +5,7 @@
 //
 
 #import "TWXUIToolbar.h"
+#import <QuartzCore/QuartzCore.h>
 #import <objc/runtime.h>
 
 // keep track of default implementations

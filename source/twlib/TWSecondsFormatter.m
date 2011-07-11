@@ -1,5 +1,5 @@
 //
-//  TWSecondsFormatter.h
+//  TWSecondsFormatter.m
 //
 //  Copyright 2009 Trollwerks Inc. All rights reserved.
 //

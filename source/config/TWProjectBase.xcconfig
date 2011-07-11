@@ -1,8 +1,12 @@
 //
 //  TWProjectBase.xcconfig
 //
-//  Copyright 2010 Trollwerks Inc. All rights reserved.
+//  Copyright 2011 Trollwerks Inc. All rights reserved.
 //
+
+// note that this should be updated for Xcode 4 LLVM
+// check Google's latest, and the mothership documentation
+// http://developer.apple.com/library/ios/#documentation/DeveloperTools/Reference/XcodeBuildSettingRef/0-Introduction/introduction.html
 
 SDKROOT = iphoneos
 IPHONEOS_DEPLOYMENT_TARGET = 3.0

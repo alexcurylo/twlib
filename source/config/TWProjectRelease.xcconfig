@@ -4,6 +4,8 @@
 //  Copyright 2010 Trollwerks Inc. All rights reserved.
 //
 
+CODE_SIGN_ENTITLEMENTS = config/TWEntitlementsRelease.plist
+
 VALIDATE_PRODUCT = YES
 CODE_SIGN_IDENTITY = iPhone Distribution 
 

@@ -4,6 +4,8 @@
 //  Copyright 2010 Trollwerks Inc. All rights reserved.
 //
 
+CODE_SIGN_ENTITLEMENTS = config/TWEntitlementsDebug.plist
+
 VALIDATE_PRODUCT = NO
 CODE_SIGN_IDENTITY = iPhone Developer 
 

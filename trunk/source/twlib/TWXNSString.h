@@ -19,6 +19,8 @@
 
 - (NSString*)stringByTruncatingToWidth:(CGFloat)width withFont:(UIFont *)font;
 
+- (NSString *)stringForCSVField;
+
 /*
 + (id)stringWithUUID;
 

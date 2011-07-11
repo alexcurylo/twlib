@@ -34,7 +34,7 @@
       (kCFAllocatorDefault,
       (CFStringRef)self,
       NULL,
-      (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+      (CFStringRef)@"!*'();:@&=+$,/?%#[]{}<>",
       kCFStringEncodingUTF8
    );
    return [(NSString *)escaped autorelease];
@@ -88,6 +88,25 @@
    }
    
    return truncatedString;
+}
+
+- (NSString *)stringForCSVField
+{
+   NSString *result = self;
+   
+   // Note that we are using Excel escaping here, not Unix style
+   // http://www.csvreader.com/csv_format.php
+   BOOL hasDoubleQuotes = [self contains:@"\""];
+   BOOL hasCommas = [self contains:@","];
+   BOOL hasLineBreaks = [self contains:@"\n"] || [self contains:@"\r"];
+   // might check for leading/trailing white space too
+   
+   if (hasDoubleQuotes)
+      result = [result stringByReplacingOccurrencesOfString:@"\"" withString:@"\"\""];
+   if (hasCommas || hasLineBreaks)
+      result = [NSString stringWithFormat:@"\"%@\"", result];
+   
+   return result;
 }
 
    /*

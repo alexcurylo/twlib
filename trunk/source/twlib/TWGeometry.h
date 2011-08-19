@@ -14,3 +14,5 @@
 #define twEqualFloatsEpsilon(f1, f2, epsilon)	( fabs( (f1) - (f2) ) < epsilon )
 #define twNotEqualFloats(f1, f2)	( !twEqualFloats(f1, f2) )
 #define twNotEqualFloatsEpsilon(f1, f2, epsilon)	( !twEqualFloatsEpsilon(f1, f2, epsilon) )
+#define twZeroFloat(f)	( fabs(f) < twDefaultFloatComparisonEpsilon )
+#define twZeroFloatEpsilon(f, epsilon)	( fabs(f) < epsilon )

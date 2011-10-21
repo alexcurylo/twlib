@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FAF64AD5144BB06E00E2D9F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF64AD4144BB06E00E2D9F2 /* UIKit.framework */; };
+		FAF64AD7144BB06E00E2D9F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF64AD6144BB06E00E2D9F2 /* Foundation.framework */; };
+		FAF64AD9144BB06E00E2D9F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF64AD8144BB06E00E2D9F2 /* CoreGraphics.framework */; };
+		FAF64AF6144BB06E00E2D9F2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF64AF5144BB06E00E2D9F2 /* SenTestingKit.framework */; };
+		FAF64AF7144BB06E00E2D9F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF64AD4144BB06E00E2D9F2 /* UIKit.framework */; };
+		FAF64AF8144BB06E00E2D9F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF64AD6144BB06E00E2D9F2 /* Foundation.framework */; };
+		FAF64B00144BB06E00E2D9F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAF64AFE144BB06E00E2D9F2 /* InfoPlist.strings */; };
+		FAF64B03144BB06E00E2D9F2 /* TWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF64B02144BB06E00E2D9F2 /* TWTests.m */; };
+		FAF64B37144BBF0800E2D9F2 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF64B2A144BBF0800E2D9F2 /* Default-Landscape.png */; };
+		FAF64B38144BBF0800E2D9F2 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF64B2B144BBF0800E2D9F2 /* Default-Portrait.png */; };
+		FAF64B39144BBF0800E2D9F2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF64B2C144BBF0800E2D9F2 /* Default.png */; };
+		FAF64B3A144BBF0800E2D9F2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF64B2D144BBF0800E2D9F2 /* Default@2x.png */; };
+		FAF64B3B144BBF0800E2D9F2 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF64B2E144BBF0800E2D9F2 /* Icon-72.png */; };
+		FAF64B3C144BBF0800E2D9F2 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF64B2F144BBF0800E2D9F2 /* Icon.png */; };
+		FAF64B3D144BBF0800E2D9F2 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF64B30144BBF0800E2D9F2 /* Icon@2x.png */; };
+		FAF64B3E144BBF0800E2D9F2 /* iTunesArtwork.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAF64B31144BBF0800E2D9F2 /* iTunesArtwork.jpg */; };
+		FAF64B41144BBF0800E2D9F2 /* TWViewController-ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF64B35144BBF0800E2D9F2 /* TWViewController-ipad.xib */; };
+		FAF64B42144BBF0800E2D9F2 /* TWViewController-iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF64B36144BBF0800E2D9F2 /* TWViewController-iphone.xib */; };
+		FAF64B45144BBF7800E2D9F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAF64B47144BBF7800E2D9F2 /* InfoPlist.strings */; };
+		FAF64B48144BBF7F00E2D9F2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAF64B4A144BBF7F00E2D9F2 /* Localizable.strings */; };
+		FAF64B5A144BC16C00E2D9F2 /* TWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF64B4F144BC16C00E2D9F2 /* TWAppDelegate.m */; };
+		FAF64B5B144BC16C00E2D9F2 /* TWMain.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF64B50144BC16C00E2D9F2 /* TWMain.m */; };
+		FAF64B5C144BC16C00E2D9F2 /* TWDebugging.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF64B53144BC16C00E2D9F2 /* TWDebugging.m */; };
+		FAF64B5D144BC16C00E2D9F2 /* TWXUIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF64B55144BC16C00E2D9F2 /* TWXUIAlertView.m */; };
+		FAF64B5E144BC16C00E2D9F2 /* TWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF64B58144BC16C00E2D9F2 /* TWViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAF64AF9144BB06E00E2D9F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAF64AC7144BB06E00E2D9F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAF64ACF144BB06E00E2D9F2;
+			remoteInfo = View;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FAF64AD0144BB06E00E2D9F2 /* View.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = View.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAF64AD4144BB06E00E2D9F2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FAF64AD6144BB06E00E2D9F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FAF64AD8144BB06E00E2D9F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FAF64AF4144BB06E00E2D9F2 /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAF64AF5144BB06E00E2D9F2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		FAF64AFD144BB06E00E2D9F2 /* TWTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TWTests-Info.plist"; sourceTree = "<group>"; };
+		FAF64AFF144BB06E00E2D9F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FAF64B01144BB06E00E2D9F2 /* TWTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWTests.h; sourceTree = "<group>"; };
+		FAF64B02144BB06E00E2D9F2 /* TWTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWTests.m; sourceTree = "<group>"; };
+		FAF64B16144BB80C00E2D9F2 /* notes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = notes.rtf; sourceTree = "<group>"; };
+		FAF64B1D144BBDAF00E2D9F2 /* TWEntitlementsDebug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TWEntitlementsDebug.plist; sourceTree = "<group>"; };
+		FAF64B1E144BBDAF00E2D9F2 /* TWEntitlementsRelease.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TWEntitlementsRelease.plist; sourceTree = "<group>"; };
+		FAF64B1F144BBDAF00E2D9F2 /* TWProjectBase.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TWProjectBase.xcconfig; sourceTree = "<group>"; };
+		FAF64B20144BBDAF00E2D9F2 /* TWProjectDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TWProjectDebug.xcconfig; sourceTree = "<group>"; };
+		FAF64B21144BBDAF00E2D9F2 /* TWProjectPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWProjectPrefix.pch; sourceTree = "<group>"; };
+		FAF64B22144BBDAF00E2D9F2 /* TWProjectRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TWProjectRelease.xcconfig; sourceTree = "<group>"; };
+		FAF64B23144BBDAF00E2D9F2 /* TWTarget.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TWTarget.xcconfig; sourceTree = "<group>"; };
+		FAF64B2A144BBF0800E2D9F2 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
+		FAF64B2B144BBF0800E2D9F2 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
+		FAF64B2C144BBF0800E2D9F2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		FAF64B2D144BBF0800E2D9F2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FAF64B2E144BBF0800E2D9F2 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		FAF64B2F144BBF0800E2D9F2 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		FAF64B30144BBF0800E2D9F2 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		FAF64B31144BBF0800E2D9F2 /* iTunesArtwork.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iTunesArtwork.jpg; sourceTree = "<group>"; };
+		FAF64B35144BBF0800E2D9F2 /* TWViewController-ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TWViewController-ipad.xib"; sourceTree = "<group>"; };
+		FAF64B36144BBF0800E2D9F2 /* TWViewController-iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; path = "TWViewController-iphone.xib"; sourceTree = "<group>"; };
+		FAF64B44144BBF4C00E2D9F2 /* TWTargetInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TWTargetInfo.plist; sourceTree = "<group>"; };
+		FAF64B46144BBF7800E2D9F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FAF64B49144BBF7F00E2D9F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FAF64B4E144BC16C00E2D9F2 /* TWAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWAppDelegate.h; sourceTree = "<group>"; };
+		FAF64B4F144BC16C00E2D9F2 /* TWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWAppDelegate.m; sourceTree = "<group>"; };
+		FAF64B50144BC16C00E2D9F2 /* TWMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWMain.m; sourceTree = "<group>"; };
+		FAF64B52144BC16C00E2D9F2 /* TWDebugging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWDebugging.h; sourceTree = "<group>"; };
+		FAF64B53144BC16C00E2D9F2 /* TWDebugging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWDebugging.m; sourceTree = "<group>"; };
+		FAF64B54144BC16C00E2D9F2 /* TWXUIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWXUIAlertView.h; sourceTree = "<group>"; };
+		FAF64B55144BC16C00E2D9F2 /* TWXUIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWXUIAlertView.m; sourceTree = "<group>"; };
+		FAF64B57144BC16C00E2D9F2 /* TWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWViewController.h; sourceTree = "<group>"; };
+		FAF64B58144BC16C00E2D9F2 /* TWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAF64ACD144BB06E00E2D9F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF64AD5144BB06E00E2D9F2 /* UIKit.framework in Frameworks */,
+				FAF64AD7144BB06E00E2D9F2 /* Foundation.framework in Frameworks */,
+				FAF64AD9144BB06E00E2D9F2 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAF64AF0144BB06E00E2D9F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF64AF6144BB06E00E2D9F2 /* SenTestingKit.framework in Frameworks */,
+				FAF64AF7144BB06E00E2D9F2 /* UIKit.framework in Frameworks */,
+				FAF64AF8144BB06E00E2D9F2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FAF64AC5144BB06E00E2D9F2 = {
+			isa = PBXGroup;
+			children = (
+				FAF64B15144BB80C00E2D9F2 /* notes */,
+				FAF64B4B144BC16C00E2D9F2 /* source */,
+				FAF64B28144BBF0700E2D9F2 /* resources */,
+				FAF64B1C144BBDAF00E2D9F2 /* config */,
+				FAF64AFB144BB06E00E2D9F2 /* tests */,
+				FAF64AD3144BB06E00E2D9F2 /* Frameworks */,
+				FAF64AD1144BB06E00E2D9F2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAF64AD1144BB06E00E2D9F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAF64AD0144BB06E00E2D9F2 /* View.app */,
+				FAF64AF4144BB06E00E2D9F2 /* Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAF64AD3144BB06E00E2D9F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAF64AD4144BB06E00E2D9F2 /* UIKit.framework */,
+				FAF64AD6144BB06E00E2D9F2 /* Foundation.framework */,
+				FAF64AD8144BB06E00E2D9F2 /* CoreGraphics.framework */,
+				FAF64AF5144BB06E00E2D9F2 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAF64AFB144BB06E00E2D9F2 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				FAF64B01144BB06E00E2D9F2 /* TWTests.h */,
+				FAF64B02144BB06E00E2D9F2 /* TWTests.m */,
+				FAF64AFC144BB06E00E2D9F2 /* Supporting Files */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
+		FAF64AFC144BB06E00E2D9F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAF64AFD144BB06E00E2D9F2 /* TWTests-Info.plist */,
+				FAF64AFE144BB06E00E2D9F2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAF64B15144BB80C00E2D9F2 /* notes */ = {
+			isa = PBXGroup;
+			children = (
+				FAF64B16144BB80C00E2D9F2 /* notes.rtf */,
+			);
+			path = notes;
+			sourceTree = "<group>";
+		};
+		FAF64B1C144BBDAF00E2D9F2 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				FAF64B1D144BBDAF00E2D9F2 /* TWEntitlementsDebug.plist */,
+				FAF64B1E144BBDAF00E2D9F2 /* TWEntitlementsRelease.plist */,
+				FAF64B21144BBDAF00E2D9F2 /* TWProjectPrefix.pch */,
+				FAF64B1F144BBDAF00E2D9F2 /* TWProjectBase.xcconfig */,
+				FAF64B20144BBDAF00E2D9F2 /* TWProjectDebug.xcconfig */,
+				FAF64B22144BBDAF00E2D9F2 /* TWProjectRelease.xcconfig */,
+				FAF64B23144BBDAF00E2D9F2 /* TWTarget.xcconfig */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		FAF64B28144BBF0700E2D9F2 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAF64B44144BBF4C00E2D9F2 /* TWTargetInfo.plist */,
+				FAF64B47144BBF7800E2D9F2 /* InfoPlist.strings */,
+				FAF64B4A144BBF7F00E2D9F2 /* Localizable.strings */,
+				FAF64B34144BBF0800E2D9F2 /* views */,
+				FAF64B29144BBF0800E2D9F2 /* deployment */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		FAF64B29144BBF0800E2D9F2 /* deployment */ = {
+			isa = PBXGroup;
+			children = (
+				FAF64B2A144BBF0800E2D9F2 /* Default-Landscape.png */,
+				FAF64B2B144BBF0800E2D9F2 /* Default-Portrait.png */,
+				FAF64B2C144BBF0800E2D9F2 /* Default.png */,
+				FAF64B2D144BBF0800E2D9F2 /* Default@2x.png */,
+				FAF64B2E144BBF0800E2D9F2 /* Icon-72.png */,
+				FAF64B2F144BBF0800E2D9F2 /* Icon.png */,
+				FAF64B30144BBF0800E2D9F2 /* Icon@2x.png */,
+				FAF64B31144BBF0800E2D9F2 /* iTunesArtwork.jpg */,
+			);
+			path = deployment;
+			sourceTree = "<group>";
+		};
+		FAF64B34144BBF0800E2D9F2 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				FAF64B35144BBF0800E2D9F2 /* TWViewController-ipad.xib */,
+				FAF64B36144BBF0800E2D9F2 /* TWViewController-iphone.xib */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		FAF64B4B144BC16C00E2D9F2 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				FAF64B4C144BC16C00E2D9F2 /* application */,
+				FAF64B56144BC16C00E2D9F2 /* views */,
+				FAF64B51144BC16C00E2D9F2 /* support */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		FAF64B4C144BC16C00E2D9F2 /* application */ = {
+			isa = PBXGroup;
+			children = (
+				FAF64B4E144BC16C00E2D9F2 /* TWAppDelegate.h */,
+				FAF64B4F144BC16C00E2D9F2 /* TWAppDelegate.m */,
+				FAF64B50144BC16C00E2D9F2 /* TWMain.m */,
+			);
+			path = application;
+			sourceTree = "<group>";
+		};
+		FAF64B51144BC16C00E2D9F2 /* support */ = {
+			isa = PBXGroup;
+			children = (
+				FAF64B52144BC16C00E2D9F2 /* TWDebugging.h */,
+				FAF64B53144BC16C00E2D9F2 /* TWDebugging.m */,
+				FAF64B54144BC16C00E2D9F2 /* TWXUIAlertView.h */,
+				FAF64B55144BC16C00E2D9F2 /* TWXUIAlertView.m */,
+			);
+			path = support;
+			sourceTree = "<group>";
+		};
+		FAF64B56144BC16C00E2D9F2 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				FAF64B57144BC16C00E2D9F2 /* TWViewController.h */,
+				FAF64B58144BC16C00E2D9F2 /* TWViewController.m */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAF64ACF144BB06E00E2D9F2 /* View */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAF64B06144BB06E00E2D9F2 /* Build configuration list for PBXNativeTarget "View" */;
+			buildPhases = (
+				FAF64ACC144BB06E00E2D9F2 /* Sources */,
+				FAF64ACD144BB06E00E2D9F2 /* Frameworks */,
+				FAF64ACE144BB06E00E2D9F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = View;
+			productName = View;
+			productReference = FAF64AD0144BB06E00E2D9F2 /* View.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FAF64AF3144BB06E00E2D9F2 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAF64B09144BB06E00E2D9F2 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				FAF64AEF144BB06E00E2D9F2 /* Sources */,
+				FAF64AF0144BB06E00E2D9F2 /* Frameworks */,
+				FAF64AF1144BB06E00E2D9F2 /* Resources */,
+				FAF64AF2144BB06E00E2D9F2 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAF64AFA144BB06E00E2D9F2 /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = ViewTests;
+			productReference = FAF64AF4144BB06E00E2D9F2 /* Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAF64AC7144BB06E00E2D9F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Trollwerks Inc.";
+			};
+			buildConfigurationList = FAF64ACA144BB06E00E2D9F2 /* Build configuration list for PBXProject "View" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FAF64AC5144BB06E00E2D9F2;
+			productRefGroup = FAF64AD1144BB06E00E2D9F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAF64ACF144BB06E00E2D9F2 /* View */,
+				FAF64AF3144BB06E00E2D9F2 /* Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAF64ACE144BB06E00E2D9F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF64B37144BBF0800E2D9F2 /* Default-Landscape.png in Resources */,
+				FAF64B38144BBF0800E2D9F2 /* Default-Portrait.png in Resources */,
+				FAF64B39144BBF0800E2D9F2 /* Default.png in Resources */,
+				FAF64B3A144BBF0800E2D9F2 /* Default@2x.png in Resources */,
+				FAF64B3B144BBF0800E2D9F2 /* Icon-72.png in Resources */,
+				FAF64B3C144BBF0800E2D9F2 /* Icon.png in Resources */,
+				FAF64B3D144BBF0800E2D9F2 /* Icon@2x.png in Resources */,
+				FAF64B3E144BBF0800E2D9F2 /* iTunesArtwork.jpg in Resources */,
+				FAF64B45144BBF7800E2D9F2 /* InfoPlist.strings in Resources */,
+				FAF64B48144BBF7F00E2D9F2 /* Localizable.strings in Resources */,
+				FAF64B41144BBF0800E2D9F2 /* TWViewController-ipad.xib in Resources */,
+				FAF64B42144BBF0800E2D9F2 /* TWViewController-iphone.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAF64AF1144BB06E00E2D9F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF64B00144BB06E00E2D9F2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FAF64AF2144BB06E00E2D9F2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAF64ACC144BB06E00E2D9F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF64B5A144BC16C00E2D9F2 /* TWAppDelegate.m in Sources */,
+				FAF64B5B144BC16C00E2D9F2 /* TWMain.m in Sources */,
+				FAF64B5C144BC16C00E2D9F2 /* TWDebugging.m in Sources */,
+				FAF64B5D144BC16C00E2D9F2 /* TWXUIAlertView.m in Sources */,
+				FAF64B5E144BC16C00E2D9F2 /* TWViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAF64AEF144BB06E00E2D9F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF64B03144BB06E00E2D9F2 /* TWTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAF64AFA144BB06E00E2D9F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAF64ACF144BB06E00E2D9F2 /* View */;
+			targetProxy = FAF64AF9144BB06E00E2D9F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FAF64AFE144BB06E00E2D9F2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAF64AFF144BB06E00E2D9F2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FAF64B47144BBF7800E2D9F2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAF64B46144BBF7800E2D9F2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FAF64B4A144BBF7F00E2D9F2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAF64B49144BBF7F00E2D9F2 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FAF64B04144BB06E00E2D9F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAF64B20144BBDAF00E2D9F2 /* TWProjectDebug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		FAF64B05144BB06E00E2D9F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAF64B22144BBDAF00E2D9F2 /* TWProjectRelease.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		FAF64B07144BB06E00E2D9F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAF64B23144BBDAF00E2D9F2 /* TWTarget.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		FAF64B08144BB06E00E2D9F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAF64B23144BBDAF00E2D9F2 /* TWTarget.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		FAF64B0A144BB06E00E2D9F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/View.app/View";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = config/TWProjectPrefix.pch;
+				INFOPLIST_FILE = "tests/TWTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FAF64B0B144BB06E00E2D9F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/View.app/View";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = config/TWProjectPrefix.pch;
+				INFOPLIST_FILE = "tests/TWTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAF64ACA144BB06E00E2D9F2 /* Build configuration list for PBXProject "View" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAF64B04144BB06E00E2D9F2 /* Debug */,
+				FAF64B05144BB06E00E2D9F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAF64B06144BB06E00E2D9F2 /* Build configuration list for PBXNativeTarget "View" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAF64B07144BB06E00E2D9F2 /* Debug */,
+				FAF64B08144BB06E00E2D9F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAF64B09144BB06E00E2D9F2 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAF64B0A144BB06E00E2D9F2 /* Debug */,
+				FAF64B0B144BB06E00E2D9F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FAF64AC7144BB06E00E2D9F2 /* Project object */;
+}

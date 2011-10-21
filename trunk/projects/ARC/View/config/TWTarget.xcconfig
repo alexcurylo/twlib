@@ -1,0 +1,11 @@
+//
+//  TWTarget.xcconfig
+//
+//  Copyright 2011 Trollwerks Inc. All rights reserved.
+//
+
+PRODUCT_NAME = View
+
+GCC_PREFIX_HEADER = config/TWProjectPrefix.pch
+
+INFOPLIST_FILE = resources/TWTargetInfo.plist

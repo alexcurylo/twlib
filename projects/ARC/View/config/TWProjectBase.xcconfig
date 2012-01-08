@@ -8,7 +8,7 @@ SDKROOT = iphoneos
 IPHONEOS_DEPLOYMENT_TARGET = 4.0
 // 1 = iPhone; 2 = iPad; 1,2 = iPhone/iPad
 TARGETED_DEVICE_FAMILY = 1,2
-// need IPHONEOS_DEPLOYMENT_TARGET 4.3 to exclude armv6
+// need IPHONEOS_DEPLOYMENT_TARGET 4.3 or iPad-only to exclude armv6
 ARCHS = armv6 armv7
 GCC_VERSION = com.apple.compilers.llvm.clang.1_0
 
@@ -76,7 +76,7 @@ GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = YES
 GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES
 
 // General C/C++/ObjC/ObjC++ warnings
-TW_GENERAL_WARNING_CFLAGS = -Wall -Wendif-labels -Winvalid-pch -Wformat=2 -Wmissing-format-attribute -Wwrite-strings -Wstack-protector -Wstrict-aliasing=2 -Wpacked -Wmissing-field-initializers  -Wglobal-constructors -Wextra -Wpointer-arith -Wdisabled-optimization -Wfloat-equal
+TW_GENERAL_WARNING_CFLAGS = -Wall -Wextra -Wendif-labels -Winvalid-pch -Wformat=2 -Wmissing-format-attribute -Wwrite-strings -Wstack-protector -Wstrict-aliasing=2 -Wpacked -Wmissing-field-initializers  -Wglobal-constructors -Wpointer-arith -Wdisabled-optimization -Wfloat-equal
 
 // GCC_WARN_UNINITIALIZED_AUTOS is defined in the release/debug xcconfigs.
 GCC_WARN_CHECK_SWITCH_STATEMENTS = YES
@@ -113,12 +113,14 @@ WARNING_CFLAGS = $(inherited) $(TW_GENERAL_WARNING_CFLAGS) $(TW_CONFIGURATION_WA
 // https://devforums.apple.com/thread/122059?tstart=15
 OTHER_CFLAGS = $(inherited) $(TW_GENERAL_OTHER_CFLAGS) $(TW_CONFIGURATION_OTHER_CFLAGS) -mno-thumb
 // note that OTHER_CPLUSPLUSFLAGS does *not* inherit -- default is $(OTHER_CFLAGS) and we want these separated
-OTHER_CPLUSPLUSFLAGS = $(TW_GENERAL_OTHER_CPLUSPLUSFLAGS) $(TW_CONFIGURATION_OTHER_CPLUSPLUSFLAGS) -mno-thumbGCC_PREPROCESSOR_DEFINITIONS = $(inherited) $(TW_CONFIGURATION_GCC_PREPROCESSOR_DEFINITIONS)
+OTHER_CPLUSPLUSFLAGS = $(TW_GENERAL_OTHER_CPLUSPLUSFLAGS) $(TW_CONFIGURATION_OTHER_CPLUSPLUSFLAGS) -mno-thumb
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) $(TW_CONFIGURATION_GCC_PREPROCESSOR_DEFINITIONS)
 // zip: -lz C++: -lstdc++ frameworks: -ObjC -all_load
 OTHER_LDFLAGS = $(inherited) $(TW_TARGET_OTHER_LDFLAGS) $(TW_CONFIGURATION_OTHER_LDFLAGS)
 
 SUPPORT_PATH = "$(SRCROOT)/source/support"
-HEADER_SEARCH_PATHS = $(inherited) $(SUPPORT_PATH) $(TW_CONFIGURATION_HEADER_SEARCH_PATHS)
-LIBRARY_SEARCH_PATHS = $(inherited) $(SUPPORT_PATH) $(TW_CONFIGURATION_LIBRARY_SEARCH_PATHS)
-FRAMEWORK_SEARCH_PATHS = $(inherited) $(SUPPORT_PATH) $(TW_CONFIGURATION_FRAMEWORK_SEARCH_PATHS)
+TESTFLIGHT_PATH = "$(SUPPORT_PATH)/TestFlightSDK0"
+HEADER_SEARCH_PATHS = $(inherited) $(TW_CONFIGURATION_HEADER_SEARCH_PATHS)
+LIBRARY_SEARCH_PATHS = $(inherited) $(TESTFLIGHT_PATH) $(TW_CONFIGURATION_LIBRARY_SEARCH_PATHS)
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(TW_CONFIGURATION_FRAMEWORK_SEARCH_PATHS)
 

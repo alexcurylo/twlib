@@ -45,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA438BBC14AAF7CC00515E94 /* TWGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWGeometry.h; sourceTree = "<group>"; };
 		FAF64AD0144BB06E00E2D9F2 /* View.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = View.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF64AD4144BB06E00E2D9F2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAF64AD6144BB06E00E2D9F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -72,7 +73,7 @@
 		FAF64B30144BBF0800E2D9F2 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		FAF64B31144BBF0800E2D9F2 /* iTunesArtwork.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iTunesArtwork.jpg; sourceTree = "<group>"; };
 		FAF64B35144BBF0800E2D9F2 /* TWViewController-ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TWViewController-ipad.xib"; sourceTree = "<group>"; };
-		FAF64B36144BBF0800E2D9F2 /* TWViewController-iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; path = "TWViewController-iphone.xib"; sourceTree = "<group>"; };
+		FAF64B36144BBF0800E2D9F2 /* TWViewController-iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TWViewController-iphone.xib"; sourceTree = "<group>"; };
 		FAF64B44144BBF4C00E2D9F2 /* TWTargetInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TWTargetInfo.plist; sourceTree = "<group>"; };
 		FAF64B46144BBF7800E2D9F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FAF64B49144BBF7F00E2D9F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -246,6 +247,7 @@
 			children = (
 				FAF64B52144BC16C00E2D9F2 /* TWDebugging.h */,
 				FAF64B53144BC16C00E2D9F2 /* TWDebugging.m */,
+				FA438BBC14AAF7CC00515E94 /* TWGeometry.h */,
 				FAF64B54144BC16C00E2D9F2 /* TWXUIAlertView.h */,
 				FAF64B55144BC16C00E2D9F2 /* TWXUIAlertView.m */,
 			);

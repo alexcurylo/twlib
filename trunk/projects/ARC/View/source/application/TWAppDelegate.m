@@ -8,38 +8,21 @@
 #import "TWViewController.h"
 
 @interface TWAppDelegate()
-{
-}
-
-#pragma mark - Life cycle
-
-+ (void)initialize;
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
-- (void)animateSplash;
-- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application;
-- (void)applicationDidBecomeActive:(UIApplication *)application;
-- (void)applicationWillResignActive:(UIApplication *)application;
-- (void)applicationDidEnterBackground:(UIApplication *)application;
-- (void)applicationWillEnterForeground:(UIApplication *)application;
-- (void)applicationWillTerminate:(UIApplication *)application;
-- (void)cleanup;
-
-#pragma mark - Actions
-
-#pragma mark - Support
 
 @end
 
 @implementation TWAppDelegate
 
-@synthesize window = _window;
-@synthesize viewController = _viewController;
++ (TWAppDelegate *) appDelegate
+{
+   return UIApplication.sharedApplication.delegate;
+}
 
 #pragma mark - Life cycle
 
 + (void)initialize
 {
-	if ( self == [TWAppDelegate class])
+	if (self == TWAppDelegate.class)
    {
       /* if you'd like some settings defaults
        NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -60,8 +43,8 @@
       launchOptions
    );
    
-   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-   self.viewController = [TWViewController controller];
+   self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+   self.viewController = TWViewController.controller;
    
    application.statusBarHidden = NO;
    self.window.rootViewController = self.viewController;
@@ -128,10 +111,3 @@
 #pragma mark - Support
 
 @end
-
-#pragma mark - Conveniences
-
-TWAppDelegate *twAppDelegate(void)
-{
-   return [UIApplication sharedApplication].delegate;
-}

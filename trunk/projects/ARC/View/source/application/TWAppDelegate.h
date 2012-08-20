@@ -13,12 +13,10 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) TWViewController *viewController;
 
++ (TWAppDelegate *) appDelegate;
+
 #pragma mark - Actions
 
 #pragma mark - Support
 
 @end
-
-#pragma mark - Conveniences
-
-TWAppDelegate *twAppDelegate(void);

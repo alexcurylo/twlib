@@ -23,11 +23,3 @@ int main(int argc, char *argv[])
       return UIApplicationMain(argc, argv, nil, NSStringFromClass([TWAppDelegate class]));
    }
 }
-
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_4_3
-// declared in stdlib.h
-u_int32_t arc4random_uniform(u_int32_t upper_bound)
-{
-   return arc4random() % upper_bound;
-}
-#endif // __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_4_3

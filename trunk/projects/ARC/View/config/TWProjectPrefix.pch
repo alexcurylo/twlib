@@ -18,15 +18,17 @@
 #else
 #define TWSDK_MAC 1
 #endif //TARGET_OS_IPHONE
-// runtime: TWRUNNING_{[IPHONE|_IPAD], _IOS5};
+// runtime: TWRUNNING_{[IPHONE|_IPAD], _IOS5, , _IOS6};
 #define TWRUNNING_IPHONE (UIUserInterfaceIdiomPhone == [UIDevice currentDevice].userInterfaceIdiom)
 #define TWRUNNING_IPAD (UIUserInterfaceIdiomPad == [UIDevice currentDevice].userInterfaceIdiom)
 #define TWRUNNING_IOS5 (NSOrderedAscending != [[UIDevice currentDevice].systemVersion compare:@"5.0" options:NSNumericSearch])
+#define TWRUNNING_IOS6 (NSOrderedAscending != [[UIDevice currentDevice].systemVersion compare:@"6.0" options:NSNumericSearch])
 
 #import "TWDebugging.h"
 #import "TWGeometry.h"
 
 #ifdef __OBJC__
+
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "TWXUIAlertView.h"

@@ -5,11 +5,11 @@
 //
 
 SDKROOT = iphoneos
-IPHONEOS_DEPLOYMENT_TARGET = 4.0
+IPHONEOS_DEPLOYMENT_TARGET = 5.0
 // 1 = iPhone; 2 = iPad; 1,2 = iPhone/iPad
 TARGETED_DEVICE_FAMILY = 1,2
 // need IPHONEOS_DEPLOYMENT_TARGET 4.3 or iPad-only to exclude armv6
-ARCHS = armv6 armv7
+ARCHS = armv7
 GCC_VERSION = com.apple.compilers.llvm.clang.1_0
 
 CLANG_ENABLE_OBJC_ARC = YES
@@ -76,7 +76,8 @@ GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = YES
 GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES
 
 // General C/C++/ObjC/ObjC++ warnings
-TW_GENERAL_WARNING_CFLAGS = -Wall -Wextra -Wendif-labels -Winvalid-pch -Wformat=2 -Wmissing-format-attribute -Wwrite-strings -Wstack-protector -Wstrict-aliasing=2 -Wpacked -Wmissing-field-initializers  -Wglobal-constructors -Wpointer-arith -Wdisabled-optimization -Wfloat-equal
+// note we have removed "-Wformat=2" since 'Format string is not a string literal' is annoying
+TW_GENERAL_WARNING_CFLAGS = -Wall -Wextra -Wendif-labels -Winvalid-pch -Wmissing-format-attribute -Wwrite-strings -Wstack-protector -Wstrict-aliasing=2 -Wpacked -Wmissing-field-initializers  -Wglobal-constructors -Wpointer-arith -Wdisabled-optimization -Wfloat-equal -Wformat
 
 // GCC_WARN_UNINITIALIZED_AUTOS is defined in the release/debug xcconfigs.
 GCC_WARN_CHECK_SWITCH_STATEMENTS = YES
@@ -109,9 +110,7 @@ GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = NO // 4.0GM SDK warns on every -stringWithF
 // merge flag/path settings with possible previous configuration file flag settings
 
 WARNING_CFLAGS = $(inherited) $(TW_GENERAL_WARNING_CFLAGS) $(TW_CONFIGURATION_WARNING_CFLAGS)
-// Note that we add -mno-thumb because of LLVM 3.0 (Xcode 4.2 Build 4C177) bugginess
-// https://devforums.apple.com/thread/122059?tstart=15
-OTHER_CFLAGS = $(inherited) $(TW_GENERAL_OTHER_CFLAGS) $(TW_CONFIGURATION_OTHER_CFLAGS) -mno-thumb
+OTHER_CFLAGS = $(inherited) $(TW_GENERAL_OTHER_CFLAGS) $(TW_CONFIGURATION_OTHER_CFLAGS)
 // note that OTHER_CPLUSPLUSFLAGS does *not* inherit -- default is $(OTHER_CFLAGS) and we want these separated
 OTHER_CPLUSPLUSFLAGS = $(TW_GENERAL_OTHER_CPLUSPLUSFLAGS) $(TW_CONFIGURATION_OTHER_CPLUSPLUSFLAGS) -mno-thumb
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) $(TW_CONFIGURATION_GCC_PREPROCESSOR_DEFINITIONS)

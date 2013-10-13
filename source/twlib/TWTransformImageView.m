@@ -1,7 +1,7 @@
 //
 //  TWTransformImageView.m
 //
-//  Copyright 2009 Trollwerks Inc. All rights reserved.
+//  Copyright 2012 Trollwerks Inc. All rights reserved.
 //
 
 #import "TWTransformImageView.h"

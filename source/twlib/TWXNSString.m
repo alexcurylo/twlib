@@ -1,7 +1,7 @@
 //
 //  TWXNSString.m
 //
-//  Copyright 2010 Trollwerks Inc. All rights reserved.
+//  Copyright 2012 Trollwerks Inc. All rights reserved.
 //
 
 #import "TWXNSString.h"

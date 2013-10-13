@@ -1,7 +1,7 @@
 //
 //  TWXUIImage.h
 //
-//  Copyright Trollwerks Inc 2011. All rights reserved.
+//  Copyright Trollwerks Inc 2012. All rights reserved.
 //
 
 @interface UIImage (TWXUIImage) < NSCoding >

@@ -1,7 +1,7 @@
 //
 //  TWXUIImage.m
 //
-//  Copyright Trollwerks Inc 2011. All rights reserved.
+//  Copyright Trollwerks Inc 2012. All rights reserved.
 //
 
 #import "TWXUIImage.h"

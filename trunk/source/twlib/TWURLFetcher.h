@@ -1,8 +1,12 @@
 //
 //  TWURLFetcher.h
 //
-//  Copyright 2010 Trollwerks Inc. All rights reserved.
+//  Copyright 2012 Trollwerks Inc. All rights reserved.
 //
+
+#if USE_ASIHTTPREQUEST
+#error shouldn't be including TWURLFetcher, USE_ASIHTTPREQUEST is on
+#endif USE_ASIHTTPREQUEST
 
 /* use like
  

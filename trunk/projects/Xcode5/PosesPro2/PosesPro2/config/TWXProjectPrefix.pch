@@ -1,0 +1,64 @@
+//
+//  TWXProjectPrefix.pch
+//
+//  Copyright 2013 Trollwerks Inc. All rights reserved.
+//
+
+@import Darwin;
+//@import Darwin.Availability;
+//@import Darwin.TargetConditionals;
+
+// compile time: TWXSDK_[IOS|MAC] and TWXPLATFORM_[DEVICE|SIMULATOR]
+
+#if TARGET_OS_IPHONE
+#define TWXSDK_IOS 1
+#if TARGET_IPHONE_SIMULATOR
+#define TWXPLATFORM_SIMULATOR 1
+#else
+#define TWXPLATFORM_DEVICE 1
+#endif //TARGET_IPHONE_SIMULATOR
+#else
+#define TWXSDK_MAC 1
+#endif //TARGET_OS_IPHONE
+
+// runtime: TWXRUNNING_{ [IPHONE[,GIRAFFE]]|IPAD, RETINA], IOS compares };
+
+#define TWXRUNNING_IPHONE (UIUserInterfaceIdiomPhone == UIDevice.currentDevice.userInterfaceIdiom)
+#define TWXRUNNING_IPAD (UIUserInterfaceIdiomPad == UIDevice.currentDevice.userInterfaceIdiom)
+#define TWXRUNNING_GIRAFFE (568 == lrintf(UIScreen.mainScreen.bounds.size.height))
+#define TWXRUNNING_RETINA (1 < UIScreen.mainScreen.scale)
+
+#define TWXRUNNINGIOS_EQUAL_TO(v)                  ([UIDevice.currentDevice.systemVersion compare:v options:NSNumericSearch] == NSOrderedSame)
+#define TWXRUNNINGIOS_GREATER_THAN(v)              ([UIDevice.currentDevice.systemVersion compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define TWXRUNNINGIOS_GREATER_THAN_OR_EQUAL_TO(v)  ([UIDevice.currentDevice.systemVersion compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define TWXRUNNINGIOS_LESS_THAN(v)                 ([UIDevice.currentDevice.systemVersion compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define TWXRUNNINGIOS_LESS_THAN_OR_EQUAL_TO(v)     ([UIDevice.currentDevice.systemVersion compare:v options:NSNumericSearch] != NSOrderedDescending)
+
+// Project specifics
+
+#define USE_NSOPERATIONQUEUE 1
+// otherwise chain downloads sequentially on main thread
+
+#define USE_ASIHTTPREQUEST 1
+// ASIHTTPRequest debugging
+//#define DEBUG_REQUEST_STATUS 1
+//#define DEBUG_FORM_DATA_REQUEST 1
+//#define DEBUG_THROTTLING 1
+//#define DEBUG_PERSISTENT_CONNECTIONS 1
+
+//#define USE_GOOGLEAPPENGINE_FOR_POSES 1
+// for downloading poses; otherwise use Dreamhost as in 1.0
+// GAE actually seems slower than Dreamhost!
+#define LIVE_GOOGLEAPPENGINE 1
+// otherwise use localhost (Simulator) / 216.19.186.62 (device, with 'Extra Flags' to set that instead)
+
+// Imports
+
+#import "TWXDebugging.h"
+
+#ifdef __OBJC__
+
+@import Foundation;
+@import UIKit;
+
+#endif //__OBJC__

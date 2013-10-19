@@ -1,0 +1,24 @@
+//
+//  TWXProjectRelease.xcconfig
+//
+//  Copyright 2013 Trollwerks Inc. All rights reserved.
+//
+
+CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Distribution: Trollwerks Inc.
+//CODE_SIGN_ENTITLEMENTS = config/TWEntitlementsRelease.plist
+
+TWX_CONFIGURATION_GCC_PREPROCESSOR_DEFINITIONS = NDEBUG=1 NS_BLOCK_ASSERTIONS=1
+
+ONLY_ACTIVE_ARCH = NO
+GCC_OPTIMIZATION_LEVEL = s
+DEAD_CODE_STRIPPING = YES
+// should be able to symbolicate with the .dSYM
+DEPLOYMENT_POSTPROCESSING = YES
+STRIP_INSTALLED_PRODUCT = YES // "Strip Linked Product"
+COPY_PHASE_STRIP = YES // "Strip Debug Symbols During Copy"
+
+ENABLE_NS_ASSERTIONS = NO
+GCC_TREAT_WARNINGS_AS_ERRORS = YES
+VALIDATE_PRODUCT = YES
+
+#include "TWXProjectBase.xcconfig"

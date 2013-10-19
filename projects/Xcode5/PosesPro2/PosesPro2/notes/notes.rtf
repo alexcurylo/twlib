@@ -1,0 +1,199 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf400
+{\fonttbl\f0\fnil\fcharset0 Monaco;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+\f3\fswiss\fcharset0 Helvetica;\f4\fnil\fcharset0 Verdana;\f5\fnil\fcharset0 LucidaGrande;
+}
+{\colortbl;\red255\green255\blue255;\red183\green255\blue82;\red83\green83\blue83;\red240\green240\blue240;
+\red0\green143\blue206;\red40\green51\blue58;}
+\margl1440\margr1440\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\fs20 \cf0 //\
+// Project notes\
+//\
+\
+- add Urban Airship\
+  - set up AirshipConfig.plist\
+  - do a test push\
+  - sort out all settings into .xcconfigs\
+\
+- save as base iOS 7 project in twlib\
+\
+- hosted IAP - free?\
+- migrate old IAP to hosted IAP?\
+- iCloud registration?\
+- URLs for unlocking? Or push?\
+- images without fuzz\
+\
+Version 2.0:\
+\
+- libs: Airship 3.0.1a, Crashlytics 2.1.2, Flurry 4.2.4a\
+- CocoaPods: AFNetworking 2.0\
+- modern environment (Xcode 5/iOS 7)\
+\
+Version 1.1.1:\
+\
+10.10.02\
+- now KeychainItemWrapper writing is not disabled by 
+\f1\fs24 \CocoaLigature0 NS_BLOCK_ASSERTIONS
+\f0\fs20 \CocoaLigature1 \
+\
+Version 1.1:\
+\
+1.1(34)\
+10.09.22\
+- #63 server registration functional\
+- packs are sorted on insert to keychain\
+- registered packs from server are marked bought\
+- prompted to register when asked key not set\
+- newly acquired packs registered whilst downloading begins\
+- registered account stored in keychain\
+10.09.21\
+- ASIHTTPRequestQueue for downloading poses\
+- TWTabBarAppDelegate now manages network activity indicator\
+- #75 split up downloading and installing poses\
+- purchases checked after first reachability even if false\
+- installs checked before reachability\
+- #63 UI for entering email\
+10.09.20\
+- now starts on OS 3 without trying to access background task field and crashing\
+- checks backgroundTime in downloadNextPose only when applicationState is UIApplicationStateBackground\
+- implemented GAE's posesupport.appspot.com for iap downloads ... but that actually seems slower.\
+\
+1.1(33)\
+10.09.19\
+- #60 poses are sorted; gallery is sectioned and indexed\
+- PPImageScrollerController responds to downloads appropriately\
+- image scroller arrows look disabled\
+- #76 download in background implemented\
+10.09.18\
+- disabled button in purchase book looks disabled\
+- #80 IAP page now reflects registrable/purchasable status, downloading; buy button only enabled if purchasable\
+- #77 StoreManager now handles formatting/availablilty; updates on network change/becoming active\
+- Purchased IAP cells no longer display selectable\
+- Keychain interface now not stashed as it doesn't refresh whilst in background\
+- handleOpenURL now sends purchases changed notification for Extras/IAP controllers' benefit\
+(- Poses: now updates keychain on all activations/URLs, removes registered overlay on OK)\
+- checkPurchases now realizes existing download list needs a push if downloading was interrupted\
+- #79 Varying network availablity over activations dealt with sensibly\
+- No error message about internet until first reachability received\
+- Download bar background not opaque\
+- #58 Download error description/domain/code provided in alert\
+- don't show error from IAP failed transaction -- it pulls in cancel signin/password\
+- #78 Download count updated properly if purchased/registered while downloading\
+10.09.14\
+ #80 available/purchased/installed text in Extras\
+10.09.07\
+ #56 StoreKit text; #57 CrashReporter\
+\
+10.07.22 (32)\
+#62 reporting connection errors\
+10.07.12 (31)\
+#70 playback list crash\
+10.07.11 (30)\
+#69 4.0 SDK update; #64 show download count; #68 3G crash downloading\
+\
+*******************\
+\
+{\field{\*\fldinst{HYPERLINK "https://go.urbanairship.com/apps/"}}{\fldrslt Urban Airship - Application Index}}\
+\
+DreamHost:\
+\pard\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7920\tx8280\tx8640\tx9000\tx9360\tx9720\tx10080\tx10440\tx10800\tx11160\tx11520\tx11880\tx12240\tx12600\tx12960\tx13320\tx13680\tx14040\tx14400\tx14760\tx15120\tx15480\tx15840\tx16200\tx16560\tx16920\tx17280\tx17640\tx18000\tx18360\tx18720\tx19080\tx19440\tx19800\tx20160\tx20520\tx20880\tx21240\tx21600\tx21960\tx22320\tx22680\tx23040\tx23400\tx23760\tx24120\tx24480\tx24840\tx25200\tx25560\tx25920\tx26280\tx26640\tx27000\tx27360\tx27720\tx28080\tx28440\tx28800\tx29160\tx29520\tx29880\tx30240\tx30600\tx30960\tx31320\tx31680\tx32040\tx32400\tx32760\tx33120\tx33480\tx33840\tx34200\tx34560\tx34920\tx35280\tx35640\tx36000\pardeftab720\li560\fi-560\pardirnatural
+
+\f2\b\fs24 \cf0 \CocoaLigature0 3GS-Pro ASIHTTPRequest(fg) timeTaken: 1363.66 seconds (22 minutes 43.657780 seconds)\
+3GS-Pro ASIHTTPRequest(fg) timeTaken: 1335.62 seconds (22 minutes 15.615127 seconds)\
+3GS-Pro ASIHTTPRequest(fg) timeTaken: 1335.62 seconds (22 minutes 15.615127 seconds)\
+3GS-Pro ASIHTTPRequest(bg) timeTaken: 1333.83 seconds (22 minutes 13.830120 seconds)\
+Pod1G-Sampler ASIHTTPRequest times out too much, but between 2-6 seconds generally\
+3GS-Pro TWURLFetcher(fg) timeTaken: 1225.46 seconds (20 minutes 25.458285 seconds)\
+3GS-Pro ASIHTTPRequest(bg) timeTaken: 1346.24 seconds (22 minutes 26.235782 seconds)\
+\pard\pardeftab720
+
+\f0\b0\fs20 \cf0 \CocoaLigature1 GAE: actually slower???\
+\pard\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7920\tx8280\tx8640\tx9000\tx9360\tx9720\tx10080\tx10440\tx10800\tx11160\tx11520\tx11880\tx12240\tx12600\tx12960\tx13320\tx13680\tx14040\tx14400\tx14760\tx15120\tx15480\tx15840\tx16200\tx16560\tx16920\tx17280\tx17640\tx18000\tx18360\tx18720\tx19080\tx19440\tx19800\tx20160\tx20520\tx20880\tx21240\tx21600\tx21960\tx22320\tx22680\tx23040\tx23400\tx23760\tx24120\tx24480\tx24840\tx25200\tx25560\tx25920\tx26280\tx26640\tx27000\tx27360\tx27720\tx28080\tx28440\tx28800\tx29160\tx29520\tx29880\tx30240\tx30600\tx30960\tx31320\tx31680\tx32040\tx32400\tx32760\tx33120\tx33480\tx33840\tx34200\tx34560\tx34920\tx35280\tx35640\tx36000\pardeftab720\li560\fi-560\pardirnatural
+
+\f2\b\fs24 \cf0 \CocoaLigature0 3GS-Pro ASIHTTPRequest(fg) timeTaken: 1415.08 seconds (23 minutes 35.084958 seconds)\
+3GS-Pro ASIHTTPRequest(fg) timeTaken: 1423.02 seconds (23 minutes 43.019906 seconds)\
+\pard\pardeftab720
+
+\f0\b0\fs20 \cf0 \CocoaLigature1 With no parsing/updates on completion:\
+\pard\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7920\tx8280\tx8640\tx9000\tx9360\tx9720\tx10080\tx10440\tx10800\tx11160\tx11520\tx11880\tx12240\tx12600\tx12960\tx13320\tx13680\tx14040\tx14400\tx14760\tx15120\tx15480\tx15840\tx16200\tx16560\tx16920\tx17280\tx17640\tx18000\tx18360\tx18720\tx19080\tx19440\tx19800\tx20160\tx20520\tx20880\tx21240\tx21600\tx21960\tx22320\tx22680\tx23040\tx23400\tx23760\tx24120\tx24480\tx24840\tx25200\tx25560\tx25920\tx26280\tx26640\tx27000\tx27360\tx27720\tx28080\tx28440\tx28800\tx29160\tx29520\tx29880\tx30240\tx30600\tx30960\tx31320\tx31680\tx32040\tx32400\tx32760\tx33120\tx33480\tx33840\tx34200\tx34560\tx34920\tx35280\tx35640\tx36000\pardeftab720\li560\fi-560\pardirnatural
+
+\f2\b\fs24 \cf0 \CocoaLigature0 3GS-Pro ASIHTTPRequest(fg) timeTaken: 360.19 seconds (6 minutes 0.188555 seconds)\
+\pard\pardeftab720
+
+\f0\b0\fs20 \cf0 \CocoaLigature1 With ASIOperationQueue and parsing -- too clogged to update even UI:\
+heh, seems that it finishes downloading way WAY before the delegate notifications!\
+\pard\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7920\tx8280\tx8640\tx9000\tx9360\tx9720\tx10080\tx10440\tx10800\tx11160\tx11520\tx11880\tx12240\tx12600\tx12960\tx13320\tx13680\tx14040\tx14400\tx14760\tx15120\tx15480\tx15840\tx16200\tx16560\tx16920\tx17280\tx17640\tx18000\tx18360\tx18720\tx19080\tx19440\tx19800\tx20160\tx20520\tx20880\tx21240\tx21600\tx21960\tx22320\tx22680\tx23040\tx23400\tx23760\tx24120\tx24480\tx24840\tx25200\tx25560\tx25920\tx26280\tx26640\tx27000\tx27360\tx27720\tx28080\tx28440\tx28800\tx29160\tx29520\tx29880\tx30240\tx30600\tx30960\tx31320\tx31680\tx32040\tx32400\tx32760\tx33120\tx33480\tx33840\tx34200\tx34560\tx34920\tx35280\tx35640\tx36000\pardeftab720\li560\fi-560\pardirnatural
+
+\f2\b\fs24 \cf0 \CocoaLigature0 (concurrent 1) timeTaken: 922.99 seconds (15 minutes 22.990986 seconds)\
+(concurrent 4) timeTaken: \
+\pard\pardeftab720
+
+\f0\b0\fs20 \cf0 \CocoaLigature1 With ASIOperationQueue and no parsing:\
+\pard\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7920\tx8280\tx8640\tx9000\tx9360\tx9720\tx10080\tx10440\tx10800\tx11160\tx11520\tx11880\tx12240\tx12600\tx12960\tx13320\tx13680\tx14040\tx14400\tx14760\tx15120\tx15480\tx15840\tx16200\tx16560\tx16920\tx17280\tx17640\tx18000\tx18360\tx18720\tx19080\tx19440\tx19800\tx20160\tx20520\tx20880\tx21240\tx21600\tx21960\tx22320\tx22680\tx23040\tx23400\tx23760\tx24120\tx24480\tx24840\tx25200\tx25560\tx25920\tx26280\tx26640\tx27000\tx27360\tx27720\tx28080\tx28440\tx28800\tx29160\tx29520\tx29880\tx30240\tx30600\tx30960\tx31320\tx31680\tx32040\tx32400\tx32760\tx33120\tx33480\tx33840\tx34200\tx34560\tx34920\tx35280\tx35640\tx36000\pardeftab720\li560\fi-560\pardirnatural
+
+\f2\b\fs24 \cf0 \CocoaLigature0 (concurrent 1) timeTaken: timeTaken: 922.23 seconds (15 minutes 22.227438 seconds)\
+(concurrent 4) timeTaken: timeTaken: 907.49 seconds (15 minutes 7.489113 seconds)\
+\pard\pardeftab720
+
+\f0\b0\fs20 \cf0 \CocoaLigature1 With ASIOperationQueue 4, having it download files:\
+\pard\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7920\tx8280\tx8640\tx9000\tx9360\tx9720\tx10080\tx10440\tx10800\tx11160\tx11520\tx11880\tx12240\tx12600\tx12960\tx13320\tx13680\tx14040\tx14400\tx14760\tx15120\tx15480\tx15840\tx16200\tx16560\tx16920\tx17280\tx17640\tx18000\tx18360\tx18720\tx19080\tx19440\tx19800\tx20160\tx20520\tx20880\tx21240\tx21600\tx21960\tx22320\tx22680\tx23040\tx23400\tx23760\tx24120\tx24480\tx24840\tx25200\tx25560\tx25920\tx26280\tx26640\tx27000\tx27360\tx27720\tx28080\tx28440\tx28800\tx29160\tx29520\tx29880\tx30240\tx30600\tx30960\tx31320\tx31680\tx32040\tx32400\tx32760\tx33120\tx33480\tx33840\tx34200\tx34560\tx34920\tx35280\tx35640\tx36000\pardeftab720\li560\fi-560\pardirnatural
+
+\f2\b\fs24 \cf0 \CocoaLigature0 timeTaken: 130.78 seconds (2 minutes 10.778192 seconds)\
+timeTaken: 136.51 seconds (2 minutes 16.510380 seconds)\
+\pard\pardeftab720
+
+\f0\b0\fs20 \cf0 \CocoaLigature1 \
+\pard\pardeftab720
+
+\f3\fs24 \cf0 Beta Builder web deployment URL --\
+http://trollwerks.com/adhoc/posespro\
+\
+Google App Engine account: alexcurylo@gmail.com / asdfgh123\
+\pard\pardeftab720
+
+\f0\fs20 \cf0 \
+IAP test user: "Iap Tester" acurylo@novuscom.net/asdfgh123ABC Favorite drink? vodka 08/13 Canada\
+\
+Resize! 1.4.2 X lets you set maximum dimension to 150, handles portrait/widescreen\
+\
+368 each in 1/2/3 + 274 in Pro = 1104 + 274 = 1378 total [274, 642, 1010, 1378]\
+\
+Flurry account: alex@alexcurylo.com / asdfgh (it seems)\
+Poses Professional Flurry application key: 
+\f4\fs38 \cb2 H9PNAMTQG6YGDRBCM5ZH
+\f0\fs20 \cb1 \
+Poses Sampler Flurry application key: 
+\f4\fs38 \cb2 S22CH58IG7J2H2NF31FG
+\f0\fs20 \cb1 \
+\
+Poses Volume 1 App Store Apple ID: 
+\f5\b\fs26 302877146
+\f0\b0\fs20 \
+ review URL: itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&amp;id=302877146&amp;pageNumber=0&amp;sortOrdering=1&amp;&amp;mt=8\
+Poses Professional App Store Apple ID: 
+\f5\b\fs26 357099619
+\f0\b0\fs20 \
+ review URL: itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&amp;id=357099619&amp;pageNumber=0&amp;sortOrdering=1&amp;&amp;mt=8\
+Poses Sampler App Store Apple ID: 
+\f5\b\fs26 359068599
+\f0\b0\fs20 \
+\
+Poses Professional Full App ID: 
+\f5\fs24 \cf3 \cb4 WE5728LBXD.com.trollwerks.posespro
+\f0\fs20 \cf0 \cb1 \
+Poses Sampler Full App ID: 
+\f5\fs24 \cf3 \cb4 WE5728LBXD.com.trollwerks.posessampler
+\f0\fs20 \cf0 \cb1 \
+\
+Poses Professional IAP: 
+\f5\fs24 \cf5 Female-Volume-1 \cf6 com.trollwerks.poses.femalevol1\
+
+\f0\fs20 \cf0 Poses Sampler IAP: 
+\f5\fs24 \cf5 Female-Volume-1 \cf6 com.trollwerks.sampler.femalevol1
+\f0\fs20 \cf0 \
+\
+Differences between Sampler and Pro:\
+PPImageController.m don't add Trash button in sampler\
+TWTabBarAppDelegate.m POSGroupsController removed from Favorites navigator, text fixed}

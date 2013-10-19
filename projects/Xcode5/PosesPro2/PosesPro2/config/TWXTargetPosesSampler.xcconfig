@@ -1,0 +1,21 @@
+//
+//  TWXTargetPosesSampler.xcconfig
+//
+//  Copyright 2013 Trollwerks Inc. All rights reserved.
+//
+
+#include "Pods.xcconfig"
+
+PRODUCT_NAME = PoseSampler
+
+// note that this will pick up the Project settings in $(inherited)
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) POSESSAMPLER=1
+
+// might as well just set these in build panel
+//TW_CODE_SIGN_IDENTITY = "iPhone Distribution: Trollwerks Inc.";
+//TW_ADHOC_PROVISIONING_PROFILE = "4F0BCC6B-11D0-4BBE-8122-45748D367F61";
+//TW_APPSTORE_PROVISIONING_PROFILE = "3C5AA1DC-26E9-4976-82F2-7384D021AF4C";
+
+GCC_PREFIX_HEADER = config/TWXProjectPrefix.pch
+INFOPLIST_FILE = resources/posessampler/TWApplicationInfoPosesSampler.plist
+//INFOPLIST_PREFIX_HEADER = resources/version.h
